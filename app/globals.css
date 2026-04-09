@@ -1,41 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --bg:           #0e1117;
-  --bg-surface:   #151b27;
-  --bg-card:      #1a2236;
-  --bg-card-hover:#1e2840;
-  --border:       #263248;
-  --border-light: #2e3c54;
+  --bg:           #f8fafc;
+  --bg-surface:   #f1f5f9;
+  --bg-card:      #ffffff;
+  --bg-card-hover:#f0f4ff;
+  --border:       #cbd5e1;
+  --border-light: #e2e8f0;
 
-  --text:         #e2e8f0;
-  --text-muted:   #7a8fa6;
-  --text-dim:     #4a607a;
+  --text:         #0f172a;
+  --text-muted:   #475569;
+  --text-dim:     #94a3b8;
 
-  --blue:         #3b82f6;
-  --blue-dark:    #2563eb;
-  --blue-soft:    rgba(59,130,246,0.12);
+  --blue:         #2563eb;
+  --blue-dark:    #1d4ed8;
+  --blue-soft:    rgba(37,99,235,0.08);
 
-  --indigo:       #6366f1;
-  --indigo-soft:  rgba(99,102,241,0.12);
+  --indigo:       #4f46e5;
+  --indigo-soft:  rgba(79,70,229,0.08);
 
-  --teal:         #14b8a6;
-  --teal-soft:    rgba(20,184,166,0.12);
+  --teal:         #0d9488;
+  --teal-soft:    rgba(13,148,136,0.08);
 
-  --green:        #22c55e;
-  --green-soft:   rgba(34,197,94,0.1);
+  --green:        #16a34a;
+  --green-soft:   rgba(22,163,74,0.08);
 
-  --red:          #ef4444;
-  --red-soft:     rgba(239,68,68,0.1);
+  --red:          #dc2626;
+  --red-soft:     rgba(220,38,38,0.08);
 
-  --amber:        #f59e0b;
-  --amber-soft:   rgba(245,158,11,0.1);
+  --amber:        #d97706;
+  --amber-soft:   rgba(217,119,6,0.08);
 
-  --domain-1: #4f8ef7;   /* Data Administration */
-  --domain-2: #14b8a6;   /* UI & Navigation */
-  --domain-3: #818cf8;   /* Service Automation */
-  --domain-4: #fb923c;   /* Scripting & Dev */
-  --domain-5: #a78bfa;   /* Users & Tasks */
+  --domain-1: #2563eb;   /* Data Administration */
+  --domain-2: #0d9488;   /* UI & Navigation */
+  --domain-3: #4f46e5;   /* Service Automation */
+  --domain-4: #ea580c;   /* Scripting & Dev */
+  --domain-5: #7c3aed;   /* Users & Tasks */
 }
 
 * { box-sizing: border-box; }
@@ -53,7 +53,7 @@ body {
 
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-surface); }
-::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(6px); }

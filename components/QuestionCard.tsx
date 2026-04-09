@@ -148,15 +148,27 @@ export default function QuestionCard({
       {/* Explanation */}
       {revealed && (
         <div
-          className="mt-5 p-4 rounded fade-up"
-          style={{ background: "rgba(59,130,246,0.06)", border: "1px solid rgba(59,130,246,0.15)" }}
+          className="mt-5 rounded fade-up overflow-hidden"
+          style={{ border: "1px solid rgba(37,99,235,0.2)" }}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--blue)" }}>
-            Explanation
-          </p>
-          <p className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>
-            {question.explanation}
-          </p>
+          {/* English */}
+          <div className="p-4" style={{ background: "rgba(37,99,235,0.05)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--blue)" }}>
+              Explanation
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>
+              {question.explanation}
+            </p>
+          </div>
+          {/* Portuguese */}
+          <div className="p-4" style={{ background: "rgba(13,148,136,0.05)", borderTop: "1px solid rgba(13,148,136,0.2)" }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--teal)" }}>
+              Explicação
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text)" }}>
+              {question.explanation_pt}
+            </p>
+          </div>
         </div>
       )}
     </div>

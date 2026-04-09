@@ -14,6 +14,7 @@ export interface Question {
   options: string[];
   correct: number | number[]; // index(es) of correct answer(s)
   explanation: string;
+  explanation_pt: string;
 }
 
 export const questions: Question[] = [
@@ -28,6 +29,7 @@ export const questions: Question[] = [
     options: ["Content frame", "Banner frame", "Navigation bar", "Application panel"],
     correct: 1,
     explanation: "The Banner frame is the top portion of the ServiceNow UI. It contains the logo, application navigator toggle, global search bar, help, and user profile/menu. The Content frame displays the main application content.",
+    explanation_pt: "O Banner frame é a parte superior da interface do ServiceNow. Ele contém o logotipo, o botão de alternância do Application Navigator, a barra de pesquisa global, a ajuda e o menu de perfil do usuário. O Content frame exibe o conteúdo principal da aplicação.",
   },
   {
     id: 2,
@@ -42,6 +44,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Favorites allow users to save shortcuts to frequently used modules, pages, or URLs in the application navigator. They appear under the 'Favorites' star section for quick access.",
+    explanation_pt: "Os Favorites permitem que os usuários salvem atalhos para módulos, páginas ou URLs frequentemente usados no Application Navigator. Eles aparecem na seção de estrela 'Favorites' para acesso rápido.",
   },
   {
     id: 3,
@@ -56,6 +59,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Right-clicking a column header in a list view reveals a context menu with options to configure the column — such as sorting ascending/descending, grouping by the field, pinning, and other list configuration options.",
+    explanation_pt: "Clicar com o botão direito no cabeçalho de uma coluna na visualização de lista revela um menu de contexto com opções para configurar a coluna — como ordenar em ordem crescente/decrescente, agrupar pelo campo, fixar e outras opções de configuração de lista.",
   },
   {
     id: 4,
@@ -65,6 +69,7 @@ export const questions: Question[] = [
     options: ["Ctrl+Alt+N", "Ctrl+Space", "Alt+F1", "No keyboard shortcut exists; you must click the search box"],
     correct: 3,
     explanation: "ServiceNow's application navigator search is accessed by clicking the search box at the top of the navigator. There is no dedicated global keyboard shortcut to focus it directly (beyond browser tab navigation).",
+    explanation_pt: "A busca no Application Navigator do ServiceNow é acessada clicando na caixa de pesquisa no topo do navegador. Não existe um atalho de teclado global dedicado para focá-la diretamente (além da navegação por tabulação do navegador).",
   },
   {
     id: 5,
@@ -79,6 +84,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Personalize List allows an individual user to choose which columns appear in their list view and in what order. These changes are saved per-user and do not affect other users' views.",
+    explanation_pt: "Personalize List permite que um usuário individual escolha quais colunas aparecem na sua visualização de lista e em qual ordem. Essas alterações são salvas por usuário e não afetam as visualizações de outros usuários.",
   },
   {
     id: 6,
@@ -88,6 +94,7 @@ export const questions: Question[] = [
     options: ["Related Records", "Split View", "Form Sections", "Related Lists"],
     correct: 1,
     explanation: "Split View divides the content frame into two panels, allowing a user to work on a form while simultaneously viewing a related list or another record — improving workflow efficiency.",
+    explanation_pt: "Split View divide o Content frame em dois painéis, permitindo que um usuário trabalhe em um formulário enquanto visualiza simultaneamente uma lista relacionada ou outro registro — melhorando a eficiência do fluxo de trabalho.",
   },
   {
     id: 7,
@@ -102,6 +109,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Breadcrumbs in list views display the currently active filter conditions as clickable chips above the list. Users can click on them to modify or remove individual filter conditions.",
+    explanation_pt: "Breadcrumbs nas visualizações de lista exibem as condições de filtro ativas atuais como chips clicáveis acima da lista. Os usuários podem clicar neles para modificar ou remover condições de filtro individuais.",
   },
   {
     id: 8,
@@ -116,6 +124,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Module is a navigational element within an Application menu in the Navigator. It is essentially a link that points to a list, form, URL, or content page, organized under an Application.",
+    explanation_pt: "Um Module é um elemento de navegação dentro de um menu de Application no Navigator. É essencialmente um link que aponta para uma lista, formulário, URL ou página de conteúdo, organizado sob um Application.",
   },
   {
     id: 9,
@@ -130,6 +139,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "sys_id is a 32-character globally unique identifier (GUID/UUID) automatically assigned to every record in ServiceNow. It is the true primary key used in references and relationships between tables.",
+    explanation_pt: "sys_id é um identificador globalmente único (GUID/UUID) de 32 caracteres atribuído automaticamente a cada registro no ServiceNow. É a verdadeira chave primária usada em referências e relacionamentos entre tabelas.",
   },
   {
     id: 10,
@@ -144,6 +154,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Administrators use the Form Layout designer (accessed via the table configuration or right-clicking the form header > Configure > Form Layout) to define which fields appear for all users. 'Personalize Form' only affects the individual user's view.",
+    explanation_pt: "Os administradores usam o designer de Form Layout (acessado pela configuração da tabela ou clicando com o botão direito no cabeçalho do formulário > Configure > Form Layout) para definir quais campos aparecem para todos os usuários. 'Personalize Form' afeta apenas a visualização do usuário individual.",
   },
   {
     id: 11,
@@ -158,6 +169,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A View is a named configuration of which fields appear on a form or list and how they are arranged. Different views can show different fields to different roles or in different contexts (e.g., ESC view vs. ITSM view).",
+    explanation_pt: "Uma View é uma configuração nomeada de quais campos aparecem em um formulário ou lista e como estão organizados. Views diferentes podem mostrar campos diferentes para funções diferentes ou em contextos diferentes (ex.: view ESC vs. view ITSM).",
   },
   {
     id: 12,
@@ -167,6 +179,7 @@ export const questions: Question[] = [
     options: ["String", "Integer", "Date/Time", "Reference"],
     correct: 2,
     explanation: "The Date/Time field type (and its variants Date and Time) display a calendar/time picker UI component when clicked, allowing users to select a date and time value.",
+    explanation_pt: "O tipo de campo Date/Time (e suas variantes Date e Time) exibe um componente de interface de calendário/seletor de hora quando clicado, permitindo que os usuários selecionem um valor de data e hora.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -185,6 +198,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Table inheritance (extension) allows a child table to inherit all fields from a parent table while adding new fields specific to it. For example, Incident [incident] extends Task [task], inheriting fields like Number, State, and Priority.",
+    explanation_pt: "A herança de tabelas (extensão) permite que uma tabela filha herde todos os campos de uma tabela pai enquanto adiciona novos campos específicos a ela. Por exemplo, Incident [incident] estende Task [task], herdando campos como Number, State e Priority.",
   },
   {
     id: 14,
@@ -194,6 +208,7 @@ export const questions: Question[] = [
     options: ["cmdb_ci", "sys_metadata", "task", "sys_user"],
     correct: 2,
     explanation: "The Task [task] table is the parent table for most work-item tables in ServiceNow, including Incident, Change Request, Problem, and Service Request. It provides common fields like Number, State, Priority, Assigned To, and Description.",
+    explanation_pt: "A tabela Task [task] é a tabela pai da maioria das tabelas de itens de trabalho no ServiceNow, incluindo Incident, Change Request, Problem e Service Request. Ela fornece campos comuns como Number, State, Priority, Assigned To e Description.",
   },
   {
     id: 15,
@@ -208,6 +223,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Import Sets are staging tables where data is loaded from external sources (CSV, Excel, JDBC, etc.). A Transform Map then maps the import set fields to target table fields and applies transformation logic before committing the data.",
+    explanation_pt: "Import Sets são tabelas de staging onde os dados são carregados de fontes externas (CSV, Excel, JDBC, etc.). Um Transform Map então mapeia os campos do import set para os campos da tabela alvo e aplica lógica de transformação antes de confirmar os dados.",
   },
   {
     id: 16,
@@ -222,6 +238,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Transform Map defines how fields in an Import Set table map to fields in a target ServiceNow table. It can also include coalesce rules (to find existing records) and transform scripts for data manipulation during the import.",
+    explanation_pt: "Um Transform Map define como os campos em uma tabela Import Set se mapeiam para campos em uma tabela ServiceNow alvo. Ele também pode incluir regras de coalesce (para encontrar registros existentes) e scripts de transformação para manipulação de dados durante a importação.",
   },
   {
     id: 17,
@@ -236,6 +253,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Coalescing in a Transform Map marks a field as the key to match against existing records. If a record with the same value in the coalesce field already exists in the target table, the import updates it rather than creating a duplicate.",
+    explanation_pt: "O coalescing em um Transform Map marca um campo como a chave para combinar com registros existentes. Se um registro com o mesmo valor no campo de coalesce já existir na tabela alvo, a importação o atualiza em vez de criar uma duplicata.",
   },
   {
     id: 18,
@@ -245,6 +263,7 @@ export const questions: Question[] = [
     options: ["Import Sets", "Update Sets", "Scheduled Data Exports", "System Clone"],
     correct: 1,
     explanation: "Update Sets capture configuration changes (not data) made in a ServiceNow instance. They can be exported as XML and imported into other instances to promote changes through the development pipeline (dev → test → production).",
+    explanation_pt: "Update Sets capturam alterações de configuração (não dados) feitas em uma instância ServiceNow. Eles podem ser exportados como XML e importados em outras instâncias para promover mudanças pelo pipeline de desenvolvimento (dev → test → produção).",
   },
   {
     id: 19,
@@ -254,6 +273,7 @@ export const questions: Question[] = [
     options: ["Choice", "Reference", "Journal", "URL"],
     correct: 1,
     explanation: "The Reference field type stores a pointer (sys_id) to a record in another specified table and displays its display value. It provides a lookup/search widget to find and select the referenced record.",
+    explanation_pt: "O tipo de campo Reference armazena um ponteiro (sys_id) para um registro em outra tabela especificada e exibe seu valor de exibição. Ele fornece um widget de pesquisa/busca para encontrar e selecionar o registro referenciado.",
   },
   {
     id: 20,
@@ -268,6 +288,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Dictionary Entry (stored in sys_dictionary) defines the metadata for a field on a table — including its type, maximum length, default value, mandatory status, and other attributes.",
+    explanation_pt: "Uma Dictionary Entry (armazenada em sys_dictionary) define os metadados de um campo em uma tabela — incluindo seu tipo, comprimento máximo, valor padrão, status obrigatório e outros atributos.",
   },
   {
     id: 21,
@@ -282,6 +303,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The CMDB stores information about Configuration Items (CIs) — hardware, software, services, and other assets — along with their attributes and relationships. It is the foundation for IT asset management and service dependency mapping.",
+    explanation_pt: "O CMDB armazena informações sobre Configuration Items (CIs) — hardware, software, serviços e outros ativos — juntamente com seus atributos e relacionamentos. É a base para o gerenciamento de ativos de TI e o mapeamento de dependências de serviços.",
   },
   {
     id: 22,
@@ -296,6 +318,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "For Choice fields, the Value is the actual data stored in the database (often a number or code like '1'), while the Display Value is the human-readable label shown in the UI (like 'New'). For example, Incident State stores '1' but displays 'New'.",
+    explanation_pt: "Para campos Choice, o Value é o dado real armazenado no banco de dados (geralmente um número ou código como '1'), enquanto o Display Value é o rótulo legível por humanos mostrado na interface (como 'New'). Por exemplo, o State de um Incident armazena '1' mas exibe 'New'.",
   },
   {
     id: 23,
@@ -305,6 +328,7 @@ export const questions: Question[] = [
     options: ["sys_dictionary", "sys_choice", "sys_db_object", "sys_field_label"],
     correct: 1,
     explanation: "The sys_choice table stores the label (display value), value, element (field name), name (table name), and sequence for all dropdown/choice list options across the instance.",
+    explanation_pt: "A tabela sys_choice armazena o rótulo (valor de exibição), o valor, o elemento (nome do campo), o nome (nome da tabela) e a sequência para todas as opções de dropdown/lista de escolha na instância.",
   },
   {
     id: 24,
@@ -319,6 +343,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ACLs (Access Controls) define who can read, write, create, or delete records or fields based on roles and conditions. They are evaluated at runtime and protect both table-level and field-level access.",
+    explanation_pt: "ACLs (Access Controls) definem quem pode ler, escrever, criar ou excluir registros ou campos com base em funções e condições. Elas são avaliadas em tempo de execução e protegem o acesso tanto no nível da tabela quanto no nível do campo.",
   },
   {
     id: 25,
@@ -333,6 +358,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow first evaluates table-level ACLs (the wildcard '*' operation on the table). If access is denied at the table level, the system does not proceed to check field-level ACLs. Field-level ACLs are evaluated only after the table-level check passes.",
+    explanation_pt: "O ServiceNow primeiro avalia ACLs no nível da tabela (a operação curinga '*' na tabela). Se o acesso for negado no nível da tabela, o sistema não prossegue para verificar ACLs no nível do campo. ACLs no nível do campo são avaliadas somente após a verificação no nível da tabela ser aprovada.",
   },
   {
     id: 26,
@@ -347,6 +373,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Glide List field stores multiple sys_id references to records in a related table (similar to a multi-select reference field). It is stored as a comma-separated string of sys_ids in the database.",
+    explanation_pt: "Um campo Glide List armazena múltiplas referências de sys_id para registros em uma tabela relacionada (semelhante a um campo de referência multi-seleção). É armazenado como uma string separada por vírgulas de sys_ids no banco de dados.",
   },
   {
     id: 27,
@@ -361,6 +388,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Scheduled Jobs (found in System Definition > Scheduled Jobs) allow administrators to run scripts, workflows, or reports automatically on a schedule — such as daily data cleanup, report generation, or system maintenance tasks.",
+    explanation_pt: "Scheduled Jobs (encontrados em System Definition > Scheduled Jobs) permitem que administradores executem scripts, workflows ou relatórios automaticamente em um cronograma — como limpeza diária de dados, geração de relatórios ou tarefas de manutenção do sistema.",
   },
   {
     id: 28,
@@ -375,6 +403,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Data Policies enforce mandatory and read-only rules at the data layer — unlike UI Policies which only apply in the browser. Data Policies are enforced even when records are updated via scripts, imports, or web services.",
+    explanation_pt: "Data Policies aplicam regras obrigatórias e somente leitura na camada de dados — ao contrário das UI Policies que se aplicam apenas no navegador. As Data Policies são aplicadas mesmo quando os registros são atualizados via scripts, importações ou serviços web.",
   },
   {
     id: 29,
@@ -389,6 +418,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "An Inactivity Monitor watches task records and triggers when a record has not been modified within a defined time period. This is commonly used to escalate stale incidents or remind assignees of pending work.",
+    explanation_pt: "Um Inactivity Monitor observa registros de tarefas e dispara quando um registro não foi modificado dentro de um período de tempo definido. Isso é comumente usado para escalar incidents parados ou lembrar os responsáveis de trabalhos pendentes.",
   },
   {
     id: 30,
@@ -403,6 +433,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "ServiceNow Archiving moves aged records from active tables to archive tables, reducing the size of production tables and improving query performance while still retaining the data for compliance and reference.",
+    explanation_pt: "O Archiving do ServiceNow move registros antigos de tabelas ativas para tabelas de arquivo, reduzindo o tamanho das tabelas de produção e melhorando o desempenho das consultas, enquanto ainda retém os dados para conformidade e referência.",
   },
   {
     id: 31,
@@ -412,6 +443,7 @@ export const questions: Question[] = [
     options: ["cmdb", "cmdb_ci", "asset", "alm_asset"],
     correct: 1,
     explanation: "cmdb_ci is the base CMDB Configuration Item table. All CI classes (servers, applications, services, etc.) extend cmdb_ci, which provides common attributes like Name, IP address, and Operational status.",
+    explanation_pt: "cmdb_ci é a tabela base do CMDB Configuration Item. Todas as classes de CI (servidores, aplicações, serviços, etc.) estendem cmdb_ci, que fornece atributos comuns como Name, IP address e Operational status.",
   },
   {
     id: 32,
@@ -426,6 +458,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "When 'Run business rules' is enabled on a Transform Map, business rules defined on the target table are triggered when the transform creates or updates records — ensuring the same validation and automation logic runs as with manual record creation.",
+    explanation_pt: "Quando 'Run business rules' está habilitado em um Transform Map, as business rules definidas na tabela alvo são disparadas quando a transformação cria ou atualiza registros — garantindo que a mesma lógica de validação e automação seja executada como na criação manual de registros.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -444,6 +477,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Business Rules are server-side JavaScript scripts that execute when a database operation (insert, update, delete, or query) occurs on a specific table. They can be configured to run before, after, or asynchronously relative to the database action.",
+    explanation_pt: "Business Rules são scripts JavaScript do lado do servidor que são executados quando uma operação de banco de dados (inserção, atualização, exclusão ou consulta) ocorre em uma tabela específica. Eles podem ser configurados para executar antes, depois ou de forma assíncrona em relação à ação do banco de dados.",
   },
   {
     id: 34,
@@ -458,6 +492,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Before Business Rules run before the database write, allowing you to modify field values before they are saved. After Business Rules run after the database write, useful for triggering notifications or related record updates. Both are synchronous.",
+    explanation_pt: "Before Business Rules executam antes da escrita no banco de dados, permitindo modificar valores de campos antes que sejam salvos. After Business Rules executam após a escrita no banco de dados, úteis para disparar notificações ou atualizações de registros relacionados. Ambos são síncronos.",
   },
   {
     id: 35,
@@ -472,6 +507,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "UI Policies are client-side rules that dynamically change form behavior in the user's browser. They can show/hide fields, make fields mandatory or optional, and set fields as read-only or editable based on conditions — without writing JavaScript.",
+    explanation_pt: "UI Policies são regras do lado do cliente que alteram dinamicamente o comportamento do formulário no navegador do usuário. Elas podem mostrar/ocultar campos, tornar campos obrigatórios ou opcionais e definir campos como somente leitura ou editáveis com base em condições — sem escrever JavaScript.",
   },
   {
     id: 36,
@@ -486,6 +522,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Workflows (now largely superseded by Flow Designer) are visual process automation tools that use activities such as approvals, notifications, conditions, timers, and scripts to automate complex multi-step processes. They attach to records and execute as the process progresses.",
+    explanation_pt: "Workflows (agora amplamente substituídos pelo Flow Designer) são ferramentas de automação de processos visuais que usam atividades como aprovações, notificações, condições, temporizadores e scripts para automatizar processos complexos de múltiplas etapas.",
   },
   {
     id: 37,
@@ -500,6 +537,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Email Notifications are configured to send emails automatically when a specific event is fired on a record (such as when an incident is created, assigned, or resolved). They use templates to format the email content.",
+    explanation_pt: "Email Notifications são configuradas para enviar emails automaticamente quando um evento específico é disparado em um registro (como quando um incident é criado, atribuído ou resolvido). Elas usam templates para formatar o conteúdo do email.",
   },
   {
     id: 38,
@@ -509,6 +547,7 @@ export const questions: Question[] = [
     options: ["Before", "After", "During", "Async"],
     correct: 2,
     explanation: "Business Rules have four 'when' options: Before (before DB write), After (after DB write), Async (asynchronously after DB write), and Display (when a record is retrieved for display). 'During' is not a valid option.",
+    explanation_pt: "Business Rules têm quatro opções de 'when': Before (antes da escrita no BD), After (após a escrita no BD), Async (assincronamente após a escrita no BD) e Display (quando um registro é recuperado para exibição). 'During' não é uma opção válida.",
   },
   {
     id: 39,
@@ -523,6 +562,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "In ServiceNow, an SLA Definition specifies the time targets (e.g., resolve within 8 hours), conditions for when the SLA starts, stops, and pauses, and the actions to take when targets are breached. SLA records are created on tasks to track compliance.",
+    explanation_pt: "No ServiceNow, uma SLA Definition especifica os alvos de tempo (ex.: resolver em 8 horas), as condições para quando o SLA inicia, para e pausa, e as ações a serem tomadas quando os alvos são violados. Registros de SLA são criados em tarefas para rastrear a conformidade.",
   },
   {
     id: 40,
@@ -537,6 +577,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Flow Designer is ServiceNow's modern low-code/no-code automation platform. It uses natural language triggers and actions to build automations (flows), replacing the older Workflow editor. It integrates with IntegrationHub for connecting external systems.",
+    explanation_pt: "Flow Designer é a plataforma moderna de automação low-code/no-code do ServiceNow. Ele usa gatilhos e ações em linguagem natural para construir automações (flows), substituindo o editor de Workflow mais antigo. Integra-se com IntegrationHub para conectar sistemas externos.",
   },
   {
     id: 41,
@@ -551,6 +592,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Inbound Email Actions process emails received by ServiceNow's email accounts. They can create new records (e.g., incidents from support emails), update existing records (via watermark), reply to senders, and execute scripts based on the email content.",
+    explanation_pt: "Inbound Email Actions processam emails recebidos pelas contas de email do ServiceNow. Eles podem criar novos registros (ex.: incidents a partir de emails de suporte), atualizar registros existentes (via marca d'água), responder a remetentes e executar scripts com base no conteúdo do email.",
   },
   {
     id: 42,
@@ -565,6 +607,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Catalog Item is a request form in the Service Catalog that end users fill out to request something — such as hardware, software access, or services. Variables on the item collect information, and the submission triggers fulfillment workflows.",
+    explanation_pt: "Um Catalog Item é um formulário de solicitação no Service Catalog que os usuários preenchem para solicitar algo — como hardware, acesso a software ou serviços. Variáveis no item coletam informações, e a submissão dispara workflows de atendimento.",
   },
   {
     id: 43,
@@ -579,6 +622,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Approval Rules (or Approval Definitions in Flow Designer) configure who needs to approve a request and the conditions under which approval is required. They drive the routing of approval tasks to the correct approvers.",
+    explanation_pt: "Approval Rules (ou Approval Definitions no Flow Designer) configuram quem precisa aprovar uma solicitação e as condições sob as quais a aprovação é necessária. Elas orientam o roteamento de tarefas de aprovação para os aprovadores corretos.",
   },
   {
     id: 44,
@@ -593,6 +637,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow Event Management ingests infrastructure alerts and events from monitoring tools (like Nagios, SCOM, etc.), correlates them to CIs, deduplicates noise, and creates/updates incidents when business-impacting issues are detected.",
+    explanation_pt: "O ServiceNow Event Management ingere alertas de infraestrutura e eventos de ferramentas de monitoramento (como Nagios, SCOM, etc.), os correlaciona a CIs, elimina duplicatas e cria/atualiza incidents quando problemas com impacto nos negócios são detectados.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -606,6 +651,7 @@ export const questions: Question[] = [
     options: ["g_form", "gs", "current", "GlideRecord"],
     correct: 0,
     explanation: "g_form is the global form object available in client scripts. It provides methods to get/set field values, show/hide fields, make fields mandatory, and manipulate the form UI. It runs in the browser (client side).",
+    explanation_pt: "g_form é o objeto de formulário global disponível em client scripts. Ele fornece métodos para obter/definir valores de campos, mostrar/ocultar campos, tornar campos obrigatórios e manipular a interface do formulário. Ele é executado no navegador (lado do cliente).",
   },
   {
     id: 46,
@@ -615,6 +661,7 @@ export const questions: Question[] = [
     options: ["g_form", "current", "g_record", "GlideForm"],
     correct: 1,
     explanation: "In Business Rules (server-side), the 'current' object represents the current GlideRecord being processed. You can access and modify field values using current.field_name.getValue() or current.field_name = 'value'.",
+    explanation_pt: "Em Business Rules (lado do servidor), o objeto 'current' representa o GlideRecord atual sendo processado. Você pode acessar e modificar valores de campos usando current.field_name.getValue() ou current.field_name = 'value'.",
   },
   {
     id: 47,
@@ -629,6 +676,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Script Includes are reusable server-side JavaScript libraries stored in ServiceNow. They define classes and functions that can be called from Business Rules, REST APIs, Scheduled Jobs, and other server-side contexts.",
+    explanation_pt: "Script Includes são bibliotecas JavaScript reutilizáveis do lado do servidor armazenadas no ServiceNow. Elas definem classes e funções que podem ser chamadas a partir de Business Rules, REST APIs, Scheduled Jobs e outros contextos do lado do servidor.",
   },
   {
     id: 48,
@@ -638,6 +686,7 @@ export const questions: Question[] = [
     options: ["get()", "query()", "getRecord()", "fetch()"],
     correct: 1,
     explanation: "After adding conditions with addQuery() or addEncodedQuery(), you call query() to execute the database query. Then you iterate through results with next() in a while loop: while(gr.next()) { ... }",
+    explanation_pt: "Após adicionar condições com addQuery() ou addEncodedQuery(), você chama query() para executar a consulta ao banco de dados. Depois, itera pelos resultados com next() em um loop while: while(gr.next()) { ... }",
   },
   {
     id: 49,
@@ -652,6 +701,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "gs.log() is a GlideSystem method that writes messages to the ServiceNow system log, viewable under System Logs > All. It is used for debugging server-side scripts. gs.info(), gs.warn(), and gs.error() are the preferred severity-based variants.",
+    explanation_pt: "gs.log() é um método do GlideSystem que escreve mensagens no log do sistema do ServiceNow, visível em System Logs > All. É usado para depurar scripts do lado do servidor. gs.info(), gs.warn() e gs.error() são as variantes preferenciais baseadas em severidade.",
   },
   {
     id: 50,
@@ -666,6 +716,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The four Client Script types are: onLoad (runs when a form is loaded), onChange (runs when a specific field value changes), onSubmit (runs when the form is submitted/saved), and onCellEdit (runs when a cell in a list is edited inline).",
+    explanation_pt: "Os quatro tipos de Client Script são: onLoad (executado quando um formulário é carregado), onChange (executado quando o valor de um campo específico muda), onSubmit (executado quando o formulário é submetido/salvo) e onCellEdit (executado quando uma célula em uma lista é editada inline).",
   },
   {
     id: 51,
@@ -680,6 +731,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "UI Actions add buttons, links, or context menu items to forms and lists. When the user clicks them, they can execute client-side scripts, server-side scripts, or redirect to URLs. Examples include 'Resolve', 'Assign to Me', and 'Clone Record' buttons.",
+    explanation_pt: "UI Actions adicionam botões, links ou itens de menu de contexto a formulários e listas. Quando o usuário os clica, eles podem executar scripts do lado do cliente, scripts do lado do servidor ou redirecionar para URLs. Exemplos incluem os botões 'Resolve', 'Assign to Me' e 'Clone Record'.",
   },
   {
     id: 52,
@@ -694,6 +746,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "In Business Rules running on update operations, the 'previous' GlideRecord object holds the field values of the record as they were before the current update. This allows comparison: if (current.state != previous.state) { ... }",
+    explanation_pt: "Em Business Rules executando em operações de atualização, o objeto GlideRecord 'previous' contém os valores dos campos do registro como estavam antes da atualização atual. Isso permite comparação: if (current.state != previous.state) { ... }",
   },
   {
     id: 53,
@@ -708,6 +761,7 @@ export const questions: Question[] = [
     ],
     correct: 3,
     explanation: "Both current.field_name.getValue() and current.getValue('field_name') return the string value of a field. Using current.field_name directly returns the GlideElement object, not the string value, which can cause issues in comparisons.",
+    explanation_pt: "Tanto current.field_name.getValue() quanto current.getValue('field_name') retornam o valor em string de um campo. Usar current.field_name diretamente retorna o objeto GlideElement, não o valor em string, o que pode causar problemas em comparações.",
   },
   {
     id: 54,
@@ -722,6 +776,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Async Business Rules run in a separate background queue after the database commit. They don't block the user's browser session, making them suitable for time-consuming operations like complex calculations, external system calls, or sending notifications.",
+    explanation_pt: "Async Business Rules executam em uma fila de segundo plano separada após a confirmação do banco de dados. Eles não bloqueiam a sessão do navegador do usuário, tornando-os adequados para operações demoradas como cálculos complexos, chamadas a sistemas externos ou envio de notificações.",
   },
   {
     id: 55,
@@ -736,6 +791,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "GlideAjax allows client-side scripts (running in the browser) to make asynchronous calls to Script Includes on the server. This is the secure, supported way to query the database or run server-side logic from a Client Script without returning to the server on form load.",
+    explanation_pt: "GlideAjax permite que scripts do lado do cliente (em execução no navegador) façam chamadas assíncronas a Script Includes no servidor. Esta é a maneira segura e suportada de consultar o banco de dados ou executar lógica do lado do servidor a partir de um Client Script sem retornar ao servidor no carregamento do formulário.",
   },
   {
     id: 56,
@@ -750,6 +806,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Scripted REST APIs allow developers to create custom REST endpoints in ServiceNow. External systems can call these endpoints, and a server-side script (using the REST API's scripting environment) processes the request and returns a response.",
+    explanation_pt: "Scripted REST APIs permitem que desenvolvedores criem endpoints REST personalizados no ServiceNow. Sistemas externos podem chamar esses endpoints, e um script do lado do servidor processa a solicitação e retorna uma resposta.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -768,6 +825,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Role in ServiceNow is a named permission set. Roles are assigned to users or groups and grant access to specific applications, modules, tables, and fields. For example, the 'itil' role grants access to ITSM modules.",
+    explanation_pt: "Uma Role no ServiceNow é um conjunto de permissões nomeado. As Roles são atribuídas a usuários ou grupos e concedem acesso a aplicações, módulos, tabelas e campos específicos. Por exemplo, a role 'itil' concede acesso aos módulos ITSM.",
   },
   {
     id: 58,
@@ -782,6 +840,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Users (sys_user) are people who can authenticate and log in to ServiceNow. Contacts are external people (from companies/accounts) who are referenced in records but may not have login credentials. Both can be associated with records.",
+    explanation_pt: "Users (sys_user) são pessoas que podem se autenticar e fazer login no ServiceNow. Contacts são pessoas externas (de empresas/contas) que são referenciadas em registros mas podem não ter credenciais de login. Ambos podem ser associados a registros.",
   },
   {
     id: 59,
@@ -796,6 +855,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Groups (sys_user_group) are collections of users. They are used for assigning tasks to a team (assignment group), managing approval groups, defining on-call rotations, and granting roles to multiple users at once.",
+    explanation_pt: "Groups (sys_user_group) são coleções de usuários. Eles são usados para atribuir tarefas a uma equipe (assignment group), gerenciar grupos de aprovação, definir rotações de plantão e conceder roles a múltiplos usuários de uma vez.",
   },
   {
     id: 60,
@@ -810,6 +870,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "When a role is assigned to a group, every member of that group automatically inherits the role. New members added to the group also inherit the role immediately. This is the recommended way to manage permissions at scale.",
+    explanation_pt: "Quando uma role é atribuída a um grupo, cada membro desse grupo herda automaticamente a role. Novos membros adicionados ao grupo também herdam a role imediatamente. Esta é a maneira recomendada de gerenciar permissões em escala.",
   },
   {
     id: 61,
@@ -824,6 +885,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The 'admin' role is the highest-privilege role in ServiceNow. Users with the admin role bypass all ACL checks and have full read/write/delete access to all tables, modules, and configuration. It should be assigned carefully.",
+    explanation_pt: "A role 'admin' é a role de maior privilégio no ServiceNow. Usuários com a role admin ignoram todas as verificações de ACL e têm acesso completo de leitura/escrita/exclusão a todas as tabelas, módulos e configurações. Deve ser atribuída com cuidado.",
   },
   {
     id: 62,
@@ -838,6 +900,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "A Task in ServiceNow refers to any record in a table that extends the base Task [task] table. This includes Incidents, Change Requests, Problems, Service Requests, and Catalog Tasks — they all share common task fields like Number, State, and Assigned To.",
+    explanation_pt: "Uma Task no ServiceNow refere-se a qualquer registro em uma tabela que estende a tabela base Task [task]. Isso inclui Incidents, Change Requests, Problems, Service Requests e Catalog Tasks — todos compartilham campos de tarefa comuns como Number, State e Assigned To.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -856,6 +919,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Update Sets capture configuration changes (metadata) such as business rules, UI policies, scripts, form layouts, and table definitions. They do NOT capture data records like incidents. To move data, use Export/Import sets or Data Preservers.",
+    explanation_pt: "Update Sets capturam alterações de configuração (metadados) como business rules, UI policies, scripts, layouts de formulário e definições de tabela. Eles NÃO capturam registros de dados como incidents. Para mover dados, use Export/Import sets ou Data Preservers.",
   },
   {
     id: 64,
@@ -870,6 +934,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "A Reference Qualifier restricts which records appear in the autocomplete/lookup for a Reference field. For example, configuring a 'Assigned To' field to only show users who are active and in a specific group.",
+    explanation_pt: "Um Reference Qualifier restringe quais registros aparecem no preenchimento automático/busca de um campo Reference. Por exemplo, configurar um campo 'Assigned To' para mostrar apenas usuários que estão ativos e em um grupo específico.",
   },
   {
     id: 65,
@@ -884,6 +949,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Application Scope (introduced with Store Apps) provides a namespace (e.g., x_acme_myapp) that isolates all artifacts of an application. This prevents naming conflicts with other apps and the global scope, enabling better lifecycle management.",
+    explanation_pt: "Application Scope (introduzido com Store Apps) fornece um namespace (ex.: x_acme_myapp) que isola todos os artefatos de uma aplicação. Isso previne conflitos de nomenclatura com outras apps e o escopo global, permitindo melhor gerenciamento do ciclo de vida.",
   },
   {
     id: 66,
@@ -898,6 +964,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Variable Sets are reusable collections of variables that can be added to multiple Catalog Items and Record Producers. This promotes consistency and reduces duplication — change the variable set once and all associated items reflect the change.",
+    explanation_pt: "Variable Sets são coleções reutilizáveis de variáveis que podem ser adicionadas a múltiplos Catalog Items e Record Producers. Isso promove consistência e reduz duplicação — altere o Variable Set uma vez e todos os itens associados refletem a mudança.",
   },
   {
     id: 67,
@@ -912,6 +979,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "A Record Producer is a type of Service Catalog entry that creates records in a specified table (e.g., Incident, HR Case) rather than creating a Requested Item (sc_req_item). It provides a catalog-style form for creating records in non-catalog tables.",
+    explanation_pt: "Um Record Producer é um tipo de entrada do Service Catalog que cria registros em uma tabela especificada (ex.: Incident, HR Case) em vez de criar um Requested Item (sc_req_item). Ele fornece um formulário no estilo catálogo para criar registros em tabelas não relacionadas ao catálogo.",
   },
   {
     id: 68,
@@ -926,6 +994,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "In Client Scripts, g_form.setValue('field_name', value) is used to set a field's value in the browser. current is a server-side object (Business Rule context), and g_form is the correct client-side form API.",
+    explanation_pt: "Em Client Scripts, g_form.setValue('field_name', value) é usado para definir o valor de um campo no navegador. current é um objeto do lado do servidor (contexto de Business Rule), e g_form é a API correta do formulário do lado do cliente.",
   },
   {
     id: 69,
@@ -940,6 +1009,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "This code creates a GlideRecord for the incident table, adds a query filter for state = 1 (New), executes the query, and logs the number of matching rows. getRowCount() returns the count of records in the result set.",
+    explanation_pt: "Este código cria um GlideRecord para a tabela incident, adiciona um filtro de consulta para state = 1 (New), executa a consulta e registra o número de linhas correspondentes. getRowCount() retorna a contagem de registros no conjunto de resultados.",
   },
   {
     id: 70,
@@ -954,6 +1024,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "System Properties (System Settings > System Properties, or sys_properties.list) store instance-wide configuration settings. Administrators use them to configure email settings, UI themes, feature toggles, integration settings, and more.",
+    explanation_pt: "System Properties (System Settings > System Properties, ou sys_properties.list) armazenam configurações de instância. Os administradores as usam para configurar configurações de email, temas de UI, alternâncias de recursos, configurações de integração e muito mais.",
   },
   {
     id: 71,
@@ -968,6 +1039,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Tables are actual database tables that store data. Database Views in ServiceNow are virtual constructs that join data from multiple tables into a single queryable entity. They are read-only but simplify complex multi-table queries.",
+    explanation_pt: "Tabelas são tabelas de banco de dados reais que armazenam dados. Database Views no ServiceNow são construções virtuais que unem dados de múltiplas tabelas em uma única entidade consultável. Elas são somente leitura, mas simplificam consultas complexas de múltiplas tabelas.",
   },
   {
     id: 72,
@@ -982,6 +1054,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Delegation allows a user to designate another user to approve requests and handle tasks on their behalf — typically used during vacations or absences. The delegate can act on approvals and tasks as if they were the original user.",
+    explanation_pt: "A Delegação permite que um usuário designe outro usuário para aprovar solicitações e lidar com tarefas em seu nome — tipicamente usada durante férias ou ausências. O delegate pode agir em aprovações e tarefas como se fosse o usuário original.",
   },
   {
     id: 73,
@@ -996,6 +1069,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Work Notes are internal journal entries visible only to fulfillers (agents, technicians, approvers) working on a record. They are NOT visible to the end user. 'Additional Comments' (Customer-visible) are the public-facing equivalent.",
+    explanation_pt: "Work Notes são entradas de journal internas visíveis apenas para os atendentes (agentes, técnicos, aprovadores) que trabalham em um registro. Elas NÃO são visíveis para o usuário final. 'Additional Comments' (visíveis ao cliente) são o equivalente público.",
   },
   {
     id: 74,
@@ -1010,6 +1084,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Scheduled Data Exports allow administrators to configure automated exports of record data to formats like CSV, XML, or Excel. These can be scheduled to run at intervals and deliver results via email, saving to MID Server, or other destinations.",
+    explanation_pt: "Scheduled Data Exports permitem que administradores configurem exportações automatizadas de dados de registros para formatos como CSV, XML ou Excel. Elas podem ser agendadas para executar em intervalos e entregar resultados por email, salvando no MID Server ou outros destinos.",
   },
   {
     id: 75,
@@ -1024,6 +1099,7 @@ export const questions: Question[] = [
     ],
     correct: 2,
     explanation: "Security Jump Start is a feature that provides a predefined set of ACL rules to lock down key ServiceNow tables with minimal configuration. It creates a secure baseline that administrators can then customize further.",
+    explanation_pt: "Security Jump Start é um recurso que fornece um conjunto predefinido de regras ACL para proteger as principais tabelas do ServiceNow com configuração mínima. Ele cria uma linha de base segura que os administradores podem personalizar posteriormente.",
   },
   {
     id: 76,
@@ -1038,6 +1114,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Subflows are reusable, parameterized flow logic that can be called from other flows or subflows. They promote reuse and modularity — similar to calling a function. A subflow can accept inputs and return outputs.",
+    explanation_pt: "Subflows são lógicas de flow reutilizáveis e parametrizadas que podem ser chamadas de outros flows ou subflows. Eles promovem reutilização e modularidade — semelhante a chamar uma função. Um subflow pode aceitar entradas e retornar saídas.",
   },
   {
     id: 77,
@@ -1047,6 +1124,7 @@ export const questions: Question[] = [
     options: ["CSV/Excel file upload", "JDBC database connection", "REST web service", "Direct LDAP query to Active Directory"],
     correct: [0, 1, 2],
     explanation: "Import Sets support multiple data sources: file uploads (CSV, Excel, XML), JDBC connections to external databases, REST/SOAP web service calls, and MID Server-based connections. LDAP is used for authentication/user synchronization via LDAP Integration, not through Import Sets.",
+    explanation_pt: "Import Sets suportam múltiplas fontes de dados: uploads de arquivos (CSV, Excel, XML), conexões JDBC com bancos de dados externos, chamadas de serviços web REST/SOAP e conexões baseadas em MID Server. LDAP é usado para autenticação/sincronização de usuários via Integração LDAP, não por meio de Import Sets.",
   },
   {
     id: 78,
@@ -1061,6 +1139,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 2],
     explanation: "Flow Designer supports Record triggers (when records are created/updated), Schedule triggers (time-based), and Event triggers (fired via gs.eventQueue()). Flows can also be triggered by Service Catalog submissions, but they are not limited to only catalog triggers.",
+    explanation_pt: "Flow Designer suporta gatilhos de Record (quando registros são criados/atualizados), gatilhos de Schedule (baseados em tempo) e gatilhos de Event (disparados via gs.eventQueue()). Flows também podem ser disparados por submissões do Service Catalog, mas não estão limitados apenas a gatilhos de catálogo.",
   },
   {
     id: 79,
@@ -1075,6 +1154,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 2],
     explanation: "Business Rules are server-side scripts (A is true). They can abort a save operation with current.setAbortAction(true) in a Before rule (B is true). During updates, both current (new values) and previous (old values) are available (C is true). While most Business Rules use JavaScript, the 'Run script' option always uses JavaScript — D is true but misleadingly phrased; all three A-C are correct.",
+    explanation_pt: "Business Rules são scripts do lado do servidor (A é verdadeiro). Eles podem abortar uma operação de salvamento com current.setAbortAction(true) em uma Before rule (B é verdadeiro). Durante atualizações, tanto current (novos valores) quanto previous (valores antigos) estão disponíveis (C é verdadeiro).",
   },
   {
     id: 80,
@@ -1089,6 +1169,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1],
     explanation: "The admin role bypasses all ACLs (A) and can access all tables (B). However, admins are not the only ones who can create roles (security_admin can also manage security). Best practice recommends NOT using admin as a day-to-day account — administrators should use a personal account with only necessary roles.",
+    explanation_pt: "A role admin ignora todas as ACLs (A) e pode acessar todas as tabelas (B). No entanto, admins não são os únicos que podem criar roles (security_admin também pode gerenciar segurança). A melhor prática recomenda NÃO usar admin como conta de trabalho diário.",
   },
   {
     id: 81,
@@ -1103,6 +1184,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Service Portal is a modern, widget-based self-service interface for end users. It provides a simplified, consumer-friendly experience for browsing the Service Catalog, submitting requests, searching the Knowledge Base, and tracking ticket status.",
+    explanation_pt: "O Service Portal é uma interface de autoatendimento moderna e baseada em widgets para usuários finais. Ele fornece uma experiência simplificada e amigável para navegar no Service Catalog, enviar solicitações, pesquisar na Base de Conhecimento e rastrear o status de tickets.",
   },
   {
     id: 82,
@@ -1117,6 +1199,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The 'My Work' module provides agents with a consolidated view of all task records currently assigned to them across all ITSM applications (incidents, changes, tasks, etc.), making it easy to manage personal workload.",
+    explanation_pt: "O módulo 'My Work' fornece aos agentes uma visão consolidada de todos os registros de tarefas atualmente atribuídos a eles em todas as aplicações ITSM (incidents, changes, tasks, etc.), facilitando o gerenciamento da carga de trabalho pessoal.",
   },
   {
     id: 83,
@@ -1131,6 +1214,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "When auditing is enabled for a table and/or specific fields, ServiceNow records a history of every value change in the sys_audit table. Auditors can view the full history of who changed what value, when, from what to what.",
+    explanation_pt: "Quando a auditoria está habilitada para uma tabela e/ou campos específicos, o ServiceNow registra um histórico de cada mudança de valor na tabela sys_audit. Os auditores podem visualizar o histórico completo de quem alterou qual valor, quando, de quê para quê.",
   },
   {
     id: 84,
@@ -1145,6 +1229,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "GlideSystem (gs) is the global server-side system object in ServiceNow scripts. It provides methods for: logging (gs.info, gs.error), getting user info (gs.getUserName, gs.hasRole), date functions, and many other utility operations.",
+    explanation_pt: "GlideSystem (gs) é o objeto de sistema global do lado do servidor nos scripts do ServiceNow. Ele fornece métodos para: logging (gs.info, gs.error), obtenção de informações do usuário (gs.getUserName, gs.hasRole), funções de data e muitas outras operações utilitárias.",
   },
   {
     id: 85,
@@ -1159,6 +1244,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Instance Cloning copies all (or selected) data and configuration from a source instance (usually production) to a target instance (dev or test). It allows development teams to work with realistic data. Clone excludes can prevent sensitive data from being copied.",
+    explanation_pt: "Instance Cloning copia todos (ou selecionados) os dados e configurações de uma instância de origem (geralmente produção) para uma instância de destino (dev ou test). Permite que as equipes de desenvolvimento trabalhem com dados realistas. Clone excludes podem impedir que dados sensíveis sejam copiados.",
   },
   {
     id: 86,
@@ -1173,6 +1259,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Assignment Lookup Rules automatically populate the 'Assignment Group' and 'Assigned To' fields on tasks based on configurable criteria such as the CI category, location, or service. This reduces manual routing effort.",
+    explanation_pt: "Assignment Lookup Rules preenchem automaticamente os campos 'Assignment Group' e 'Assigned To' em tarefas com base em critérios configuráveis como categoria do CI, localização ou serviço. Isso reduz o esforço de roteamento manual.",
   },
   {
     id: 87,
@@ -1187,6 +1274,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Connect is a real-time collaboration sidebar embedded in the ServiceNow interface. It allows users to send messages, share records, and collaborate with colleagues directly within the platform without leaving the current page.",
+    explanation_pt: "Connect é uma barra lateral de colaboração em tempo real incorporada na interface do ServiceNow. Ela permite que os usuários enviem mensagens, compartilhem registros e colaborem com colegas diretamente dentro da plataforma sem sair da página atual.",
   },
   {
     id: 88,
@@ -1201,6 +1289,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A MID (Management, Instrumentation, and Discovery) Server is a Java application that runs behind your firewall. It enables ServiceNow to communicate with and discover systems on your internal network — used for Discovery, Orchestration, JDBC imports, and integrations.",
+    explanation_pt: "Um MID (Management, Instrumentation, and Discovery) Server é uma aplicação Java executada atrás do seu firewall. Ele permite que o ServiceNow se comunique e descubra sistemas na sua rede interna — usado para Discovery, Orchestration, importações JDBC e integrações.",
   },
   {
     id: 89,
@@ -1215,6 +1304,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Script Debugger (System Diagnostics > Script Debugger) allows developers to set breakpoints in server-side scripts (Business Rules, Script Includes) and interactively step through execution, inspect variable values, and diagnose logic issues.",
+    explanation_pt: "O Script Debugger (System Diagnostics > Script Debugger) permite que desenvolvedores definam breakpoints em scripts do lado do servidor (Business Rules, Script Includes) e percorram interativamente a execução, inspecionem valores de variáveis e diagnostiquem problemas de lógica.",
   },
   {
     id: 90,
@@ -1229,6 +1319,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "SLA Escalations trigger notifications and workflow actions at configurable percentage thresholds of the SLA (e.g., at 50%, 75%, and 100% elapsed time). This alerts stakeholders and enables proactive management before a breach occurs.",
+    explanation_pt: "Escalações de SLA disparam notificações e ações de workflow em limites percentuais configuráveis do SLA (ex.: aos 50%, 75% e 100% do tempo decorrido). Isso alerta as partes interessadas e permite o gerenciamento proativo antes que uma violação ocorra.",
   },
   {
     id: 91,
@@ -1243,6 +1334,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "CMDB Field Normalization standardizes the values of CI attributes (e.g., normalizing OS names from 'Windows Server 2019' and 'Microsoft Windows 2019' to a standard value). This improves data quality and enables more accurate reporting.",
+    explanation_pt: "A Normalização de Campos do CMDB padroniza os valores dos atributos dos CIs (ex.: normalizando nomes de SO de 'Windows Server 2019' e 'Microsoft Windows 2019' para um valor padrão). Isso melhora a qualidade dos dados e permite relatórios mais precisos.",
   },
   {
     id: 92,
@@ -1257,6 +1349,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Administrators can configure the default list layout for all users by right-clicking the column header in a list view and selecting Configure > List Layout. This opens the List Layout designer where columns and their order can be set for all users (view-specific).",
+    explanation_pt: "Os administradores podem configurar o layout de lista padrão para todos os usuários clicando com o botão direito no cabeçalho da coluna em uma visualização de lista e selecionando Configure > List Layout. Isso abre o designer de List Layout onde as colunas e sua ordem podem ser definidas para todos os usuários.",
   },
   {
     id: 93,
@@ -1271,6 +1364,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Events in ServiceNow are messages published to an event queue via gs.eventQueue(). Email notifications, script actions, and workflows can subscribe to specific events and be triggered when they fire. This is the publish/subscribe mechanism in ServiceNow.",
+    explanation_pt: "Events no ServiceNow são mensagens publicadas em uma fila de eventos via gs.eventQueue(). Email notifications, script actions e workflows podem se inscrever em eventos específicos e serem disparados quando eles ocorrem. Este é o mecanismo publish/subscribe no ServiceNow.",
   },
   {
     id: 94,
@@ -1285,6 +1379,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "User Impersonation (System Security > Users > [User] > Impersonate User) allows an admin to take on the session identity of another user. This is invaluable for testing ACLs, UI Policies, and other permission-based behaviors from that user's perspective.",
+    explanation_pt: "User Impersonation (System Security > Users > [User] > Impersonate User) permite que um admin assuma a identidade de sessão de outro usuário. Isso é inestimável para testar ACLs, UI Policies e outros comportamentos baseados em permissão na perspectiva daquele usuário.",
   },
   {
     id: 95,
@@ -1299,6 +1394,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The sys_user_has_role table is the many-to-many join table that stores direct role assignments to specific users. When you assign a role to a user directly (not via a group), a record is created in this table.",
+    explanation_pt: "A tabela sys_user_has_role é a tabela de junção muitos-para-muitos que armazena atribuições diretas de role para usuários específicos. Quando você atribui uma role diretamente a um usuário (não via grupo), um registro é criado nesta tabela.",
   },
   {
     id: 96,
@@ -1313,6 +1409,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "gs.hasRole('role_name') checks if the current session user has the specified role. It returns true if the user has the role (either directly or via a group), false otherwise. It is commonly used in ACL scripts and conditional logic.",
+    explanation_pt: "gs.hasRole('role_name') verifica se o usuário da sessão atual possui a role especificada. Retorna true se o usuário tem a role (diretamente ou via grupo), false caso contrário. É comumente usado em scripts ACL e lógica condicional.",
   },
   {
     id: 97,
@@ -1327,6 +1424,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Knowledge Base (KB) is a repository of articles that both end users (via Service Portal) and agents can search to find solutions, FAQs, and how-to guides. It reduces ticket volume through self-service and speeds up agent resolution.",
+    explanation_pt: "A Knowledge Base (KB) é um repositório de artigos que tanto usuários finais (via Service Portal) quanto agentes podem pesquisar para encontrar soluções, FAQs e guias de como fazer. Ela reduz o volume de tickets por meio do autoatendimento e acelera a resolução pelos agentes.",
   },
   {
     id: 98,
@@ -1341,6 +1439,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "A Homepage (also called a Content Page or Dashboard) is a configurable page shown to users upon login. It can contain gauges, activity streams, shortcuts, and other widgets. Administrators can create role-based homepages and set defaults.",
+    explanation_pt: "Uma Homepage (também chamada de Content Page ou Dashboard) é uma página configurável mostrada aos usuários ao fazer login. Ela pode conter gauges, activity streams, atalhos e outros widgets. Os administradores podem criar homepages baseadas em role e definir padrões.",
   },
   {
     id: 99,
@@ -1355,6 +1454,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "sys_metadata is the base table that all configuration/metadata records extend (Business Rules, Script Includes, UI Policies, etc.). This enables Update Sets to identify and capture configuration records by checking if they extend sys_metadata.",
+    explanation_pt: "sys_metadata é a tabela base que todos os registros de configuração/metadados estendem (Business Rules, Script Includes, UI Policies, etc.). Isso permite que Update Sets identifiquem e capturem registros de configuração verificando se eles estendem sys_metadata.",
   },
   {
     id: 100,
@@ -1369,6 +1469,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The Condition Builder is a visual, point-and-click interface for constructing filter queries using AND/OR logic without writing code. It is used throughout ServiceNow in list filters, business rules, ACLs, notifications, reports, and workflows.",
+    explanation_pt: "O Condition Builder é uma interface visual de apontar e clicar para construir consultas de filtro usando lógica AND/OR sem escrever código. É usado em todo o ServiceNow em filtros de lista, business rules, ACLs, notificações, relatórios e workflows.",
   },
   {
     id: 101,
@@ -1383,6 +1484,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Related Lists appear at the bottom of a form and display records from other tables that are related to the current record. For example, on an Incident form, related lists might show Tasks, SLA records, CI relationships, and Approval records.",
+    explanation_pt: "Related Lists aparecem na parte inferior de um formulário e exibem registros de outras tabelas que estão relacionados ao registro atual. Por exemplo, em um formulário de Incident, as related lists podem mostrar Tasks, registros de SLA, relacionamentos de CI e registros de Aprovação.",
   },
   {
     id: 102,
@@ -1397,6 +1499,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "IntegrationHub extends Flow Designer with 'spokes' — pre-built or custom integration actions for communicating with external services (Slack, Jira, AWS, etc.). It provides REST, SOAP, and various protocol connectors without requiring custom code.",
+    explanation_pt: "IntegrationHub estende o Flow Designer com 'spokes' — ações de integração pré-construídas ou personalizadas para comunicação com serviços externos (Slack, Jira, AWS, etc.). Ele fornece conectores REST, SOAP e de vários protocolos sem exigir código personalizado.",
   },
   {
     id: 103,
@@ -1411,6 +1514,7 @@ export const questions: Question[] = [
     ],
     correct: 2,
     explanation: "Ctrl+Alt+G (or using the .do URL pattern) opens the 'Go To' record dialog, allowing users to navigate directly to a specific record by entering its table name and record number (e.g., INC0010001) or sys_id.",
+    explanation_pt: "Ctrl+Alt+G (ou usando o padrão de URL .do) abre o diálogo 'Go To' de registro, permitindo que os usuários naveguem diretamente para um registro específico inserindo seu nome de tabela e número de registro (ex.: INC0010001) ou sys_id.",
   },
   {
     id: 104,
@@ -1425,6 +1529,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Dot-walking allows you to traverse reference fields to access attributes on related records. For example, on the Incident table, 'caller_id.department.name' navigates from Incident > User (via caller_id) > Department (via department) > Name field.",
+    explanation_pt: "O dot-walking permite percorrer campos de referência para acessar atributos em registros relacionados. Por exemplo, na tabela Incident, 'caller_id.department.name' navega de Incident > User (via caller_id) > Department (via department) > campo Name.",
   },
   {
     id: 105,
@@ -1439,6 +1544,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Predictive Intelligence uses machine learning models trained on historical ServiceNow data to automatically classify records (category, assignment group), suggest knowledge articles to agents, and predict field values — reducing manual effort and improving consistency.",
+    explanation_pt: "Predictive Intelligence usa modelos de machine learning treinados em dados históricos do ServiceNow para classificar automaticamente registros (categoria, grupo de atribuição), sugerir artigos de conhecimento para agentes e prever valores de campo — reduzindo o esforço manual e melhorando a consistência.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -1457,6 +1563,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Database View in ServiceNow is a virtual table defined as a SQL-like join across two or more real tables. It is read-only and used to simplify reporting or list views that span multiple tables without creating redundant data.",
+    explanation_pt: "Uma Database View no ServiceNow é uma tabela virtual definida como um join similar a SQL entre duas ou mais tabelas reais. É somente leitura e usada para simplificar relatórios ou visualizações de lista que abrangem múltiplas tabelas sem criar dados redundantes.",
   },
   {
     id: 107,
@@ -1471,6 +1578,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Data Preservers define records that should be preserved (not overwritten) when a clone is performed from one instance to another. For example, you can preserve integration credentials or user accounts in the target instance so they are not replaced by production data.",
+    explanation_pt: "Data Preservers definem registros que devem ser preservados (não sobrescritos) quando um clone é realizado de uma instância para outra. Por exemplo, você pode preservar credenciais de integração ou contas de usuário na instância de destino para que não sejam substituídas pelos dados de produção.",
   },
   {
     id: 108,
@@ -1485,6 +1593,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The Max length attribute on a String (or similar) dictionary entry defines the maximum number of characters the database column can store. Exceeding this limit will truncate or reject the value depending on the database engine.",
+    explanation_pt: "O atributo Max length em uma Dictionary Entry de String define o número máximo de caracteres que a coluna do banco de dados pode armazenar. Exceder esse limite truncará ou rejeitará o valor dependendo do mecanismo de banco de dados.",
   },
   {
     id: 109,
@@ -1499,6 +1608,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Setting a dictionary entry as Mandatory (also called 'Cannot be empty' at the data layer) means a record cannot be saved unless the field has a value. This is enforced at the database level — unlike UI Policy mandatory which only applies in the browser.",
+    explanation_pt: "Definir uma Dictionary Entry como Mandatory (também chamado de 'Cannot be empty' na camada de dados) significa que um registro não pode ser salvo a menos que o campo tenha um valor. Isso é aplicado no nível do banco de dados — ao contrário da UI Policy mandatory que só se aplica no navegador.",
   },
   {
     id: 110,
@@ -1513,6 +1623,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Dependent choice list filters its options based on the current value of another field (the 'Dependent on' field). For example, the 'Sub-category' choice list options change depending on the selected 'Category' value.",
+    explanation_pt: "Uma lista de escolha Dependent filtra suas opções com base no valor atual de outro campo (o campo 'Dependent on'). Por exemplo, as opções da lista de escolha 'Sub-category' mudam dependendo do valor de 'Category' selecionado.",
   },
   {
     id: 111,
@@ -1527,6 +1638,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Auto-number generates a unique, human-readable identifier for each new record in a table using a configurable prefix and number format (e.g., INC0000001). This is configured in the table's Number Maintenance settings.",
+    explanation_pt: "Auto-number gera um identificador único e legível por humanos para cada novo registro em uma tabela usando um prefixo e formato de número configuráveis (ex.: INC0000001). Isso é configurado nas configurações de Number Maintenance da tabela.",
   },
   {
     id: 112,
@@ -1541,6 +1653,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Many-to-many relationships in ServiceNow are implemented via an intermediate (junction) table that stores pairs of sys_ids from both related tables. For example, the relationship between users and roles (sys_user_has_role) is a M2M relationship.",
+    explanation_pt: "Relacionamentos muitos-para-muitos no ServiceNow são implementados via uma tabela intermediária (junção) que armazena pares de sys_ids de ambas as tabelas relacionadas. Por exemplo, o relacionamento entre usuários e roles (sys_user_has_role) é um relacionamento M2M.",
   },
   {
     id: 113,
@@ -1555,6 +1668,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "sys_created_by stores the login name (username) of the user who created the record. The corresponding date/time is stored in sys_created_on. These are system fields automatically populated on every table.",
+    explanation_pt: "sys_created_by armazena o nome de login (username) do usuário que criou o registro. A data/hora correspondente é armazenada em sys_created_on. Estes são campos de sistema preenchidos automaticamente em cada tabela.",
   },
   {
     id: 114,
@@ -1569,6 +1683,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Encrypted Text field type stores its value encrypted in the database using Edge Encryption or platform-level encryption. The value is decrypted on display for authorized users. It is used for sensitive data like passwords or API keys.",
+    explanation_pt: "O tipo de campo Encrypted Text armazena seu valor criptografado no banco de dados usando Edge Encryption ou criptografia no nível da plataforma. O valor é descriptografado na exibição para usuários autorizados. É usado para dados sensíveis como senhas ou chaves de API.",
   },
   {
     id: 115,
@@ -1583,6 +1698,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "When a table is marked as Extensible, other tables can extend it as child tables, inheriting all its fields. If extensible is set to false, no child tables can be created from it. Most base tables like Task are extensible.",
+    explanation_pt: "Quando uma tabela é marcada como Extensible, outras tabelas podem estendê-la como tabelas filhas, herdando todos os seus campos. Se extensible estiver definido como false, nenhuma tabela filha pode ser criada a partir dela. A maioria das tabelas base como Task é extensível.",
   },
   {
     id: 116,
@@ -1597,6 +1713,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Record Watcher is a ServiceNow mechanism that uses Server-Sent Events (SSE) to push real-time notifications to the browser when records matching specified criteria are updated. It is used by features like live feeds, activity streams, and real-time dashboards.",
+    explanation_pt: "Record Watcher é um mecanismo do ServiceNow que usa Server-Sent Events (SSE) para enviar notificações em tempo real ao navegador quando registros que correspondem a critérios especificados são atualizados. É usado por recursos como live feeds, activity streams e dashboards em tempo real.",
   },
   {
     id: 117,
@@ -1611,6 +1728,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Clone Excludes define tables or records that should not be overwritten in the target instance during a clone. This protects instance-specific configurations like integration credentials, user accounts, or system properties that differ between environments.",
+    explanation_pt: "Clone Excludes definem tabelas ou registros que não devem ser sobrescritos na instância de destino durante um clone. Isso protege configurações específicas da instância como credenciais de integração, contas de usuário ou propriedades de sistema que diferem entre ambientes.",
   },
   {
     id: 118,
@@ -1625,6 +1743,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "CMDB Health provides metrics and dashboards that measure the quality of CMDB data — including completeness (required fields populated), correctness (values within expected ranges), and compliance (CIs meeting defined standards). It helps identify and remediate data quality issues.",
+    explanation_pt: "CMDB Health fornece métricas e dashboards que medem a qualidade dos dados do CMDB — incluindo integridade (campos obrigatórios preenchidos), correção (valores dentro dos intervalos esperados) e conformidade (CIs atendendo padrões definidos). Ajuda a identificar e remediar problemas de qualidade de dados.",
   },
   {
     id: 119,
@@ -1639,6 +1758,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Table rotation is used for high-volume, time-series tables (like sys_log, sys_audit). Instead of one continuously growing table, ServiceNow creates a new physical table at defined intervals and rotates reads/writes to the newest. Older tables can be archived or deleted.",
+    explanation_pt: "Table rotation é usada para tabelas de alto volume e séries temporais (como sys_log, sys_audit). Em vez de uma tabela que cresce continuamente, o ServiceNow cria uma nova tabela física em intervalos definidos e rotaciona leituras/gravações para a mais recente. Tabelas mais antigas podem ser arquivadas ou excluídas.",
   },
   {
     id: 120,
@@ -1653,6 +1773,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 2, 3],
     explanation: "All ServiceNow tables include these system fields: sys_id (unique record identifier), sys_created_on (creation timestamp), sys_updated_by (last modifier's username), and sys_class_name (the actual table/class name for extended tables). These cannot be removed.",
+    explanation_pt: "Todas as tabelas do ServiceNow incluem estes campos de sistema: sys_id (identificador único do registro), sys_created_on (timestamp de criação), sys_updated_by (username do último modificador) e sys_class_name (o nome da tabela/classe real para tabelas estendidas). Estes não podem ser removidos.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -1671,6 +1792,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Application Navigator is the left-side panel in the ServiceNow UI. It contains a hierarchical list of Applications (headings) and Modules (links) that provide access to all areas of the platform. Users can filter it by typing in the search box at the top.",
+    explanation_pt: "O Application Navigator é o painel do lado esquerdo na interface do ServiceNow. Ele contém uma lista hierárquica de Applications (títulos) e Modules (links) que fornecem acesso a todas as áreas da plataforma. Os usuários podem filtrá-lo digitando na caixa de pesquisa no topo.",
   },
   {
     id: 122,
@@ -1685,6 +1807,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Appending '.list' to a table name (e.g., 'incident.list' in the navigator search or URL) directly opens the list view for that table. Similarly, '.do' opens a new record form. This is a common power-user shortcut.",
+    explanation_pt: "Anexar '.list' ao nome de uma tabela (ex.: 'incident.list' na pesquisa do navigator ou URL) abre diretamente a visualização de lista para aquela tabela. Da mesma forma, '.do' abre um formulário de novo registro. Este é um atalho comum para usuários avançados.",
   },
   {
     id: 123,
@@ -1699,6 +1822,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "UI Macros are reusable Jelly-based server-side UI components that render HTML. They can be embedded in form sections, formatters, and UI pages to display custom UI elements. They are analogous to reusable HTML/template components.",
+    explanation_pt: "UI Macros são componentes de interface do usuário reutilizáveis baseados em Jelly que renderizam HTML. Eles podem ser incorporados em seções de formulário, formatters e páginas de UI para exibir elementos de UI personalizados. São análogos a componentes HTML/template reutilizáveis.",
   },
   {
     id: 124,
@@ -1713,6 +1837,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Formatters are special UI elements placed in form sections (via Form Layout) that display non-field content — such as the Activity formatter (work notes/comments stream), the CI Relations formatter, or custom HTML formatters.",
+    explanation_pt: "Formatters são elementos especiais de UI colocados em seções de formulário (via Form Layout) que exibem conteúdo não relacionado a campos — como o formatter de Activity (stream de work notes/comments), o formatter de CI Relations ou formatters HTML personalizados.",
   },
   {
     id: 125,
@@ -1727,6 +1852,7 @@ export const questions: Question[] = [
     ],
     correct: 3,
     explanation: "Users can bookmark records in two ways: (1) clicking the star/bookmark icon to add it as a Favorite in the Navigator, or (2) using Tags (labels) to tag a record for later reference. Both approaches help users find specific records quickly.",
+    explanation_pt: "Os usuários podem marcar registros de duas maneiras: (1) clicando no ícone de estrela/bookmark para adicioná-lo como Favorite no Navigator, ou (2) usando Tags (rótulos) para marcar um registro para referência posterior. Ambas as abordagens ajudam os usuários a encontrar registros específicos rapidamente.",
   },
   {
     id: 126,
@@ -1741,6 +1867,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Global Text Search (the magnifying glass in the banner) searches across multiple tables simultaneously — returning results from incidents, knowledge articles, users, change requests, and other configured tables — providing a unified search experience.",
+    explanation_pt: "Global Text Search (a lupa no banner) pesquisa em múltiplas tabelas simultaneamente — retornando resultados de incidents, artigos de conhecimento, usuários, change requests e outras tabelas configuradas — fornecendo uma experiência de pesquisa unificada.",
   },
   {
     id: 127,
@@ -1755,6 +1882,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Form Layout is the traditional two-column slushbucket interface for adding/removing fields and setting their order. Form Design is a more modern, drag-and-drop designer that allows managing form sections, columns, and field placement in a visual canvas.",
+    explanation_pt: "Form Layout é a interface tradicional de duas colunas (slushbucket) para adicionar/remover campos e definir sua ordem. Form Design é um designer mais moderno de arrastar e soltar que permite gerenciar seções de formulário, colunas e posicionamento de campos em uma tela visual.",
   },
   {
     id: 128,
@@ -1769,6 +1897,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Content Pages (also called Homepages) are the configurable landing pages users see after login in the classic ServiceNow UI. Administrators can create role-specific homepages with gauges, activity streams, and shortcuts.",
+    explanation_pt: "Content Pages (também chamadas de Homepages) são as páginas de destino configuráveis que os usuários veem após o login na interface clássica do ServiceNow. Os administradores podem criar homepages específicas por role com gauges, activity streams e atalhos.",
   },
   {
     id: 129,
@@ -1783,6 +1912,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Group By organizes the list display by a chosen field, collapsing records into expandable sections by that field's value (e.g., grouping incidents by Priority shows sections for 1-Critical, 2-High, etc.). It does not change data — only the view.",
+    explanation_pt: "Group By organiza a exibição da lista por um campo escolhido, recolhendo registros em seções expansíveis pelo valor desse campo (ex.: agrupar incidents por Priority mostra seções para 1-Critical, 2-High, etc.). Não altera os dados — apenas a visualização.",
   },
   {
     id: 130,
@@ -1797,6 +1927,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Tags (formerly Labels) allow users to attach custom labels to records for personal or team organization. They appear in the Navigator under the Tags section, providing quick access to all records bearing that tag. Tags can be public or private.",
+    explanation_pt: "Tags (anteriormente Labels) permitem que os usuários anexem rótulos personalizados a registros para organização pessoal ou de equipe. Eles aparecem no Navigator na seção Tags, fornecendo acesso rápido a todos os registros com aquela tag. As Tags podem ser públicas ou privadas.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -1815,6 +1946,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Change Management in ITSM controls the end-to-end lifecycle of changes to IT infrastructure and services — from request and assessment through approval, implementation, and review — to minimize the risk of unplanned disruption.",
+    explanation_pt: "O Change Management no ITSM controla o ciclo de vida completo das mudanças na infraestrutura e serviços de TI — desde a solicitação e avaliação até a aprovação, implementação e revisão — para minimizar o risco de interrupção não planejada.",
   },
   {
     id: 132,
@@ -1829,6 +1961,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow Change Management defines three types: Standard (pre-authorized, low-risk, routine), Normal (follows the full approval and CAB process), and Emergency (expedited for urgent, unplanned changes). Each type has a different approval flow.",
+    explanation_pt: "O ServiceNow Change Management define três tipos: Standard (pré-autorizado, baixo risco, rotineiro), Normal (segue o processo completo de aprovação e CAB) e Emergency (expedito para mudanças urgentes e não planejadas). Cada tipo tem um fluxo de aprovação diferente.",
   },
   {
     id: 133,
@@ -1843,6 +1976,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Change Advisory Board (CAB) is a group of stakeholders — IT, business, and sometimes customers — who review and approve Normal and Emergency change requests. ServiceNow's CAB Workbench provides tools for scheduling and managing CAB meetings.",
+    explanation_pt: "O Change Advisory Board (CAB) é um grupo de partes interessadas — TI, negócios e às vezes clientes — que revisam e aprovam solicitações de mudança Normal e Emergency. O CAB Workbench do ServiceNow fornece ferramentas para agendar e gerenciar reuniões do CAB.",
   },
   {
     id: 134,
@@ -1857,6 +1991,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Problem Management identifies the underlying root cause of one or more incidents to prevent recurrence. A Problem record tracks investigation through states like Open, In Progress (Root Cause Analysis), Known Error, and Closed. Workarounds are documented as Known Errors.",
+    explanation_pt: "O Problem Management identifica a causa raiz subjacente de um ou mais incidents para prevenir recorrências. Um registro de Problem rastreia a investigação por estados como Open, In Progress (Root Cause Analysis), Known Error e Closed. Workarounds são documentados como Known Errors.",
   },
   {
     id: 135,
@@ -1871,6 +2006,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Known Error is a problem that has been diagnosed to identify the root cause, and for which a workaround or permanent fix has been documented. Known Errors are stored in the Known Error Database (KEDB) and linked to incidents for faster resolution.",
+    explanation_pt: "Um Known Error é um problema que foi diagnosticado para identificar a causa raiz, e para o qual um workaround ou correção permanente foi documentado. Known Errors são armazenados no Known Error Database (KEDB) e vinculados a incidents para resolução mais rápida.",
   },
   {
     id: 136,
@@ -1885,6 +2021,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Incident Management focuses on restoring normal service operation as quickly as possible when an unplanned interruption or quality reduction occurs — minimizing adverse impact on business operations.",
+    explanation_pt: "O Incident Management foca em restaurar a operação normal do serviço o mais rápido possível quando ocorre uma interrupção não planejada ou redução de qualidade — minimizando o impacto adverso nas operações de negócios.",
   },
   {
     id: 137,
@@ -1899,6 +2036,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Request Management manages the end-to-end lifecycle of service requests submitted via the Service Catalog. A Request (sc_request) contains one or more Requested Items (sc_req_item), each of which can trigger catalog tasks for fulfillment.",
+    explanation_pt: "O Request Management gerencia o ciclo de vida completo das solicitações de serviço enviadas via Service Catalog. Um Request (sc_request) contém um ou mais Requested Items (sc_req_item), cada um dos quais pode acionar catalog tasks para atendimento.",
   },
   {
     id: 138,
@@ -1913,6 +2051,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The 'Approval — User' workflow activity creates an approval record assigned to a specific user and pauses the workflow until that user approves or rejects. The workflow then branches based on the outcome.",
+    explanation_pt: "A atividade de workflow 'Approval — User' cria um registro de aprovação atribuído a um usuário específico e pausa o workflow até que esse usuário aprove ou rejeite. O workflow então ramifica com base no resultado.",
   },
   {
     id: 139,
@@ -1927,6 +2066,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "On-Call Scheduling allows organizations to define who is on-call at any given time for specific groups, including rotation schedules, coverage windows, and escalation paths. When triggered, it automatically routes notifications to the current on-call person.",
+    explanation_pt: "On-Call Scheduling permite que as organizações definam quem está de plantão em um determinado momento para grupos específicos, incluindo cronogramas de rotação, janelas de cobertura e caminhos de escalada. Quando acionado, roteia automaticamente notificações para a pessoa de plantão atual.",
   },
   {
     id: 140,
@@ -1941,6 +2081,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "SLA pause conditions define when the SLA timer should stop counting — for example, when an incident is in 'Awaiting User Info' state. The timer resumes when the pause condition is no longer met, giving an accurate measurement of actual resolution time.",
+    explanation_pt: "As condições de pausa do SLA definem quando o temporizador do SLA deve parar de contar — por exemplo, quando um incident está no estado 'Awaiting User Info'. O temporizador é retomado quando a condição de pausa não é mais atendida, fornecendo uma medição precisa do tempo real de resolução.",
   },
   {
     id: 141,
@@ -1955,6 +2096,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow Notify integrates with telephony providers (like Twilio) to enable SMS and voice capabilities directly within the platform. It is used for on-call alerting, major incident conferencing, and customer communications.",
+    explanation_pt: "ServiceNow Notify integra-se com provedores de telefonia (como Twilio) para habilitar capacidades de SMS e voz diretamente dentro da plataforma. É usado para alertas de plantão, conferências de major incidents e comunicações com clientes.",
   },
   {
     id: 142,
@@ -1969,6 +2111,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Task SLA (contract_sla table) is created when an SLA Definition's conditions are met on a task record. It tracks the actual elapsed time, percentage complete, and breach status for that specific task — it is the live measurement, not the template.",
+    explanation_pt: "Um Task SLA (tabela contract_sla) é criado quando as condições de uma SLA Definition são atendidas em um registro de task. Ele rastreia o tempo decorrido real, a porcentagem concluída e o status de violação para aquela task específica — é a medição ao vivo, não o template.",
   },
   {
     id: 143,
@@ -1983,6 +2126,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Virtual Agent is ServiceNow's NLP-powered chatbot platform. It provides self-service conversations that guide users to resolve issues, submit requests, get information, and perform tasks — reducing live agent workload through automated conversational flows.",
+    explanation_pt: "Virtual Agent é a plataforma de chatbot com NLP do ServiceNow. Ele fornece conversas de autoatendimento que guiam os usuários a resolver problemas, enviar solicitações, obter informações e realizar tarefas — reduzindo a carga dos agentes ao vivo por meio de fluxos conversacionais automatizados.",
   },
   {
     id: 144,
@@ -1997,6 +2141,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Workflow Context is the executing instance of a workflow for a specific record. It stores the current activity, execution log, input/scratchpad variables, and overall state (running, completed, cancelled). Multiple contexts can run simultaneously for the same workflow on different records.",
+    explanation_pt: "Um Workflow Context é a instância em execução de um workflow para um registro específico. Ele armazena a atividade atual, o log de execução, variáveis de entrada/scratchpad e o estado geral (em execução, concluído, cancelado). Múltiplos contexts podem ser executados simultaneamente para o mesmo workflow em registros diferentes.",
   },
   {
     id: 145,
@@ -2011,6 +2156,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 2, 3],
     explanation: "A Task SLA record can be in one of these states: In Progress (timer running, target not yet reached), Paused (timer stopped due to a pause condition), Breached (target time exceeded), or Complete (task resolved within target). All four are valid states.",
+    explanation_pt: "Um registro Task SLA pode estar em um destes estados: In Progress (temporizador em execução, alvo ainda não atingido), Paused (temporizador parado devido a uma condição de pausa), Breached (tempo alvo excedido) ou Complete (task resolvida dentro do alvo). Todos os quatro são estados válidos.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -2029,6 +2175,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "GlideRecord.deleteRecord() permanently deletes the current record from the database. It should be used carefully and is typically governed by ACL 'delete' operations. It returns true on success, false on failure.",
+    explanation_pt: "GlideRecord.deleteRecord() exclui permanentemente o registro atual do banco de dados. Deve ser usado com cuidado e é tipicamente governado por operações de 'delete' da ACL. Retorna true em caso de sucesso, false em caso de falha.",
   },
   {
     id: 147,
@@ -2043,6 +2190,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Scoped applications run in an isolated JavaScript namespace. Their scripts can only access Global scope Script Includes and APIs that are explicitly marked as 'Accessible from: All application scopes'. This prevents accidental or malicious interference between apps.",
+    explanation_pt: "Aplicações com escopo (scoped apps) são executadas em um namespace JavaScript isolado. Seus scripts só podem acessar APIs e Script Includes do escopo Global que são explicitamente marcados como 'Accessible from: All application scopes'. Isso previne interferência acidental ou maliciosa entre apps.",
   },
   {
     id: 148,
@@ -2057,6 +2205,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "To insert a new record: (1) create a new GlideRecord, (2) call initialize() to prepare a blank record, (3) set field values with setValue(), then (4) call insert(). The insert() method writes the record to the database and returns the new sys_id.",
+    explanation_pt: "Para inserir um novo registro: (1) crie um novo GlideRecord, (2) chame initialize() para preparar um registro em branco, (3) defina valores de campo com setValue(), depois (4) chame insert(). O método insert() grava o registro no banco de dados e retorna o novo sys_id.",
   },
   {
     id: 149,
@@ -2071,6 +2220,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "g_form.hideFieldMsg('field_name') removes an inline message that was previously displayed below a field using g_form.showFieldMsg(). It is commonly used to clear validation messages when the field value becomes valid.",
+    explanation_pt: "g_form.hideFieldMsg('field_name') remove uma mensagem inline que foi exibida anteriormente abaixo de um campo usando g_form.showFieldMsg(). É comumente usado para limpar mensagens de validação quando o valor do campo se torna válido.",
   },
   {
     id: 150,
@@ -2085,6 +2235,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "addEncodedQuery() accepts a URL-encoded query string (the same format as the 'sysparm_query' parameter) and adds it as a filter condition. For example: gr.addEncodedQuery('state=1^priority=2'). It is useful for copying queries from list filters into scripts.",
+    explanation_pt: "addEncodedQuery() aceita uma string de consulta codificada em URL (o mesmo formato que o parâmetro 'sysparm_query') e a adiciona como condição de filtro. Por exemplo: gr.addEncodedQuery('state=1^priority=2'). É útil para copiar consultas de filtros de lista para scripts.",
   },
   {
     id: 151,
@@ -2099,6 +2250,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "gs.getCurrentScopeName() returns the technical name (namespace) of the application scope in which the currently running script exists — for example, 'x_acme_myapp' for a scoped app or 'global' for global scope scripts.",
+    explanation_pt: "gs.getCurrentScopeName() retorna o nome técnico (namespace) do escopo de aplicação no qual o script atualmente em execução existe — por exemplo, 'x_acme_myapp' para um scoped app ou 'global' para scripts de escopo global.",
   },
   {
     id: 152,
@@ -2113,6 +2265,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Display Business Rules run when a record is loaded for display in a form. They can set values on the special g_scratchpad object, which is passed to client scripts. This allows server-side data to be shared with client scripts without an additional GlideAjax call.",
+    explanation_pt: "Display Business Rules executam quando um registro é carregado para exibição em um formulário. Eles podem definir valores no objeto especial g_scratchpad, que é passado para client scripts. Isso permite que dados do lado do servidor sejam compartilhados com client scripts sem uma chamada GlideAjax adicional.",
   },
   {
     id: 153,
@@ -2127,6 +2280,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ATF (Automated Test Framework) allows administrators and developers to create automated tests that verify ServiceNow configurations work as expected — testing form behaviors, business rules, workflows, and integrations. Tests can be run manually or as part of a CI/CD pipeline.",
+    explanation_pt: "O ATF (Automated Test Framework) permite que administradores e desenvolvedores criem testes automatizados que verificam se as configurações do ServiceNow funcionam como esperado — testando comportamentos de formulário, business rules, workflows e integrações. Os testes podem ser executados manualmente ou como parte de um pipeline CI/CD.",
   },
   {
     id: 154,
@@ -2141,6 +2295,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "HTTP 201 Created is returned when a POST request successfully creates a new resource. In ServiceNow's Table API, a POST to create a new record returns 201 along with the created record data. 200 OK is returned for successful GET/PATCH requests.",
+    explanation_pt: "HTTP 201 Created é retornado quando uma solicitação POST cria com sucesso um novo recurso. Na Table API do ServiceNow, um POST para criar um novo registro retorna 201 junto com os dados do registro criado. 200 OK é retornado para solicitações GET/PATCH bem-sucedidas.",
   },
   {
     id: 155,
@@ -2155,6 +2310,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Table API is ServiceNow's primary REST API for CRUD operations on table records. External systems authenticate and send HTTP GET/POST/PUT/PATCH/DELETE requests to interact with ServiceNow data. It supports query parameters for filtering, field selection, and pagination.",
+    explanation_pt: "A Table API é a principal API REST do ServiceNow para operações CRUD em registros de tabelas. Sistemas externos autenticam e enviam solicitações HTTP GET/POST/PUT/PATCH/DELETE para interagir com dados do ServiceNow. Suporta parâmetros de consulta para filtragem, seleção de campos e paginação.",
   },
   {
     id: 156,
@@ -2169,6 +2325,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "gr.getValue('field') returns the actual stored value in the database (e.g., a sys_id for Reference fields, or '1' for a Choice field storing a number). gr.getDisplayValue('field') returns the human-readable display value (e.g., the referenced record's name, or 'New' for a state choice).",
+    explanation_pt: "gr.getValue('field') retorna o valor real armazenado no banco de dados (ex.: um sys_id para campos Reference, ou '1' para um campo Choice que armazena um número). gr.getDisplayValue('field') retorna o valor de exibição legível por humanos (ex.: o nome do registro referenciado, ou 'New' para um state choice).",
   },
   {
     id: 157,
@@ -2183,6 +2340,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Fix Scripts are one-time scripts run manually by administrators through the Script Background or Fix Script module. They are used for data migrations, bulk updates, or one-off corrections that do not need to be part of ongoing automation.",
+    explanation_pt: "Fix Scripts são scripts únicos executados manualmente por administradores por meio do Script Background ou módulo Fix Script. São usados para migrações de dados, atualizações em massa ou correções pontuais que não precisam fazer parte de uma automação contínua.",
   },
   {
     id: 158,
@@ -2197,6 +2355,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 2, 3],
     explanation: "Business Rule execution can be controlled by: (A) the Condition field (the rule only runs if the condition is true), (C) deactivating the rule entirely, and (D) using early return statements in the script. Option B (setAbortAction) aborts the entire save operation — it does not just skip the rule.",
+    explanation_pt: "A execução de Business Rule pode ser controlada por: (A) o campo Condition (a regra só executa se a condição for verdadeira), (C) desativando a regra completamente e (D) usando instruções de retorno antecipado no script. A opção B (setAbortAction) aborta toda a operação de salvamento — não apenas ignora a regra.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -2215,6 +2374,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The security_admin role is required to create, modify, or delete ACL rules. This separation of duties prevents regular admins from inadvertently weakening security by changing access controls. To edit ACLs, a user must elevate to security_admin (System Security > Elevate Role).",
+    explanation_pt: "A role security_admin é necessária para criar, modificar ou excluir regras ACL. Essa separação de funções impede que admins regulares enfraqueçam inadvertidamente a segurança alterando controles de acesso. Para editar ACLs, um usuário deve elevar para security_admin (System Security > Elevate Role).",
   },
   {
     id: 160,
@@ -2229,6 +2389,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Role elevation allows users who have the right to use a sensitive role (like security_admin or admin) to temporarily activate it for their current session. Once the session ends or the role is lowered, the elevated permissions are removed — reducing the attack surface.",
+    explanation_pt: "A elevação de role permite que usuários que têm o direito de usar uma role sensível (como security_admin ou admin) a ativem temporariamente para sua sessão atual. Quando a sessão termina ou a role é rebaixada, as permissões elevadas são removidas — reduzindo a superfície de ataque.",
   },
   {
     id: 161,
@@ -2243,6 +2404,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "A Group Manager is a designated user who has the ability to manage the membership of their specific group — adding and removing users — without needing full admin rights. This supports delegated administration.",
+    explanation_pt: "Um Group Manager é um usuário designado que tem a capacidade de gerenciar a associação de seu grupo específico — adicionando e removendo usuários — sem precisar de direitos de admin completos. Isso suporta a administração delegada.",
   },
   {
     id: 162,
@@ -2257,6 +2419,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Active field on sys_user determines whether a user can authenticate and log in. When set to false, the user cannot log in. Inactive users are also typically excluded from reference lookups (e.g., assigning a task). Inactivating rather than deleting preserves audit history.",
+    explanation_pt: "O campo Active em sys_user determina se um usuário pode se autenticar e fazer login. Quando definido como false, o usuário não pode fazer login. Usuários inativos também são tipicamente excluídos de buscas de referência. Inativar em vez de excluir preserva o histórico de auditoria.",
   },
   {
     id: 163,
@@ -2271,6 +2434,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The 'itil' role is the standard role assigned to service desk agents and IT staff who work on ITSM tasks. It provides access to core ITSM modules including Incident, Change, Problem, and Request Management applications and their associated data.",
+    explanation_pt: "A role 'itil' é a role padrão atribuída a agentes de service desk e pessoal de TI que trabalham em tarefas ITSM. Ela fornece acesso aos principais módulos ITSM incluindo aplicações de Incident, Change, Problem e Request Management e seus dados associados.",
   },
   {
     id: 164,
@@ -2285,6 +2449,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Assignment Group field on task records (incidents, changes, etc.) identifies the team responsible for working on the task. When set, all members of that group can see and work on the task. It is typically set manually or via Assignment Lookup Rules.",
+    explanation_pt: "O campo Assignment Group em registros de task identifica a equipe responsável por trabalhar na task. Quando definido, todos os membros desse grupo podem ver e trabalhar na task. Tipicamente é definido manualmente ou via Assignment Lookup Rules.",
   },
   {
     id: 165,
@@ -2299,6 +2464,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The VIP flag on sys_user identifies users who are high-priority stakeholders (e.g., executives). Business rules and SLAs can reference this flag to automatically elevate the priority of tasks submitted by VIP users, ensuring faster service.",
+    explanation_pt: "O flag VIP em sys_user identifica usuários que são partes interessadas de alta prioridade (ex.: executivos). Business rules e SLAs podem referenciar este flag para elevar automaticamente a prioridade de tasks enviadas por usuários VIP, garantindo um serviço mais rápido.",
   },
   {
     id: 166,
@@ -2313,6 +2479,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 3],
     explanation: "Roles can be assigned via: (A) direct assignment on the user record, (B) group membership (the user inherits the group's roles), or (D) role inheritance (a role can contain other roles). Option C is not a real GlideRecord method — roles are managed through the sys_user_has_role and sys_group_has_role tables.",
+    explanation_pt: "As roles podem ser atribuídas via: (A) atribuição direta no registro do usuário, (B) associação a grupo (o usuário herda as roles do grupo) ou (D) herança de role (uma role pode conter outras roles). A opção C não é um método real do GlideRecord — as roles são gerenciadas pelas tabelas sys_user_has_role e sys_group_has_role.",
   },
   {
     id: 167,
@@ -2327,6 +2494,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The fulfiller view is a named form view optimized for service desk agents and fulfillment staff. It typically shows assignment, work notes, state, and other operational fields rather than the simplified view shown to end users (the 'esc' or end-user view).",
+    explanation_pt: "A fulfiller view é uma view de formulário nomeada otimizada para agentes de service desk e pessoal de atendimento. Ela tipicamente mostra atribuição, work notes, state e outros campos operacionais, em vez da view simplificada mostrada aos usuários finais.",
   },
 
   // ─────────────────────────────────────────────────────────────
@@ -2345,6 +2513,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow Discovery automatically scans IP networks using MID Servers, identifies CIs (servers, applications, network devices, etc.), and populates or updates the CMDB with their attributes and relationships — keeping the CMDB current without manual data entry.",
+    explanation_pt: "O ServiceNow Discovery escaneia automaticamente redes IP usando MID Servers, identifica CIs (servidores, aplicações, dispositivos de rede, etc.) e popula ou atualiza o CMDB com seus atributos e relacionamentos — mantendo o CMDB atualizado sem entrada manual de dados.",
   },
   {
     id: 169,
@@ -2359,6 +2528,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow Orchestration extends workflow automation to remote systems via MID Servers. It enables automated execution of operations like provisioning VMs, resetting passwords in Active Directory, restarting services, or running runbooks on infrastructure — all triggered from within ServiceNow.",
+    explanation_pt: "O ServiceNow Orchestration estende a automação de workflow para sistemas remotos via MID Servers. Ele permite a execução automatizada de operações como provisionamento de VMs, redefinição de senhas no Active Directory, reinicialização de serviços ou execução de runbooks em infraestrutura.",
   },
   {
     id: 170,
@@ -2373,6 +2543,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The Client callable checkbox (not literally 'Execution Environment') on a Script Include controls whether it can be called from client scripts via GlideAjax. Standard Script Includes run server-side. The key distinction in ServiceNow scripting is always client-side (browser) vs. server-side.",
+    explanation_pt: "A caixa de seleção 'Client callable' em um Script Include controla se ele pode ser chamado a partir de client scripts via GlideAjax. Script Includes padrão executam no lado do servidor. A distinção chave no scripting do ServiceNow é sempre lado do cliente (navegador) vs. lado do servidor.",
   },
   {
     id: 171,
@@ -2387,6 +2558,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "A Configuration Baseline captures the expected state of a CI's attributes at a given point in time. ServiceNow can compare the current CI state against the baseline to detect configuration drift — unauthorized or untracked changes that may indicate security issues or policy violations.",
+    explanation_pt: "Um Configuration Baseline captura o estado esperado dos atributos de um CI em um determinado momento. O ServiceNow pode comparar o estado atual do CI com o baseline para detectar configuration drift — mudanças não autorizadas ou não rastreadas que podem indicar problemas de segurança ou violações de política.",
   },
   {
     id: 172,
@@ -2401,6 +2573,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The 'Wait for condition' activity pauses the workflow and periodically evaluates a configured condition. Once the condition becomes true (e.g., a field reaches a certain value), the workflow resumes. This is commonly used to wait for an external process to complete.",
+    explanation_pt: "A atividade 'Wait for condition' pausa o workflow e avalia periodicamente uma condição configurada. Quando a condição se torna verdadeira (ex.: um campo atinge um determinado valor), o workflow é retomado. Isso é comumente usado para aguardar a conclusão de um processo externo.",
   },
   {
     id: 173,
@@ -2415,6 +2588,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "ServiceNow uses Mozilla's Rhino JavaScript engine (or its successor Nashorn/Graal depending on the platform version) to execute server-side JavaScript — Business Rules, Script Includes, Scheduled Jobs, and other server scripts all run in this engine.",
+    explanation_pt: "O ServiceNow usa o motor JavaScript Rhino da Mozilla (ou seu sucessor Nashorn/Graal dependendo da versão da plataforma) para executar JavaScript do lado do servidor — Business Rules, Script Includes, Scheduled Jobs e outros scripts de servidor todos executam neste motor.",
   },
   {
     id: 174,
@@ -2429,6 +2603,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Now Experience (code-named Polaris) is ServiceNow's modernized platform UI design system. It introduces a refreshed visual design, improved navigation, unified component library, and performance improvements compared to the classic UI16 interface.",
+    explanation_pt: "Now Experience (codinome Polaris) é o sistema de design modernizado da interface da plataforma do ServiceNow. Ele introduz um design visual atualizado, navegação aprimorada, biblioteca de componentes unificada e melhorias de desempenho em comparação com a interface clássica UI16.",
   },
   {
     id: 175,
@@ -2443,6 +2618,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The sys_properties table stores system properties — name-value configuration pairs that control instance-wide behaviors such as email settings, UI features, integration parameters, and feature flags. They are managed via System Settings > System Properties.",
+    explanation_pt: "A tabela sys_properties armazena propriedades do sistema — pares nome-valor de configuração que controlam comportamentos em toda a instância, como configurações de email, recursos de UI, parâmetros de integração e flags de recursos. São gerenciadas via System Settings > System Properties.",
   },
   {
     id: 176,
@@ -2457,6 +2633,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "Catalog Tasks (sc_task) are work items generated as part of a Requested Item's fulfillment process — typically created by workflow activities. They are assigned to fulfillment groups who complete specific steps (e.g., 'Procure hardware', 'Provision access').",
+    explanation_pt: "Catalog Tasks (sc_task) são itens de trabalho gerados como parte do processo de atendimento de um Requested Item — tipicamente criados por atividades de workflow. São atribuídos a grupos de atendimento que concluem etapas específicas (ex.: 'Adquirir hardware', 'Provisionar acesso').",
   },
   {
     id: 177,
@@ -2471,6 +2648,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "setLimit(n) restricts the number of records returned by a GlideRecord query to the specified maximum. This is important for performance — without a limit, a query on a large table can return thousands of records and impact server resources.",
+    explanation_pt: "setLimit(n) restringe o número de registros retornados por uma consulta GlideRecord ao máximo especificado. Isso é importante para desempenho — sem um limite, uma consulta em uma tabela grande pode retornar milhares de registros e impactar os recursos do servidor.",
   },
   {
     id: 178,
@@ -2485,6 +2663,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "CMDB Relationships (stored in cmdb_rel_ci) capture the connections and dependencies between CIs — for example, an Application 'Runs on' a Server, or a Server 'Hosted on' a Datacenter. These relationships enable impact analysis and service dependency mapping.",
+    explanation_pt: "Relacionamentos do CMDB (armazenados em cmdb_rel_ci) capturam as conexões e dependências entre CIs — por exemplo, uma Aplicação 'Runs on' um Servidor, ou um Servidor 'Hosted on' um Datacenter. Esses relacionamentos permitem análise de impacto e mapeamento de dependências de serviços.",
   },
   {
     id: 179,
@@ -2499,6 +2678,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Multi-factor Authentication requires users to provide a second form of verification beyond their password — such as a time-based OTP from an authenticator app, an SMS code, or a hardware token. ServiceNow supports MFA via identity providers or the built-in Duo/Auth0 integration.",
+    explanation_pt: "A Autenticação Multi-fator requer que os usuários forneçam uma segunda forma de verificação além de sua senha — como um OTP baseado em tempo de um app autenticador, um código por SMS ou um token de hardware. O ServiceNow suporta MFA via provedores de identidade ou a integração interna Duo/Auth0.",
   },
   {
     id: 180,
@@ -2513,6 +2693,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Assignment Rules automatically set the Assignment Group (and optionally Assigned To) fields on new incidents based on conditions like category, subcategory, CI, or location. This reduces manual routing effort and improves consistency.",
+    explanation_pt: "Assignment Rules definem automaticamente o Assignment Group (e opcionalmente o Assigned To) em novos incidents com base em condições como categoria, subcategoria, CI ou localização. Isso reduz o esforço de roteamento manual e melhora a consistência.",
   },
   {
     id: 181,
@@ -2527,6 +2708,7 @@ export const questions: Question[] = [
     ],
     correct: 2,
     explanation: "The Condition field on a Business Rule is evaluated before the script runs. If the condition is false, the script is skipped entirely. This allows lightweight pre-filtering without running JavaScript, improving performance. Conditions use the standard condition builder.",
+    explanation_pt: "O campo Condition em uma Business Rule é avaliado antes da execução do script. Se a condição for false, o script é completamente ignorado. Isso permite uma filtragem leve sem executar JavaScript, melhorando o desempenho. As condições usam o condition builder padrão.",
   },
   {
     id: 182,
@@ -2541,6 +2723,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Table Cleaner (also called Auto-flush) is a ServiceNow mechanism that automatically purges records older than a configured age from high-volume tables like sys_log, sys_event, and import set tables. This prevents these tables from growing unbounded.",
+    explanation_pt: "O Table Cleaner (também chamado de Auto-flush) é um mecanismo do ServiceNow que purga automaticamente registros mais antigos que uma idade configurada de tabelas de alto volume como sys_log, sys_event e tabelas de import set. Isso evita que essas tabelas cresçam sem limites.",
   },
   {
     id: 183,
@@ -2555,6 +2738,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Activity Stream (rendered by the Activity formatter) provides a unified, chronological view of all record activity — including work notes (internal), additional comments (customer-visible), field value changes, and attachments. It is the primary collaboration area on task records.",
+    explanation_pt: "O Activity Stream (renderizado pelo formatter de Activity) fornece uma visão cronológica unificada de toda a atividade do registro — incluindo work notes (internas), additional comments (visíveis ao cliente), alterações de valor de campo e anexos. É a principal área de colaboração em registros de task.",
   },
   {
     id: 184,
@@ -2569,6 +2753,7 @@ export const questions: Question[] = [
     ],
     correct: 2,
     explanation: "Service Level Management in ServiceNow provides tools to define SLA definitions, monitor Task SLA records across all ITSM processes, configure pause/stop conditions, and report on SLA compliance — ensuring the organization meets its service delivery commitments.",
+    explanation_pt: "O Service Level Management no ServiceNow fornece ferramentas para definir SLA definitions, monitorar registros Task SLA em todos os processos ITSM, configurar condições de pausa/parada e relatar conformidade com SLA — garantindo que a organização cumpra seus compromissos de entrega de serviços.",
   },
   {
     id: 185,
@@ -2583,6 +2768,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "gs.getProperty('property.name') retrieves the value of a named system property from the sys_properties table. An optional second argument provides a default value if the property does not exist. This is the standard way to read configuration settings in server-side scripts.",
+    explanation_pt: "gs.getProperty('property.name') recupera o valor de uma propriedade de sistema nomeada da tabela sys_properties. Um segundo argumento opcional fornece um valor padrão se a propriedade não existir. Esta é a maneira padrão de ler configurações em scripts do lado do servidor.",
   },
   {
     id: 186,
@@ -2597,6 +2783,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Number Maintenance records (sys_number) define the auto-numbering configuration for each table — including the prefix (e.g., 'INC'), the number of digits, the current counter value, and the increment step. These determine the formatted record number (e.g., INC0001234).",
+    explanation_pt: "Registros de Number Maintenance (sys_number) definem a configuração de numeração automática para cada tabela — incluindo o prefixo (ex.: 'INC'), o número de dígitos, o valor atual do contador e o passo de incremento. Eles determinam o número de registro formatado (ex.: INC0001234).",
   },
   {
     id: 187,
@@ -2611,6 +2798,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "UI Themes define the global visual appearance of the ServiceNow platform UI — colors, fonts, header styles, and other design elements. Administrators can create custom themes to match corporate branding and assign them to specific companies or users.",
+    explanation_pt: "UI Themes definem a aparência visual global da interface da plataforma ServiceNow — cores, fontes, estilos de cabeçalho e outros elementos de design. Os administradores podem criar temas personalizados para corresponder à identidade visual corporativa e atribuí-los a empresas ou usuários específicos.",
   },
   {
     id: 188,
@@ -2625,6 +2813,7 @@ export const questions: Question[] = [
     ],
     correct: [0, 1, 2],
     explanation: "The Service Catalog request structure consists of: Request (sc_request) as the parent container, Requested Items (sc_req_item) representing each catalog item ordered, and Catalog Tasks (sc_task) as the individual fulfillment work items. 'Catalog Order' is not a standard ServiceNow table.",
+    explanation_pt: "A estrutura de solicitação do Service Catalog consiste em: Request (sc_request) como contêiner pai, Requested Items (sc_req_item) representando cada item do catálogo pedido e Catalog Tasks (sc_task) como os itens de trabalho individuais de atendimento. 'Catalog Order' não é uma tabela padrão do ServiceNow.",
   },
   {
     id: 189,
@@ -2639,6 +2828,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Navigating to 'tablename.do' in the ServiceNow URL bar opens a new (blank) record form for that table. For example, 'incident.do' opens a new incident form. Combining with 'sys_id' in the URL opens a specific existing record.",
+    explanation_pt: "Navegar para 'tablename.do' na barra de URL do ServiceNow abre um formulário de novo registro (em branco) para aquela tabela. Por exemplo, 'incident.do' abre um novo formulário de incident. Combinar com 'sys_id' na URL abre um registro existente específico.",
   },
   {
     id: 190,
@@ -2653,6 +2843,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The Read roles field on a table or dictionary entry provides a simplified way to restrict visibility without writing full ACL rules. Only users with one of the listed roles can see the table rows or field value. It works alongside (not instead of) explicit ACLs.",
+    explanation_pt: "O campo Read roles em uma entrada de tabela ou de dictionary fornece uma maneira simplificada de restringir a visibilidade sem escrever regras ACL completas. Apenas usuários com uma das roles listadas podem ver as linhas da tabela ou o valor do campo. Funciona em conjunto com ACLs explícitas.",
   },
   {
     id: 191,
@@ -2667,6 +2858,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "SSO allows ServiceNow to delegate authentication to an external Identity Provider (IdP) such as Active Directory, Okta, or Azure AD using SAML 2.0. Users authenticate once with the IdP and gain access to ServiceNow without entering a separate password.",
+    explanation_pt: "SSO permite que o ServiceNow delegue a autenticação a um Identity Provider (IdP) externo como Active Directory, Okta ou Azure AD usando SAML 2.0. Os usuários se autenticam uma vez com o IdP e obtêm acesso ao ServiceNow sem inserir uma senha separada.",
   },
   {
     id: 192,
@@ -2681,6 +2873,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "UI Scripts are client-side JavaScript libraries that are loaded in the browser. They can contain utility functions and classes used by Client Scripts, UI Actions, or Service Portal widgets. They are the client-side equivalent of Script Includes.",
+    explanation_pt: "UI Scripts são bibliotecas JavaScript do lado do cliente carregadas no navegador. Elas podem conter funções utilitárias e classes usadas por Client Scripts, UI Actions ou widgets do Service Portal. São o equivalente do lado do cliente dos Script Includes.",
   },
   {
     id: 193,
@@ -2695,6 +2888,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Flow Variables are typed data containers used within Flow Designer to store intermediate values and pass data between actions. For example, a flow can retrieve a record's field value into a variable, then use that variable as input to a subsequent action.",
+    explanation_pt: "Flow Variables são contêineres de dados tipados usados dentro do Flow Designer para armazenar valores intermediários e passar dados entre ações. Por exemplo, um flow pode recuperar o valor de um campo de um registro em uma variável e usar essa variável como entrada para uma ação subsequente.",
   },
   {
     id: 194,
@@ -2709,6 +2903,7 @@ export const questions: Question[] = [
     ],
     correct: 0,
     explanation: "The sys_scope table stores the application scope records — each representing a scoped application's namespace, version, vendor, and configuration. When you install or create a scoped app, a record is created in sys_scope defining its namespace (e.g., x_acme_myapp).",
+    explanation_pt: "A tabela sys_scope armazena os registros de escopo de aplicação — cada um representando o namespace, versão, fornecedor e configuração de um scoped app. Quando você instala ou cria um scoped app, um registro é criado em sys_scope definindo seu namespace (ex.: x_acme_myapp).",
   },
   {
     id: 195,
@@ -2723,6 +2918,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Right-clicking a field label on a form provides administrators with contextual options including: Show Dictionary (opens the dictionary entry), Configure (adjust field settings), show the field's element name, set a default value, and more — making it a quick access point for field configuration.",
+    explanation_pt: "Clicar com o botão direito em um rótulo de campo em um formulário fornece aos administradores opções contextuais incluindo: Show Dictionary (abre a dictionary entry), Configure (ajustar configurações do campo), mostrar o nome do elemento do campo, definir um valor padrão e muito mais.",
   },
   {
     id: 196,
@@ -2737,6 +2933,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "gr.orderBy('field_name') sorts the GlideRecord query results in ascending order by the specified field. gr.orderByDesc('field_name') sorts in descending order. Multiple order clauses can be chained to achieve multi-level sorting.",
+    explanation_pt: "gr.orderBy('field_name') ordena os resultados da consulta GlideRecord em ordem crescente pelo campo especificado. gr.orderByDesc('field_name') ordena em ordem decrescente. Múltiplas cláusulas de ordenação podem ser encadeadas para obter uma ordenação em múltiplos níveis.",
   },
   {
     id: 197,
@@ -2751,6 +2948,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The 'When' setting on a Transform Map controls whether the transformation logic runs when a record in the import set is being inserted (new), updated (already exists in target), or both. This allows different logic to handle new vs. existing records during import.",
+    explanation_pt: "A configuração 'When' em um Transform Map controla se a lógica de transformação é executada quando um registro no import set está sendo inserido (novo), atualizado (já existe na tabela alvo) ou ambos. Isso permite lógica diferente para lidar com registros novos vs. existentes durante a importação.",
   },
   {
     id: 198,
@@ -2765,6 +2963,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Knowledge Categories provide a hierarchical taxonomy within a Knowledge Base — organizing articles into parent/child category trees (e.g., Hardware > Laptops > Dell). Users can browse by category, and categories can have different access controls.",
+    explanation_pt: "Knowledge Categories fornecem uma taxonomia hierárquica dentro de uma Knowledge Base — organizando artigos em árvores de categorias pai/filho (ex.: Hardware > Laptops > Dell). Os usuários podem navegar por categoria, e as categorias podem ter controles de acesso diferentes.",
   },
   {
     id: 199,
@@ -2779,6 +2978,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "Before and After business rules run synchronously — the user's browser waits for them to complete before the page responds. Async business rules run in a background queue after the database commit, so the user's browser is not blocked. This makes async rules suitable for time-consuming operations.",
+    explanation_pt: "Before e After business rules executam de forma síncrona — o navegador do usuário aguarda sua conclusão antes que a página responda. Async business rules executam em uma fila de segundo plano após o commit do banco de dados, portanto o navegador do usuário não é bloqueado.",
   },
   {
     id: 200,
@@ -2793,6 +2993,7 @@ export const questions: Question[] = [
     ],
     correct: 1,
     explanation: "The IRE is the CMDB's authoritative engine for CI identification and data reconciliation. When Discovery, Service Graph Connectors, or other data sources provide CI data, the IRE determines whether to create a new CI or update an existing one, and manages which data source has authority over each attribute.",
+    explanation_pt: "O IRE é o mecanismo autoritativo do CMDB para identificação de CI e reconciliação de dados. Quando Discovery, Service Graph Connectors ou outras fontes de dados fornecem dados de CI, o IRE determina se deve criar um novo CI ou atualizar um existente, e gerencia qual fonte de dados tem autoridade sobre cada atributo.",
   },
 ];
 

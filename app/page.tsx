@@ -50,7 +50,7 @@ export default function Home() {
         {/* Exam info strip */}
         <div
           className="grid grid-cols-3 divide-x rounded-lg"
-          style={{ background: "var(--bg-card)", border: "1px solid var(--border)", divideColor: "var(--border)" }}
+          style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
         >
           {[
             { label: "Questions",    value: String(EXAM_CONFIG.totalQuestions) },

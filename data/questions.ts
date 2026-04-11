@@ -2577,23 +2577,148 @@ export const EXAM_CONFIG = {
 };
 
 /**
- * Select questions for the hard mode simulation respecting domain weights.
+ * Curated set of question IDs with the highest probability of appearing on the
+ * real ServiceNow CSA Pearson VUE exam, organized by domain weight.
+ *
+ * UI & Navigation  (18): covers navigator, forms, lists, views, sys_id
+ * Data Admin       (30): covers tables, fields, import/transform, update sets, CMDB, ACL
+ * Service Auto     (25): covers BR, UI Policy, SLA, flow, catalog, ITSM processes
+ * Scripting        (22): covers GlideRecord, g_form, gs, client/server scripts
+ * Users & Tasks    (10): covers roles, groups, admin, itil, security_admin
+ */
+export const hardModeIds = new Set<number>([
+  // ── User Interface & Navigation (18) ──────────────────────────
+  1,   // Banner frame
+  2,   // Favorites
+  5,   // Personalize List
+  7,   // Breadcrumbs
+  8,   // Module definition
+  9,   // sys_id
+  10,  // Form layout — admin all users
+  11,  // View definition
+  12,  // Date/Time field type
+  92,  // Configure > List Layout
+  121, // Application Navigator
+  122, // .list URL shortcut
+  126, // Global Text Search
+  127, // Form Layout vs Form Design
+  129, // Group By
+  183, // Activity Stream formatter
+  187, // UI Theme
+  195, // Right-click field label
+  // ── Data Administration (30) ──────────────────────────────────
+  13,  // Table inheritance
+  14,  // Task base table
+  15,  // Import Set
+  16,  // Transform Map
+  17,  // Coalescing
+  18,  // Update Sets
+  19,  // Reference field
+  20,  // Dictionary Entry
+  21,  // CMDB purpose
+  22,  // Display Value vs Value
+  23,  // sys_choice table
+  24,  // ACL
+  25,  // ACL evaluation order
+  27,  // Scheduled Job
+  28,  // Data Policies
+  31,  // cmdb_ci base table
+  63,  // Update Set scope (no data records)
+  64,  // Reference Qualifier
+  99,  // sys_metadata
+  100, // Condition Builder
+  101, // Related List
+  104, // Dot-walking
+  109, // Mandatory attribute — data layer
+  111, // Auto-number
+  113, // sys_created_by
+  120, // System fields (multiple)
+  175, // sys_properties table
+  178, // CMDB Relationship
+  186, // Number Maintenance
+  190, // Read roles on dictionary
+  // ── Service Automation (25) ───────────────────────────────────
+  33,  // Business Rule definition
+  34,  // Before vs After BR
+  35,  // UI Policy
+  36,  // Workflow
+  37,  // Email Notification
+  38,  // BR "when" options (Display is valid; During is not)
+  39,  // SLA definition
+  40,  // Flow Designer
+  41,  // Inbound Email Action
+  42,  // Catalog Item
+  43,  // Approval Rule
+  66,  // Catalog Variable Set
+  67,  // Record Producer
+  90,  // SLA Escalation
+  93,  // Events / gs.eventQueue
+  97,  // Knowledge Base
+  131, // Change Management purpose
+  132, // Standard / Normal / Emergency change types
+  133, // CAB
+  134, // Problem Management
+  135, // Known Error
+  136, // Incident Management
+  137, // Request Management / sc_request hierarchy
+  140, // SLA pause conditions
+  176, // Catalog Task (sc_task)
+  // ── Scripting & Development (22) ─────────────────────────────
+  45,  // g_form — client side
+  46,  // current object — business rule
+  47,  // Script Include
+  48,  // GlideRecord query()
+  49,  // gs.log / syslog
+  50,  // Client Script types (onLoad/onChange/onSubmit/onCellEdit)
+  51,  // UI Action
+  52,  // previous object
+  53,  // GlideRecord getValue / Both C and D correct
+  54,  // Async Business Rules
+  55,  // GlideAjax
+  68,  // g_form.setValue — client script
+  84,  // GlideSystem (gs)
+  96,  // gs.hasRole()
+  148, // GlideRecord insert (initialize + setValue + insert)
+  150, // addEncodedQuery
+  152, // Display Business Rule + g_scratchpad
+  155, // Table API (REST CRUD)
+  156, // getValue vs getDisplayValue
+  157, // Fix Script
+  181, // Business Rule Condition field
+  199, // Sync vs Async BR — user experience
+  // ── Users & Tasks (10) ────────────────────────────────────────
+  57,  // Role definition
+  59,  // Group
+  60,  // Role assigned to group — all members inherit
+  61,  // admin role
+  62,  // Task record (extends task table)
+  80,  // admin role characteristics (multiple)
+  94,  // Impersonation
+  159, // security_admin role
+  160, // Role elevation
+  163, // itil role
+]);
+
+/**
+ * Select questions for the hard mode simulation.
+ * Only uses the curated hardModeIds pool, respecting domain weights.
  */
 export function selectExamQuestions(): Question[] {
+  const hardPool = questions.filter((q) => hardModeIds.has(q.id));
   const domains = Object.keys(domainWeights) as Domain[];
   const selected: Question[] = [];
 
   for (const domain of domains) {
     const count = Math.round(domainWeights[domain] * EXAM_CONFIG.totalQuestions);
-    const pool = questions.filter((q) => q.domain === domain);
+    const pool = hardPool.filter((q) => q.domain === domain);
     const shuffled = [...pool].sort(() => Math.random() - 0.5);
     selected.push(...shuffled.slice(0, count));
   }
 
-  // Fill any shortfall with random questions not yet selected
+  // Fill any shortfall from the hard pool (should not happen with 105 curated questions)
   if (selected.length < EXAM_CONFIG.totalQuestions) {
     const selectedIds = new Set(selected.map((q) => q.id));
-    const remaining = questions
+    const remaining = hardPool
       .filter((q) => !selectedIds.has(q.id))
       .sort(() => Math.random() - 0.5);
     selected.push(...remaining.slice(0, EXAM_CONFIG.totalQuestions - selected.length));

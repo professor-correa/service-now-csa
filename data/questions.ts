@@ -1,10 +1,11 @@
 export type QuestionType = "single" | "multiple";
 export type Domain =
-  | "Data Administration"
-  | "User Interface & Navigation"
-  | "Service Automation"
-  | "Scripting & Development"
-  | "Users & Tasks";
+  | "Platform Overview and Navigation"
+  | "Instance Configuration"
+  | "Configuring Applications for Collaboration"
+  | "Self Service & Automation"
+  | "Database Management and Platform Security"
+  | "Data Migration and Integration";
 
 export interface Question {
   id: number;
@@ -20,7 +21,7 @@ export interface Question {
 export const questions: Question[] = [
   {
     id: 1,
-    domain: "Users & Tasks",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "Which stakeholder is responsible for architecting a ServiceNow Stack to ensure business continuity and disaster recovery for the customer?",
     options: [
@@ -34,7 +35,7 @@ export const questions: Question[] = [
   },
   {
     id: 2,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "You are creating a catalog item for ordering a new desktop computer. The computers have these options:\n• Color: Black or Silver\n• RAM: 32 MB or 64MB\n• Keyboard: Standard or Ergonomic\n• Monitor: 24 inch or 32 inch\nHow would you add these options to the catalog item form?",
     options: [
@@ -49,7 +50,7 @@ export const questions: Question[] = [
   },
   {
     id: 3,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "How would you distinguish between a Base Class table and a Parent Class table?",
     options: [
@@ -64,7 +65,7 @@ export const questions: Question[] = [
   },
   {
     id: 4,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "single",
     question: "When does a Business Rule execute in ServiceNow?",
     options: [
@@ -79,7 +80,7 @@ export const questions: Question[] = [
   },
   {
     id: 5,
-    domain: "Data Administration",
+    domain: "Instance Configuration",
     type: "single",
     question: "What protects applications by restricting access to data in another application, in the same instance?",
     options: [
@@ -94,7 +95,7 @@ export const questions: Question[] = [
   },
   {
     id: 6,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "multiple",
     question: "What are the options that can be set to determine when a Business Rule executes? (Choose 4)",
     options: [
@@ -112,7 +113,7 @@ export const questions: Question[] = [
   },
   {
     id: 7,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which access control rule applies to every field in the incident table?",
     options: [
@@ -127,7 +128,7 @@ export const questions: Question[] = [
   },
   {
     id: 8,
-    domain: "Users & Tasks",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What is the most common role that has access to almost all platform features, functions, and data?",
     options: [
@@ -143,7 +144,7 @@ export const questions: Question[] = [
   },
   {
     id: 9,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which component of a table contains a piece of data for one record?",
     options: [
@@ -159,7 +160,7 @@ export const questions: Question[] = [
   },
   {
     id: 10,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "multiple",
     question: "What are the three key tables in an enterprise CMDB? (Choose 3)",
     options: [
@@ -177,7 +178,7 @@ export const questions: Question[] = [
   },
   {
     id: 11,
-    domain: "Service Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "What process allows users to create, categorize, review, approve and browse important information in a centralized location that is shared by the entire organization?",
     options: [
@@ -193,7 +194,7 @@ export const questions: Question[] = [
   },
   {
     id: 12,
-    domain: "User Interface & Navigation",
+    domain: "Instance Configuration",
     type: "single",
     question: "Which feature can be used to give users the choice to easily populate the most-used fields for a specific table?",
     options: [
@@ -208,7 +209,7 @@ export const questions: Question[] = [
   },
   {
     id: 13,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What is the name of the table relationship where two or more tables are related in a bi-directional relationship, so that the related records are visible from both tables in a related list?",
     options: [
@@ -223,7 +224,7 @@ export const questions: Question[] = [
   },
   {
     id: 14,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which ServiceNow capability allows you to provide knowledge articles, via a conversational messaging interface?",
     options: [
@@ -238,7 +239,7 @@ export const questions: Question[] = [
   },
   {
     id: 15,
-    domain: "Service Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "In a Knowledge Base record, where can an administrator find the User Criteria for who can read the articles?",
     options: [
@@ -253,7 +254,7 @@ export const questions: Question[] = [
   },
   {
     id: 16,
-    domain: "Users & Tasks",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "When working on a task, which field do you use to share knowledge and other customer visible details?",
     options: [
@@ -268,7 +269,7 @@ export const questions: Question[] = [
   },
   {
     id: 17,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "What is the name of the string that displays filter criteria?",
     options: [
@@ -283,7 +284,7 @@ export const questions: Question[] = [
   },
   {
     id: 18,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "What helps to define the structure of a catalog item form that is displayed to the customer?",
     options: [
@@ -298,7 +299,7 @@ export const questions: Question[] = [
   },
   {
     id: 19,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "multiple",
     question: "Tables may have a One to Many relationship. From the Service Catalog, what are examples of tables having a one to many relationships? (Choose 3)",
     options: [
@@ -314,7 +315,7 @@ export const questions: Question[] = [
   },
   {
     id: 20,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Tables may be set up with Many to Many relationships. What is a classic example of a scenario where the tables would have many to many relationships?",
     options: [
@@ -329,7 +330,7 @@ export const questions: Question[] = [
   },
   {
     id: 21,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which feature helps to automatically allocate a critical, high-priority, service request to the appropriate assignment group or team member?",
     options: [
@@ -344,7 +345,7 @@ export const questions: Question[] = [
   },
   {
     id: 22,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "multiple",
     question: "When managing tags, you can adjust who is able to see it. What are the visibility options for a tag? (Choose 3)",
     options: [
@@ -360,7 +361,7 @@ export const questions: Question[] = [
   },
   {
     id: 23,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "You are looking at a list of Active Incidents. You want to exclude Incidents with the state of Resolved. How might you do that?",
     options: [
@@ -376,7 +377,7 @@ export const questions: Question[] = [
   },
   {
     id: 24,
-    domain: "Data Administration",
+    domain: "Instance Configuration",
     type: "single",
     question: "What is the purpose of an application scope?",
     options: [
@@ -391,7 +392,7 @@ export const questions: Question[] = [
   },
   {
     id: 25,
-    domain: "Service Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "As an IT employee what interface would you use, if you wanted to browse internal IT documentation, like troubleshooting scripts and FAQs?",
     options: [
@@ -407,7 +408,7 @@ export const questions: Question[] = [
   },
   {
     id: 26,
-    domain: "Data Administration",
+    domain: "Data Migration and Integration",
     type: "single",
     question: "What application is used primarily to load data into ServiceNow?",
     options: [
@@ -422,7 +423,7 @@ export const questions: Question[] = [
   },
   {
     id: 27,
-    domain: "Data Administration",
+    domain: "Data Migration and Integration",
     type: "single",
     question: "What is the best practice related to using the Default Update Set for moving customizations between instances?",
     options: [
@@ -437,7 +438,7 @@ export const questions: Question[] = [
   },
   {
     id: 28,
-    domain: "Data Administration",
+    domain: "Data Migration and Integration",
     type: "single",
     question: "What are the steps to apply an update set retrieved from another instance?",
     options: [
@@ -452,7 +453,7 @@ export const questions: Question[] = [
   },
   {
     id: 29,
-    domain: "Users & Tasks",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What encryption feature is included in ServiceNow by default?",
     options: [
@@ -466,7 +467,7 @@ export const questions: Question[] = [
   },
   {
     id: 30,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "You have been asked to create a way for users to order a new iPhone. The approvers and users should be automatically notified at each approval level. What feature would you use to manage the approvals and notifications?",
     options: [
@@ -482,7 +483,7 @@ export const questions: Question[] = [
   },
   {
     id: 31,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "single",
     question: "Which statement correctly describes the differences between a Client Script and a Business Rule?",
     options: [
@@ -497,7 +498,7 @@ export const questions: Question[] = [
   },
   {
     id: 32,
-    domain: "Service Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "What is used to determine user access to knowledge bases or a knowledge article?",
     options: [
@@ -512,7 +513,7 @@ export const questions: Question[] = [
   },
   {
     id: 33,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "single",
     question: "Typically, based on Best Practice, which of the following interactions is used to make fields mandatory, read only, and/or hidden?",
     options: [
@@ -527,7 +528,7 @@ export const questions: Question[] = [
   },
   {
     id: 34,
-    domain: "Users & Tasks",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which Security Center feature helps resolve platform related security issues and misconfigurations?",
     options: [
@@ -542,7 +543,7 @@ export const questions: Question[] = [
   },
   {
     id: 35,
-    domain: "Data Administration",
+    domain: "Instance Configuration",
     type: "single",
     question: "What action can be performed by selecting the Additional actions menu in Table Builder?",
     options: [
@@ -557,7 +558,7 @@ export const questions: Question[] = [
   },
   {
     id: 36,
-    domain: "User Interface & Navigation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Which form element displays the list of activities, or history, on a task form?",
     options: [
@@ -572,7 +573,7 @@ export const questions: Question[] = [
   },
   {
     id: 37,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "How would you describe the relationship between the Incident and Task table?",
     options: [
@@ -588,7 +589,7 @@ export const questions: Question[] = [
   },
   {
     id: 38,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "multiple",
     question: "What are the components that make up a filter condition? (Choose 3)",
     options: [
@@ -604,7 +605,7 @@ export const questions: Question[] = [
   },
   {
     id: 39,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "A Service Catalog may include which of the following components?",
     options: [
@@ -619,7 +620,7 @@ export const questions: Question[] = [
   },
   {
     id: 40,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "Which displays the list of activities, or history, on a form?",
     options: [
@@ -634,7 +635,7 @@ export const questions: Question[] = [
   },
   {
     id: 41,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "What actions are required to refine the number of records displayed in a list view?",
     options: [
@@ -649,7 +650,7 @@ export const questions: Question[] = [
   },
   {
     id: 42,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which flow components allow you to specify when a flow should be run?",
     options: [
@@ -665,7 +666,7 @@ export const questions: Question[] = [
   },
   {
     id: 43,
-    domain: "Service Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Which tab on the knowledge base record would you use to identify the sets of users who are able to read articles in that knowledge base?",
     options: [
@@ -680,7 +681,7 @@ export const questions: Question[] = [
   },
   {
     id: 44,
-    domain: "Users & Tasks",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "What action helps to see which modules are visible to a user?",
     options: [
@@ -695,7 +696,7 @@ export const questions: Question[] = [
   },
   {
     id: 45,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "What happens when a user is listed in both the \"Available For\" and \"Not Available For\" category lists?",
     options: [
@@ -710,7 +711,7 @@ export const questions: Question[] = [
   },
   {
     id: 46,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "single",
     question: "Where do UI Policies run?",
     options: [
@@ -725,7 +726,7 @@ export const questions: Question[] = [
   },
   {
     id: 47,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "Which path is used on the Filter Navigator to display the list of records from the sys_user table?",
     options: [
@@ -740,7 +741,7 @@ export const questions: Question[] = [
   },
   {
     id: 48,
-    domain: "Scripting & Development",
+    domain: "Instance Configuration",
     type: "single",
     question: "A customer asks you to make the following updates to a form:\n• When Caller field is populated, automatically look up caller location and load it in the Location field.\n• Add notice at the top of the page when the record is submitted.\nWhat type of script would you use to meet this requirement?",
     options: [
@@ -755,7 +756,7 @@ export const questions: Question[] = [
   },
   {
     id: 49,
-    domain: "Data Administration",
+    domain: "Data Migration and Integration",
     type: "single",
     question: "Which module is used as the first step for importing data?",
     options: [
@@ -770,7 +771,7 @@ export const questions: Question[] = [
   },
   {
     id: 50,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which ServiceNow utility provides a modern interactive graphical interface to visualize configuration items and their relationships?",
     options: [
@@ -785,7 +786,7 @@ export const questions: Question[] = [
   },
   {
     id: 51,
-    domain: "Service Automation",
+    domain: "Platform Overview and Navigation",
     type: "multiple",
     question: "The ServiceNow platform supports a wide variety of plug and play applications. Which of these workflows are included in the platform? (Choose 3)",
     options: [
@@ -802,7 +803,7 @@ export const questions: Question[] = [
   },
   {
     id: 52,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "multiple",
     question: "A customer wants to be able to identify and track components of their infrastructure that support their eCommerce service. What ServiceNow products could support this requirement? (Choose 3)",
     options: [
@@ -818,7 +819,7 @@ export const questions: Question[] = [
   },
   {
     id: 53,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "Which interface allows users to search articles, submit requests, and browse communication notices?",
     options: [
@@ -833,7 +834,7 @@ export const questions: Question[] = [
   },
   {
     id: 54,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What is the result of the order in which access controls are evaluated?",
     options: [
@@ -848,7 +849,7 @@ export const questions: Question[] = [
   },
   {
     id: 55,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which module in the Service Catalog application is used to create a new catalog item?",
     options: [
@@ -863,7 +864,7 @@ export const questions: Question[] = [
   },
   {
     id: 56,
-    domain: "Data Administration",
+    domain: "Data Migration and Integration",
     type: "single",
     question: "Which sequence of actions applies an update set to an instance?",
     options: [
@@ -878,7 +879,7 @@ export const questions: Question[] = [
   },
   {
     id: 57,
-    domain: "User Interface & Navigation",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "What icon do you use to change the label on a Favorite?",
     options: [
@@ -893,7 +894,7 @@ export const questions: Question[] = [
   },
   {
     id: 58,
-    domain: "Service Automation",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which feature allows you to automate business logic for a particular application or process such as approvals, tasks, notifications, and record operations?",
     options: [
@@ -909,7 +910,7 @@ export const questions: Question[] = [
   },
   {
     id: 59,
-    domain: "User Interface & Navigation",
+    domain: "Instance Configuration",
     type: "single",
     question: "On a Catalog Task record, how would an administrator change the priority choice options?",
     options: [
@@ -924,7 +925,7 @@ export const questions: Question[] = [
   },
   {
     id: 60,
-    domain: "Data Administration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which one statement correctly describes Access Control rule evaluation?",
     options: [
@@ -939,7 +940,7 @@ export const questions: Question[] = [
   },
   {
     id: 61,
-    domain: "User Interface & Navigation",
+    domain: "Instance Configuration",
     type: "single",
     question: "How can an administrator modify the layout of a form using Table Builder?",
     options: [
@@ -952,30 +953,952 @@ export const questions: Question[] = [
     explanation: "In Table Builder (the modern admin interface), administrators can modify form layouts by configuring form sections — adding, removing, and rearranging sections and the fields within them. This provides a visual, drag-and-drop interface for managing how forms appear to users, equivalent to the classic Configure > Form Design functionality.",
     explanation_pt: "No Table Builder (a interface administrativa moderna), os administradores podem modificar layouts de formulário configurando form sections — adicionando, removendo e reorganizando seções e os campos dentro delas. Isso fornece uma interface visual de arrastar e soltar para gerenciar como os formulários aparecem para os usuários, equivalente à funcionalidade clássica Configure > Form Design.",
   },
+
+  // ── Platform Overview and Navigation ──────────────────────────────────────
+  {
+    id: 62,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "What are the three main screen elements of the Now Platform User Interface?",
+    options: [
+      "Application Navigator, Content Frame, and Sidebar",
+      "Banner Frame, Application Navigator, and Content Frame",
+      "Filter Navigator, Homepage, and Content Frame",
+      "Banner Frame, Filter Navigator, and Sidebar",
+    ],
+    correct: 1,
+    explanation: "The ServiceNow UI is divided into three fixed regions: the Banner Frame (top bar — global search, user menu, settings), the Application Navigator (left panel — app menus and modules), and the Content Frame (main working area — forms, lists, dashboards).",
+    explanation_pt: "A interface do ServiceNow é dividida em três regiões fixas: o Banner Frame (barra superior — busca global, menu do usuário, configurações), o Application Navigator (painel esquerdo — menus de aplicações e módulos) e o Content Frame (área de trabalho principal — formulários, listas, dashboards).",
+  },
+  {
+    id: 63,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "What is the name of ServiceNow's proprietary internal search engine used for full-text indexing?",
+    options: [
+      "Lucene",
+      "Elasticsearch",
+      "Zing",
+      "Solr",
+    ],
+    correct: 2,
+    explanation: "ServiceNow uses its proprietary search engine called Zing for full-text search across all tables. Zing powers the global search bar and knowledge article search, and is tightly integrated with the platform's data model.",
+    explanation_pt: "O ServiceNow utiliza seu mecanismo de busca proprietário chamado Zing para pesquisa de texto completo em todas as tabelas. O Zing impulsiona a barra de pesquisa global e a pesquisa de artigos de conhecimento, e está intimamente integrado ao modelo de dados da plataforma.",
+  },
+  {
+    id: 64,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "How is the ServiceNow instance architecture best described?",
+    options: [
+      "Single-instance, multiple-tenant — many customers share one instance",
+      "Multi-instance, single-tenant — each customer has their own dedicated instance",
+      "Multi-instance, multi-tenant — multiple customers share multiple instances",
+      "Single-instance, single-tenant — one customer per shared instance",
+    ],
+    correct: 1,
+    explanation: "ServiceNow uses a multi-instance, single-tenant architecture. Each customer gets a completely separate, dedicated instance (own database, application server, and URL such as company.service-now.com). This is distinct from traditional multi-tenant SaaS where customers share infrastructure.",
+    explanation_pt: "O ServiceNow utiliza uma arquitetura multi-instância e single-tenant. Cada cliente recebe uma instância completamente separada e dedicada (próprio banco de dados, servidor de aplicação e URL como empresa.service-now.com). Isso é diferente do SaaS multi-tenant tradicional onde os clientes compartilham infraestrutura.",
+  },
+  {
+    id: 65,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "What are the categories available in the Settings Menu (gear icon) in ServiceNow?",
+    options: [
+      "General, Theme, Notifications, Lists, Forms, and Developer",
+      "General, Security, Notifications, Forms, Modules, and Developer",
+      "Profile, Accessibility, Lists, Forms, Workflows, and Notifications",
+      "General, Theme, Roles, Lists, Reports, and Developer",
+    ],
+    correct: 0,
+    explanation: "The Settings menu contains six categories: General (language, accessibility), Theme (UI color schemes), Notifications (email/push preferences), Lists (list behavior), Forms (form behavior), and Developer (UI diagnostics — visible only with developer role).",
+    explanation_pt: "O menu de Configurações contém seis categorias: General (idioma, acessibilidade), Theme (esquemas de cores da UI), Notifications (preferências de email/push), Lists (comportamento de lista), Forms (comportamento de formulário) e Developer (diagnósticos de UI — visível apenas com a role de desenvolvedor).",
+  },
+  {
+    id: 66,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "What application is available to ALL users in a base ServiceNow instance, regardless of role?",
+    options: [
+      "Change Management",
+      "Incident Management",
+      "Facilities",
+      "Self-Service",
+    ],
+    correct: 3,
+    explanation: "The Self-Service application (including the Service Portal, Service Catalog, and Knowledge Base) is available to all users, even those with no specific ITSM roles. Applications like Change and Incident require roles such as itil or change_manager.",
+    explanation_pt: "A aplicação Self-Service (incluindo Service Portal, Service Catalog e Knowledge Base) está disponível para todos os usuários, mesmo aqueles sem roles específicos de ITSM. Aplicações como Change e Incident requerem roles como itil ou change_manager.",
+  },
+  {
+    id: 67,
+    domain: "Platform Overview and Navigation",
+    type: "single",
+    question: "What does the Activity Stream on a form record display?",
+    options: [
+      "Pending approvals and SLA timers",
+      "Record history, field changes, comments, and work notes",
+      "A feed of all platform-wide notifications",
+      "The current workflow stage of the record",
+    ],
+    correct: 1,
+    explanation: "The Activity Stream is the audit/communication history at the bottom of most forms. It logs every field change (who changed what and when), plus all comments (visible to requesters) and work notes (internal, visible to fulfillment staff only).",
+    explanation_pt: "O Activity Stream é o histórico de auditoria/comunicação na parte inferior da maioria dos formulários. Ele registra cada alteração de campo (quem mudou o quê e quando), além de todos os comentários (visíveis para solicitantes) e notas de trabalho (internas, visíveis apenas para a equipe de atendimento).",
+  },
+  {
+    id: 68,
+    domain: "Platform Overview and Navigation",
+    type: "multiple",
+    question: "From the User menu in the Banner Frame, which of the following actions can a user select? (Choose 3)",
+    options: [
+      "Send Notifications",
+      "Log Out of ServiceNow",
+      "Elevate Roles",
+      "Impersonate Users",
+      "Order from Service Catalog",
+    ],
+    correct: [1, 2, 3],
+    explanation: "The User Menu (top-right name/avatar) provides: Log Out (end session), Elevate Roles (temporarily gain security_admin — admins only), and Impersonate Users (view the system as another user — admins only). Notifications and Service Catalog ordering are accessed via separate navigation paths.",
+    explanation_pt: "O Menu do Usuário (nome/avatar no canto superior direito) oferece: Log Out (encerrar sessão), Elevate Roles (obter temporariamente security_admin — apenas admins) e Impersonate Users (ver o sistema como outro usuário — apenas admins). Notificações e pedidos do Service Catalog são acessados por caminhos de navegação separados.",
+  },
+
+  // ── Instance Configuration ─────────────────────────────────────────────────
+  {
+    id: 69,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "If the prefix of an Incident number needs to be changed, where would an administrator make this change?",
+    options: [
+      "System Definition > Number Maintenance",
+      "Right-click on Incident Number > Personalize Dictionary",
+      "System Properties > General",
+      "System Definition > Tables",
+    ],
+    correct: 0,
+    explanation: "Number Maintenance (System Definition > Number Maintenance) controls the prefix, starting number, and increment for all auto-numbered records in ServiceNow. Personalize Dictionary changes field labels, not number prefixes.",
+    explanation_pt: "Number Maintenance (System Definition > Number Maintenance) controla o prefixo, número inicial e incremento para todos os registros com numeração automática no ServiceNow. Personalize Dictionary altera rótulos de campos, não prefixos de números.",
+  },
+  {
+    id: 70,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "What role is required to add or remove fields from a list view?",
+    options: [
+      "admin",
+      "personalize_list",
+      "itil",
+      "list_admin",
+    ],
+    correct: 1,
+    explanation: "The personalize_list role specifically allows users to configure which columns appear in list views. The admin role also has this capability, but personalize_list is the dedicated minimum role for this function and is the expected answer on the CSA exam.",
+    explanation_pt: "A role personalize_list permite especificamente que usuários configurem quais colunas aparecem nas visualizações de lista. A role admin também tem essa capacidade, mas personalize_list é a role mínima dedicada para essa função e é a resposta esperada no exame CSA.",
+  },
+  {
+    id: 71,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "Which of the following is true of a new table created by extending another table?",
+    options: [
+      "The new table archives the parent table and assumes its roles in the database",
+      "The new table inherits Business Rules, Client Scripts, and UI Policies but none of the fields",
+      "The new table inherits all fields of the parent table and can contain new fields unique to itself",
+      "The new table inherits all fields but not Access Control rules or Client Scripts",
+    ],
+    correct: 2,
+    explanation: "Table extension (inheritance) in ServiceNow means the child table inherits ALL columns, Business Rules, Client Scripts, UI Policies, and ACLs from the parent. It can also define its own additional fields specific to that table.",
+    explanation_pt: "A extensão de tabela (herança) no ServiceNow significa que a tabela filha herda TODAS as colunas, Business Rules, Client Scripts, UI Policies e ACLs da tabela pai. Ela também pode definir seus próprios campos adicionais específicos para aquela tabela.",
+  },
+  {
+    id: 72,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "What is the platform (API) name for the User table in ServiceNow?",
+    options: [
+      "u_users",
+      "sys_users",
+      "x_users",
+      "sys_user",
+    ],
+    correct: 3,
+    explanation: "The core user table is sys_user (singular). The u_ prefix indicates custom admin-created tables, sys_users is incorrect pluralization, and x_ designates scoped application tables. Knowing core table names is tested on the CSA exam.",
+    explanation_pt: "A tabela central de usuários é sys_user (singular). O prefixo u_ indica tabelas criadas por admins, sys_users é uma pluralização incorreta, e x_ designa tabelas de aplicações com escopo. Conhecer os nomes das tabelas principais é testado no exame CSA.",
+  },
+  {
+    id: 73,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "What are the two most commonly used core tables in the ServiceNow database?",
+    options: [
+      "sys_user and sys_user_group",
+      "task and cmdb_ci",
+      "incident and change_request",
+      "sc_request and sc_req_item",
+    ],
+    correct: 1,
+    explanation: "Task [task] and Configuration Item [cmdb_ci] are the two most fundamental core tables. Task is the base table for all work records (incidents, changes, requests), and cmdb_ci is the base table for all CI classes in the CMDB.",
+    explanation_pt: "Task [task] e Configuration Item [cmdb_ci] são as duas tabelas centrais mais fundamentais. Task é a tabela base para todos os registros de trabalho (incidents, changes, requests), e cmdb_ci é a tabela base para todas as classes de CI no CMDB.",
+  },
+  {
+    id: 74,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "Buttons, form links, and context menu items on a ServiceNow form are all examples of what?",
+    options: [
+      "Business Rule",
+      "UI Action",
+      "Client Script",
+      "UI Policy",
+    ],
+    correct: 1,
+    explanation: "UI Actions are the mechanism that adds interactive buttons, links, and context menu items to forms and lists. They can trigger server-side scripts or client-side scripts when clicked. Business Rules run on DB events; Client Scripts run on form field events; UI Policies control field state.",
+    explanation_pt: "UI Actions são o mecanismo que adiciona botões interativos, links e itens de menu de contexto a formulários e listas. Podem acionar scripts do lado do servidor ou cliente quando clicados. Business Rules são executadas em eventos de banco de dados; Client Scripts em eventos de campo do formulário; UI Policies controlam o estado dos campos.",
+  },
+  {
+    id: 75,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "A UI Action with an Order of 110 will display where relative to a UI Action with an Order of 120?",
+    options: [
+      "After — higher order numbers display first",
+      "Before — lower order numbers display first",
+      "The order has no effect on display position",
+      "It depends on the form view configured",
+    ],
+    correct: 1,
+    explanation: "In ServiceNow, lower order numbers display FIRST. A UI Action with order 110 will appear BEFORE one with order 120. This ordering convention is consistent across variables, catalog categories, and all other ordered elements in the platform.",
+    explanation_pt: "No ServiceNow, números de ordem menores são exibidos primeiro. Uma UI Action com order 110 aparecerá ANTES de uma com order 120. Essa convenção de ordenação é consistente em variáveis, categorias de catálogo e todos os outros elementos ordenados na plataforma.",
+  },
+  {
+    id: 76,
+    domain: "Instance Configuration",
+    type: "single",
+    question: "What is a Formatter in ServiceNow?",
+    options: [
+      "A formatter allows you to configure applications on your instance",
+      "A formatter is a form element used to display information that is not a database field",
+      "A formatter allows you to auto-populate fields using default values",
+      "A formatter is a set of conditions applied to a table to filter data",
+    ],
+    correct: 1,
+    explanation: "Formatters are special form elements that display non-field content on a form — for example, the Activity Formatter (activity stream), CI Relations Formatter, or Approval Summarizer. They render contextual content without being tied to a specific database column.",
+    explanation_pt: "Formatters são elementos especiais de formulário que exibem conteúdo não relacionado a campos — por exemplo, o Activity Formatter (fluxo de atividades), CI Relations Formatter ou Approval Summarizer. Eles renderizam conteúdo contextual sem estarem vinculados a uma coluna de banco de dados específica.",
+  },
+
+  // ── Configuring Applications for Collaboration ─────────────────────────────
+  {
+    id: 77,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "In what order should the elements of a filter condition be specified?",
+    options: [
+      "Field, Operator, then Value",
+      "Field, Operator, then Condition",
+      "Operator, Condition, then Value",
+      "Value, Operator, then Field",
+    ],
+    correct: 0,
+    explanation: "The universal order for building a filter condition in ServiceNow is always: Field (which column to filter on), Operator (how to compare — is, contains, starts with, etc.), then Value (what to compare against). This applies everywhere conditions appear: list filters, Business Rules, Notifications, and more.",
+    explanation_pt: "A ordem universal para construir uma condição de filtro no ServiceNow é sempre: Field (qual coluna filtrar), Operator (como comparar — is, contains, starts with, etc.) e Value (com o que comparar). Isso se aplica em todos os lugares onde aparecem condições: filtros de lista, Business Rules, Notificações e mais.",
+  },
+  {
+    id: 78,
+    domain: "Configuring Applications for Collaboration",
+    type: "multiple",
+    question: "Knowledge Base search results can be sorted by which of the following? (Choose 3)",
+    options: [
+      "Most recent update",
+      "Popularity",
+      "Relevancy",
+      "Manager assignment",
+      "Alphabetical order",
+    ],
+    correct: [0, 1, 2],
+    explanation: "Knowledge Base search results can be sorted by Most Recent Update (newest first), Popularity (engagement-based ranking), and Relevancy (keyword match score). Manager Assignment is a workflow field, not a search sort option.",
+    explanation_pt: "Os resultados de pesquisa da Knowledge Base podem ser classificados por Most Recent Update (mais recente primeiro), Popularity (classificação baseada em engajamento) e Relevancy (pontuação de correspondência de palavras-chave). Manager Assignment é um campo de workflow, não uma opção de classificação de pesquisa.",
+  },
+  {
+    id: 79,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "What are the four out-of-the-box knowledge base workflows available in a base ServiceNow instance?",
+    options: [
+      "Draft, Review, Published, Retired",
+      "Instant Publish, Instant Retire, Approval Publish, Retire Knowledge",
+      "Submit, Review, Approve, Publish",
+      "Draft, Instant Publish, Peer Review, Archive",
+    ],
+    correct: 1,
+    explanation: "The four out-of-the-box knowledge workflows are: Instant Publish (immediate publication, no approval required), Instant Retire (immediate retirement), Approval Publish (requires approval before publishing), and Retire Knowledge (workflow-driven retirement process).",
+    explanation_pt: "Os quatro workflows de conhecimento prontos para uso são: Instant Publish (publicação imediata, sem aprovação), Instant Retire (retirada imediata), Approval Publish (requer aprovação antes de publicar) e Retire Knowledge (processo de retirada orientado por workflow).",
+  },
+  {
+    id: 80,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "When does the Submit button appear on a ServiceNow form?",
+    options: [
+      "When saving an existing record",
+      "When creating a new record",
+      "When changing a reference field on an existing record",
+      "When updating a record via a related list",
+    ],
+    correct: 1,
+    explanation: "The Submit button only appears when creating a new record. For existing records, users see Update, Save, or similar buttons instead. Clicking Submit finalizes the initial creation of a record and triggers any on-insert Business Rules.",
+    explanation_pt: "O botão Submit aparece apenas ao criar um novo registro. Para registros existentes, os usuários veem botões Update, Save ou similares. Clicar em Submit finaliza a criação inicial de um registro e aciona quaisquer Business Rules do tipo on-insert.",
+  },
+  {
+    id: 81,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "Right-clicking on a column header in a list view opens the Column Context Menu. Which actions are available?",
+    options: [
+      "Quick reports, configure list columns, sort, group, and export data",
+      "Filter options, assign tags, and global search",
+      "View form, view related task, and add relationship",
+      "Open record, assign to me, and create incident",
+    ],
+    correct: 0,
+    explanation: "Right-clicking a column header (Column Context Menu) gives column-specific options: create quick reports from that column, configure the list (add/remove columns), sort ascending/descending, group by, and export data. Row context menus (right-clicking a row cell) offer record-level actions.",
+    explanation_pt: "Clicar com o botão direito em um cabeçalho de coluna (Column Context Menu) fornece opções específicas da coluna: criar relatórios rápidos, configurar a lista (adicionar/remover colunas), ordenar em ordem crescente/decrescente, agrupar por e exportar dados. Menus de contexto de linha oferecem ações em nível de registro.",
+  },
+  {
+    id: 82,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "What is an Event in ServiceNow?",
+    options: [
+      "A trigger that has a direct, synchronous response in the platform",
+      "An indication to ServiceNow processes that something has occurred",
+      "An indicator that a Priority 1 Incident has been logged",
+      "A recognized, scheduled occurrence of a business process",
+    ],
+    correct: 1,
+    explanation: "An Event is a platform signal placed in the Event Queue indicating that something happened. Events are processed asynchronously by Event Rules, which determine what actions to take in response (e.g., send a notification, create an incident). Events decouple the trigger from the response.",
+    explanation_pt: "Um Event é um sinal da plataforma colocado na Event Queue indicando que algo aconteceu. Events são processados de forma assíncrona por Event Rules, que determinam quais ações tomar em resposta (ex.: enviar uma notificação, criar um incident). Events desacoplam o gatilho da resposta.",
+  },
+  {
+    id: 83,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "Which statement about SLAs in ServiceNow is correct?",
+    options: [
+      "SLAs can be applied to any table in ServiceNow",
+      "SLAs are only applicable to task-based tables (tables that extend [task])",
+      "SLAs are only applicable to the Incident table",
+      "SLAs apply only to tables configured with Flow Designer",
+    ],
+    correct: 1,
+    explanation: "SLA definitions in ServiceNow are designed to work with task-based tables — tables that extend [task]. This includes Incident, Change, Problem, Request, and more. They cannot be directly applied to non-task tables without customization.",
+    explanation_pt: "As definições de SLA no ServiceNow são projetadas para funcionar com tabelas baseadas em tasks — tabelas que estendem [task]. Isso inclui Incident, Change, Problem, Request e outras. Elas não podem ser aplicadas diretamente a tabelas não baseadas em tasks sem customização.",
+  },
+  {
+    id: 84,
+    domain: "Configuring Applications for Collaboration",
+    type: "multiple",
+    question: "What are the conditions in an SLA definition that control its lifecycle? (Choose 3)",
+    options: [
+      "Begin Condition",
+      "Start Condition",
+      "Pause Condition",
+      "Stop Condition",
+      "End Condition",
+    ],
+    correct: [1, 2, 3],
+    explanation: "An SLA definition uses three lifecycle conditions: Start Condition (when the SLA clock begins), Pause Condition (when the clock temporarily stops), and Stop Condition (when the SLA is completed or cancelled). 'Begin' and 'End' are not the standard ServiceNow SLA field names.",
+    explanation_pt: "Uma definição de SLA usa três condições de ciclo de vida: Start Condition (quando o relógio do SLA começa), Pause Condition (quando o relógio para temporariamente) e Stop Condition (quando o SLA é concluído ou cancelado). 'Begin' e 'End' não são os nomes de campos de SLA padrão do ServiceNow.",
+  },
+  {
+    id: 85,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "What are the states in the SLA task instance lifecycle?",
+    options: [
+      "Start, Pause, Stop",
+      "Start, Hold, Stop",
+      "Start, Pause, Stop, End",
+      "Start, Hold, Stop, End",
+    ],
+    correct: 2,
+    explanation: "The SLA task instance goes through four states: Start (clock begins), Pause (clock pauses), Stop (task has met or breached the SLA condition), and End (the final terminal state). Both Pause and Stop are distinct steps in the full lifecycle.",
+    explanation_pt: "A instância de task do SLA passa por quatro estados: Start (o relógio começa), Pause (o relógio pausa), Stop (a task atingiu ou violou a condição do SLA) e End (o estado terminal final). Tanto Pause quanto Stop são etapas distintas no ciclo de vida completo.",
+  },
+  {
+    id: 86,
+    domain: "Configuring Applications for Collaboration",
+    type: "single",
+    question: "How can administrators reuse the same notification content across different delivery channels (email, mobile push, etc.)?",
+    options: [
+      "Configure Default notification content",
+      "Enable Actionable notification content",
+      "Provide Common notification content",
+      "Set up Related notification content",
+    ],
+    correct: 2,
+    explanation: "Common notification content allows administrators to define shared content blocks that can be reused across multiple notifications and delivery channels. This reduces duplication and ensures consistent messaging regardless of how the notification is delivered.",
+    explanation_pt: "O conteúdo de notificação Common permite que os administradores definam blocos de conteúdo compartilhados que podem ser reutilizados em várias notificações e canais de entrega. Isso reduz a duplicação e garante mensagens consistentes independentemente de como a notificação é entregue.",
+  },
+
+  // ── Self Service & Automation ──────────────────────────────────────────────
+  {
+    id: 87,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "What record is generated when a user places an order through the Service Catalog?",
+    options: [
+      "A Change Request",
+      "An Order Guide",
+      "A Request (REQ)",
+      "A Service Level Agreement",
+    ],
+    correct: 2,
+    explanation: "Placing a Service Catalog order creates a Request record (REQ), which is the parent container for the entire order. Each individual item in the order becomes a Requested Item (RITM). Fulfillment tasks (TASK) are created as children of each RITM.",
+    explanation_pt: "Fazer um pedido no Service Catalog cria um registro de Request (REQ), que é o contêiner pai de todo o pedido. Cada item individual no pedido se torna um Requested Item (RITM). Tasks de atendimento (TASK) são criadas como filhos de cada RITM.",
+  },
+  {
+    id: 88,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "What does a REQ number in the Service Catalog represent?",
+    options: [
+      "The overall order number — parent container for the entire order",
+      "The stage of fulfillment for the order",
+      "The individual fulfillment task to complete",
+      "The individual item requested within the order",
+    ],
+    correct: 0,
+    explanation: "REQ = Request = the overall parent order. RITM = Requested Item = each individual item within the order. TASK = the specific fulfillment work to be done. Understanding this three-level hierarchy (REQ > RITM > TASK) is critical for the CSA exam.",
+    explanation_pt: "REQ = Request = o pedido pai geral. RITM = Requested Item = cada item individual dentro do pedido. TASK = o trabalho específico de atendimento a ser feito. Compreender essa hierarquia de três níveis (REQ > RITM > TASK) é fundamental para o exame CSA.",
+  },
+  {
+    id: 89,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "What is the correct hierarchy for viewing fulfillment stage tasks for a user's Service Catalog order?",
+    options: [
+      "RITM > REQ > TASK",
+      "REQ > RITM > TASK",
+      "REQ > TASK > RITM",
+      "FULFILLMENT > RITM > TASK",
+    ],
+    correct: 1,
+    explanation: "The correct hierarchy is REQ (parent order) > RITM (individual item requested) > TASK (fulfillment task to complete). This three-level structure is fundamental to how the Service Catalog manages requests from submission through fulfillment.",
+    explanation_pt: "A hierarquia correta é REQ (pedido pai) > RITM (item individual solicitado) > TASK (task de atendimento a concluir). Essa estrutura de três níveis é fundamental para como o Service Catalog gerencia solicitações desde o envio até o atendimento.",
+  },
+  {
+    id: 90,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "The display sequence of variables in a Service Catalog item is controlled by which field?",
+    options: [
+      "The Default Value field on the Catalog Item form",
+      "The Sequence field on the Catalog Item form",
+      "The Order field on the Variable record",
+      "The Choice field on the Variable record",
+    ],
+    correct: 2,
+    explanation: "The Order field on each Variable record determines the display sequence on the catalog item form. Lower numbers appear first. Default Value initializes the variable's content, not its position.",
+    explanation_pt: "O campo Order em cada registro de Variable determina a sequência de exibição no formulário do catalog item. Números menores aparecem primeiro. Default Value inicializa o conteúdo da variável, não sua posição.",
+  },
+  {
+    id: 91,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "What is a key characteristic of Service Catalog variables?",
+    options: [
+      "Service Catalog variables can only be used in Record Producers",
+      "Service Catalog variables can only be used in Order Guides",
+      "Service Catalog variables are global by default",
+      "Service Catalog variables cannot affect the order price",
+    ],
+    correct: 2,
+    explanation: "Service Catalog variables are global by default, meaning they can be accessed across different catalog items via Variable Sets (reusable groups of variables). They are NOT restricted to Record Producers or Order Guides specifically.",
+    explanation_pt: "As variáveis do Service Catalog são globais por padrão, o que significa que podem ser acessadas em diferentes catalog items por meio de Variable Sets (grupos reutilizáveis de variáveis). Elas NÃO são restritas especificamente a Record Producers ou Order Guides.",
+  },
+  {
+    id: 92,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "To generate task-based records (such as Incidents) directly through the Service Catalog, which component should be used?",
+    options: [
+      "Catalog Item",
+      "Order Guide",
+      "Record Producer",
+      "Variable Set",
+    ],
+    correct: 2,
+    explanation: "A Record Producer is a catalog component specifically designed to create records in any task-based table directly from the Service Catalog. Unlike standard catalog items that create REQ/RITM records, a Record Producer can directly create an Incident, Change, Problem, or any other task record.",
+    explanation_pt: "Um Record Producer é um componente de catálogo projetado especificamente para criar registros em qualquer tabela baseada em task diretamente do Service Catalog. Ao contrário dos catalog items padrão que criam registros REQ/RITM, um Record Producer pode criar diretamente um Incident, Change, Problem ou qualquer outro registro de task.",
+  },
+  {
+    id: 93,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "What are the four stages in the Service Catalog request management process?",
+    options: [
+      "Submit, Review, Approve, Close",
+      "Submittal, Approval, Fulfillment, Closure",
+      "Create, Assign, Fulfill, Archive",
+      "Request, Approval, Task, Complete",
+    ],
+    correct: 1,
+    explanation: "The four standard stages in the request lifecycle are: Submittal (user places the order), Approval (management approves if required), Fulfillment (the work is performed), and Closure (request is completed and closed). This lifecycle applies to REQ and RITM records.",
+    explanation_pt: "Os quatro estágios padrão no ciclo de vida de uma solicitação são: Submittal (usuário faz o pedido), Approval (gestão aprova se necessário), Fulfillment (o trabalho é realizado) e Closure (a solicitação é concluída e fechada). Esse ciclo de vida se aplica aos registros REQ e RITM.",
+  },
+  {
+    id: 94,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "Multiple Choice, Single Line Text, and Select Box are examples of which type of element in ServiceNow?",
+    options: [
+      "Order Guides",
+      "Request Types",
+      "Variable Types",
+      "Related Lists",
+    ],
+    correct: 2,
+    explanation: "Multiple Choice, Single Line Text, and Select Box are all Variable Types used in Service Catalog items and Record Producers. Variable types define the kind of input control rendered on the catalog form. Other types include Checkbox, Date, Multi-Line Text, and Lookup Select Box.",
+    explanation_pt: "Multiple Choice, Single Line Text e Select Box são todos tipos de Variable usados em catalog items e Record Producers do Service Catalog. Os tipos de variável definem o tipo de controle de entrada renderizado no formulário do catálogo. Outros tipos incluem Checkbox, Date, Multi-Line Text e Lookup Select Box.",
+  },
+  {
+    id: 95,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "Which statement best describes what a Metric does in ServiceNow?",
+    options: [
+      "A metric is a report gauge used on homepages to display real-time data",
+      "A metric is a time measurement used to report on workflow effectiveness",
+      "A metric measures and evaluates the effectiveness of IT service management processes",
+      "A metric is a comparative measurement used to report the effectiveness of flows and SLAs only",
+    ],
+    correct: 2,
+    explanation: "Metrics in ServiceNow measure and evaluate ITSM process effectiveness over time (e.g., mean time to resolve, first-call resolution rate). Gauges are visualization widgets on dashboards. Metrics provide the underlying calculated data; reports and dashboards visualize that data.",
+    explanation_pt: "Métricas no ServiceNow medem e avaliam a eficácia dos processos de ITSM ao longo do tempo (ex.: tempo médio de resolução, taxa de resolução no primeiro contato). Gauges são widgets de visualização em dashboards. As métricas fornecem os dados calculados subjacentes; relatórios e dashboards visualizam esses dados.",
+  },
+  {
+    id: 96,
+    domain: "Self Service & Automation",
+    type: "multiple",
+    question: "Reports can be created from which places in the platform? (Choose 2)",
+    options: [
+      "A list column heading (right-click > Create Report)",
+      "The Metrics module",
+      "The Statistics module",
+      "The View/Run module in the Reports application",
+    ],
+    correct: [0, 3],
+    explanation: "Reports can be initiated from: (A) a list column heading — right-clicking a column header offers 'Create Report'; and (D) the View/Run module in the Reports application. There is no standalone Statistics module in standard ServiceNow navigation.",
+    explanation_pt: "Relatórios podem ser iniciados a partir de: (A) um cabeçalho de coluna de lista — clicar com o botão direito em um cabeçalho de coluna oferece 'Create Report'; e (D) o módulo View/Run no aplicativo Reports. Não há um módulo Statistics independente na navegação padrão do ServiceNow.",
+  },
+  {
+    id: 97,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "How are Events triggered in ServiceNow?",
+    options: [
+      "Only through scheduled jobs",
+      "Only through Business Rules",
+      "Through user actions, scripts (Business Rules, Script Includes), and workflows/flows",
+      "Only through notification rules",
+    ],
+    correct: 2,
+    explanation: "Events can be triggered in multiple ways: user actions on records, server-side scripts (Business Rules, Script Includes) using gs.eventQueue(), workflows/Flow Designer actions, or scheduled jobs. This makes events a flexible, loosely-coupled mechanism for triggering downstream actions.",
+    explanation_pt: "Events podem ser acionados de múltiplas formas: ações do usuário em registros, scripts do lado do servidor (Business Rules, Script Includes) usando gs.eventQueue(), ações de workflows/Flow Designer ou tarefas agendadas. Isso torna os events um mecanismo flexível e desacoplado para acionar ações subsequentes.",
+  },
+  {
+    id: 98,
+    domain: "Self Service & Automation",
+    type: "single",
+    question: "Can a Scheduled Job in ServiceNow perform client-side form validation on a recurring schedule?",
+    options: [
+      "Yes, using the Run Script field in the Scheduled Job",
+      "Yes, using the System Scheduler with a client-side trigger",
+      "No — Scheduled Jobs run server-side and cannot perform client-side form validation",
+      "Yes, but only for forms in the Service Portal",
+    ],
+    correct: 2,
+    explanation: "Scheduled Jobs run entirely on the server side. They cannot interact with or validate client-side form elements. Client Scripts run in the browser during user interaction, not on a schedule. This combination simply cannot be done with Scheduled Jobs.",
+    explanation_pt: "Scheduled Jobs são executadas inteiramente no lado do servidor. Elas não podem interagir com ou validar elementos de formulário do lado do cliente. Client Scripts são executados no navegador durante a interação do usuário, não em um agendamento. Essa combinação simplesmente não pode ser feita com Scheduled Jobs.",
+  },
+
+  // ── Database Management and Platform Security ──────────────────────────────
+  {
+    id: 99,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "What does an Access Control (ACL) rule specify?",
+    options: [
+      "Groups, Conditional Expressions, and Workflows",
+      "Table Schema, CRUD operations, and User Authentication methods",
+      "The object and operation being secured, and the permissions required to access it",
+      "Only the security_admin role requirement for each table",
+    ],
+    correct: 2,
+    explanation: "Every ACL rule defines: the Object (table, field, or record) and Operation (create, read, write, delete) being protected; and the Permissions required (a combination of roles, conditions, and scripts that must ALL evaluate to true for access to be granted).",
+    explanation_pt: "Cada regra ACL define: o Object (tabela, campo ou registro) e Operation (create, read, write, delete) sendo protegidos; e as Permissions necessárias (uma combinação de roles, condições e scripts que devem TODOS ser avaliados como verdadeiros para que o acesso seja concedido).",
+  },
+  {
+    id: 100,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "In what order are Access Control rules evaluated for a table?",
+    options: [
+      "Wildcard (*) first, then parent table name, then exact table name",
+      "Exact table name first, then parent table name, then wildcard (*)",
+      "Parent table name first, then exact table name, then wildcard (*)",
+      "Wildcard (*) first, then exact table name, then parent table name",
+    ],
+    correct: 1,
+    explanation: "ACL evaluation goes from most specific to least specific: first it checks for a rule matching the exact table name, then the parent table name (for inherited tables), and finally wildcard (*) rules as a catch-all fallback. More specific rules always take precedence.",
+    explanation_pt: "A avaliação de ACL vai do mais específico para o menos específico: primeiro verifica uma regra correspondente ao nome exato da tabela, depois o nome da tabela pai (para tabelas herdadas) e finalmente regras curinga (*) como fallback geral. Regras mais específicas sempre têm precedência.",
+  },
+  {
+    id: 101,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "In what three ways can ACL permissions be defined in ServiceNow?",
+    options: [
+      "Users, Groups, and Conditions",
+      "Roles, Conditional Expressions, and Scripts",
+      "Tables, Fields, and Records",
+      "Read, Write, and Delete operations",
+    ],
+    correct: 1,
+    explanation: "An ACL rule's permission check has three independent gates: (1) Roles — the user must have at least one required role; (2) Conditions — a condition expression must evaluate to true; (3) Script — a script must return true. ALL specified gates must pass for access to be granted.",
+    explanation_pt: "A verificação de permissão de uma regra ACL tem três portões independentes: (1) Roles — o usuário deve ter pelo menos uma role necessária; (2) Conditions — uma expressão de condição deve ser avaliada como verdadeira; (3) Script — um script deve retornar verdadeiro. TODOS os portões especificados devem passar para que o acesso seja concedido.",
+  },
+  {
+    id: 102,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "Which role is required to create or modify Access Control (ACL) rules in ServiceNow?",
+    options: [
+      "admin",
+      "itil",
+      "security_admin",
+      "acl_manager",
+    ],
+    correct: 2,
+    explanation: "The security_admin role is an elevated privilege specifically required to create, edit, or delete ACL rules. Even the admin role cannot modify ACLs without first elevating to security_admin. This separation of duties protects the security model from accidental changes.",
+    explanation_pt: "A role security_admin é um privilégio elevado especificamente necessário para criar, editar ou excluir regras ACL. Mesmo a role admin não pode modificar ACLs sem primeiro elevar para security_admin. Essa separação de funções protege o modelo de segurança de alterações acidentais.",
+  },
+  {
+    id: 103,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "After the high-security plugin is activated, what is an 'elevated privilege' in ServiceNow?",
+    options: [
+      "A privilege used to promote extension tables to base tables",
+      "A role that enables the ITIL role to have admin-type access",
+      "A role that grants special permissions for the duration of the login session only",
+      "Any user who has been assigned the Admin role permanently",
+    ],
+    correct: 2,
+    explanation: "Elevated privileges (like security_admin) are session-scoped — they are granted for that login session only and are not permanently stored on the user record. This reduces the risk window and enforces least-privilege principles. Users must re-elevate in each new session.",
+    explanation_pt: "Privilégios elevados (como security_admin) têm escopo de sessão — são concedidos apenas para aquela sessão de login e não são armazenados permanentemente no registro do usuário. Isso reduz a janela de risco e impõe os princípios de menor privilégio. Os usuários devem elevar novamente em cada nova sessão.",
+  },
+  {
+    id: 104,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "What is a Role in ServiceNow?",
+    options: [
+      "A record in the Role [sys_user_role] table that grants specific permissions",
+      "A record in the Role [user_sys_role] table",
+      "A persona used in Live Feed Chat sessions",
+      "A set of modules associated with a particular application",
+    ],
+    correct: 0,
+    explanation: "Roles are stored as records in the sys_user_role table. Each role record defines a named permission set that can be assigned to users or groups. Roles can also contain other roles (inheritance), and access granted to a parent role flows down to any role that contains it.",
+    explanation_pt: "Roles são armazenadas como registros na tabela sys_user_role. Cada registro de role define um conjunto de permissões nomeado que pode ser atribuído a usuários ou grupos. Roles também podem conter outras roles (herança), e o acesso concedido a uma role pai flui para qualquer role que a contenha.",
+  },
+  {
+    id: 105,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "Can roles contain other roles in ServiceNow?",
+    options: [
+      "No, roles are flat and cannot be nested",
+      "Yes — a role may contain other roles, and access granted to that role is automatically granted to any role that contains it",
+      "Yes, but only up to two levels of nesting",
+      "Yes, but the contained roles must be from the same application scope",
+    ],
+    correct: 1,
+    explanation: "Role inheritance is a core ServiceNow feature. A role can include other roles, and any permissions granted to the included role are automatically inherited by the containing role. For example, the admin role contains many sub-roles, inheriting all their permissions.",
+    explanation_pt: "A herança de roles é uma funcionalidade central do ServiceNow. Uma role pode incluir outras roles, e quaisquer permissões concedidas à role incluída são automaticamente herdadas pela role que a contém. Por exemplo, a role admin contém muitas sub-roles, herdando todas as suas permissões.",
+  },
+  {
+    id: 106,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "What is the best practice for assigning roles to users in ServiceNow?",
+    options: [
+      "Assign roles directly to individual users for granular control",
+      "Assign roles to Groups, then add users to those Groups",
+      "Assign all roles to a single shared admin account",
+      "Create one unique role per user to maximize security",
+    ],
+    correct: 1,
+    explanation: "Best practice is to assign roles to Groups, then add Users to those groups. This provides scalable, auditable access control. When a user's access needs change, you change their group membership rather than individual role assignments, which is far easier to maintain.",
+    explanation_pt: "A melhor prática é atribuir roles a Groups e depois adicionar Users a esses grupos. Isso fornece controle de acesso escalável e auditável. Quando o acesso de um usuário precisa mudar, você muda a associação de grupo dele em vez de atribuições individuais de roles, o que é muito mais fácil de manter.",
+  },
+  {
+    id: 107,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "Which authentication methods does ServiceNow support?",
+    options: [
+      "Only LDAP and local database",
+      "Only SAML 2.0 and OAuth 2.0",
+      "LDAP, SAML 2.0, OAuth 2.0, local database, MFA, and SSO",
+      "Only local database and multi-factor authentication",
+    ],
+    correct: 2,
+    explanation: "ServiceNow supports multiple authentication methods: Local Database (credentials stored in ServiceNow), LDAP (directory sync with Active Directory), SAML 2.0 (federated SSO), OAuth 2.0 (token-based API access), Multi-Factor Authentication (MFA), and Single Sign-On (SSO).",
+    explanation_pt: "O ServiceNow suporta múltiplos métodos de autenticação: Local Database (credenciais armazenadas no ServiceNow), LDAP (sincronização de diretório com Active Directory), SAML 2.0 (SSO federado), OAuth 2.0 (acesso à API baseado em token), Multi-Factor Authentication (MFA) e Single Sign-On (SSO).",
+  },
+  {
+    id: 108,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "What are the two purposes of LDAP integration in ServiceNow?",
+    options: [
+      "Data Population and Authentication",
+      "Data Formatting and Authorization",
+      "Data Encryption and Authentication",
+      "Data Migration and Authorization",
+    ],
+    correct: 0,
+    explanation: "LDAP integration in ServiceNow serves two distinct purposes: (1) Data Population — synchronizing user and group records from LDAP/Active Directory into ServiceNow tables automatically; and (2) Authentication — validating user credentials against the LDAP/AD server at login time.",
+    explanation_pt: "A integração LDAP no ServiceNow serve a dois propósitos distintos: (1) Data Population — sincronizar automaticamente registros de usuários e grupos do LDAP/Active Directory para tabelas do ServiceNow; e (2) Authentication — validar as credenciais do usuário no servidor LDAP/AD no momento do login.",
+  },
+  {
+    id: 109,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "Which field exists on every ServiceNow record and contains a globally unique identifier?",
+    options: [
+      "sys_number",
+      "sc_req_item",
+      "sys_id",
+      "sys_number_id",
+    ],
+    correct: 2,
+    explanation: "sys_id is the globally unique identifier (GUID) for every record in every table in ServiceNow. It is a 32-character hexadecimal string. Every ServiceNow record has a sys_id — it is the primary key used for all references, relationships, and API calls.",
+    explanation_pt: "sys_id é o identificador globalmente único (GUID) para cada registro em cada tabela no ServiceNow. É uma string hexadecimal de 32 caracteres. Todo registro do ServiceNow tem um sys_id — é a chave primária usada para todas as referências, relacionamentos e chamadas de API.",
+  },
+  {
+    id: 110,
+    domain: "Database Management and Platform Security",
+    type: "single",
+    question: "Which tool is used to create and manage relationships between Configuration Items in the CMDB?",
+    options: [
+      "Relationship Builder module",
+      "CI Relationship Editor",
+      "CMDB Import Set",
+      "Dependency Map viewer",
+    ],
+    correct: 1,
+    explanation: "The CI Relationship Editor is the tool used to create, view, and manage relationships between CIs in the CMDB. It provides a visual interface to define how CIs depend on or connect to each other (e.g., 'Runs on', 'Hosted by', 'Connects to').",
+    explanation_pt: "O CI Relationship Editor é a ferramenta usada para criar, visualizar e gerenciar relacionamentos entre CIs no CMDB. Ele fornece uma interface visual para definir como os CIs dependem ou se conectam entre si (ex.: 'Runs on', 'Hosted by', 'Connects to').",
+  },
+
+  // ── Data Migration and Integration ────────────────────────────────────────
+  {
+    id: 111,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "What is a Transform Map in ServiceNow?",
+    options: [
+      "A map used to store the history of incident records",
+      "A map used to add data to encrypted fields",
+      "A map that triggers Business Rules before data is sent via web service",
+      "A map that determines relationships between fields in an Import Set and fields in a target table",
+    ],
+    correct: 3,
+    explanation: "A Transform Map defines the field-level mapping between the Import Set (staging) table and the target production table. It also contains transformation scripts and coalesce field definitions. Without a Transform Map, imported data stays in the staging table and never reaches the target.",
+    explanation_pt: "Um Transform Map define o mapeamento em nível de campo entre a tabela Import Set (staging) e a tabela de produção alvo. Ele também contém scripts de transformação e definições de campos coalesce. Sem um Transform Map, os dados importados ficam na tabela de staging e nunca chegam ao destino.",
+  },
+  {
+    id: 112,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "During an import, a field is marked as 'coalesce'. What happens when a matching record IS found in the target table?",
+    options: [
+      "The existing record is updated with the imported information",
+      "A new duplicate record is created alongside the existing one",
+      "The import is rejected and the record is skipped",
+      "The system creates a new Transform Map automatically",
+    ],
+    correct: 0,
+    explanation: "Coalesce designates one or more fields as natural keys for matching. When a match IS found: the existing record is updated (no duplicate created). When a match is NOT found: a new record is inserted. This is one of the most tested Import Set topics on the CSA exam.",
+    explanation_pt: "Coalesce designa um ou mais campos como chaves naturais para correspondência. Quando uma correspondência É encontrada: o registro existente é atualizado (sem duplicata criada). Quando uma correspondência NÃO é encontrada: um novo registro é inserido. Este é um dos tópicos de Import Set mais testados no exame CSA.",
+  },
+  {
+    id: 113,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "Which statement about reusing a Transform Map is correct?",
+    options: [
+      "An existing Transform Map can only be used once on a given Import Set table",
+      "An existing Transform Map can be used multiple times on the same or different Import Set tables",
+      "A Transform Map is automatically deleted after a single use",
+      "Transform Maps can only be reused within the same application scope",
+    ],
+    correct: 1,
+    explanation: "A Transform Map is reusable — once created, it can be run against the same or different Import Set tables multiple times. This is useful for recurring data loads (e.g., nightly user sync from HR). Creating a new Transform Map each time is unnecessary.",
+    explanation_pt: "Um Transform Map é reutilizável — uma vez criado, pode ser executado na mesma ou em diferentes tabelas Import Set várias vezes. Isso é útil para cargas de dados recorrentes (ex.: sincronização noturna de usuários do RH). Criar um novo Transform Map a cada vez é desnecessário.",
+  },
+  {
+    id: 114,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "What is the correct sequence of steps for loading data using Import Sets?",
+    options: [
+      "Create Transform Map → Load Data → Run Transform",
+      "Load Data → Run Transform → Create Transform Map",
+      "Load Data → Create Transform Map → Run Transform",
+      "Create Import Set → Load Data → Preview → Run Transform",
+    ],
+    correct: 2,
+    explanation: "The three-step data import process is: (1) Load Data — upload the source file to create the staging Import Set table; (2) Create Transform Map — define how staging fields map to target table fields and set coalesce keys; (3) Run Transform — move data from staging to the target table.",
+    explanation_pt: "O processo de importação de dados em três etapas é: (1) Load Data — carregar o arquivo fonte para criar a tabela de staging Import Set; (2) Create Transform Map — definir como os campos de staging mapeiam para os campos da tabela alvo e definir chaves coalesce; (3) Run Transform — mover os dados do staging para a tabela alvo.",
+  },
+  {
+    id: 115,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "When should Coalesce fields be designated on a Transform Map?",
+    options: [
+      "After running the Transform",
+      "Before running the Transform, during Transform Map configuration",
+      "Only during the initial Load Data step",
+      "At any point, even after the transform has already run",
+    ],
+    correct: 1,
+    explanation: "Coalesce fields must be designated on the Transform Map BEFORE running the transform. They are a configuration property of the field mapping that tells the transform engine what to use as the matching key. They cannot be applied retroactively.",
+    explanation_pt: "Os campos Coalesce devem ser designados no Transform Map ANTES de executar o transform. Eles são uma propriedade de configuração do mapeamento de campo que informa ao mecanismo de transformação o que usar como chave de correspondência para encontrar registros existentes. Eles não podem ser aplicados retroativamente.",
+  },
+  {
+    id: 116,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "What is the purpose of the Mapping Assist tool when creating a Transform Map?",
+    options: [
+      "Mapping fields using the Import Log for error detection",
+      "Mapping fields using Transform History for auditing",
+      "Mapping fields using SLA conditions",
+      "Providing field-level auto-mapping suggestions between staging and target table columns",
+    ],
+    correct: 3,
+    explanation: "Mapping Assist analyzes the staging table column names and suggests corresponding target table field mappings automatically. It speeds up Transform Map creation by auto-suggesting the most likely field mappings, which administrators can accept or override.",
+    explanation_pt: "Mapping Assist analisa os nomes das colunas da tabela de staging e sugere mapeamentos de campos correspondentes na tabela alvo automaticamente. Ele acelera a criação do Transform Map sugerindo automaticamente os mapeamentos de campos mais prováveis, que os administradores podem aceitar ou substituir.",
+  },
+  {
+    id: 117,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "What are Update Sets used for in ServiceNow?",
+    options: [
+      "Loading transactional data (Incidents, users, CIs) between instances",
+      "Capturing and transferring configuration changes between instances (dev → test → prod)",
+      "Updating the ServiceNow platform to a newer version",
+      "Synchronizing CMDB data from external discovery tools",
+    ],
+    correct: 1,
+    explanation: "Update Sets capture configuration changes (Business Rules, UI Policies, Forms, Catalog Items, Workflows, Scripts, etc.) made in one instance and package them for migration to another. They do NOT capture transactional data. The typical path is: Development → Test → Production.",
+    explanation_pt: "Update Sets capturam mudanças de configuração (Business Rules, UI Policies, Forms, Catalog Items, Workflows, Scripts, etc.) feitas em uma instância e as empacotam para migração para outra. Elas NÃO capturam dados transacionais. O caminho típico é: Development → Test → Production.",
+  },
+  {
+    id: 118,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "What type of records are captured in an Update Set?",
+    options: [
+      "All record changes including Incidents and user records",
+      "Configuration changes only — scripts, forms, catalog items, workflows",
+      "Only changes made to the sys_user table",
+      "Only records created by users with the admin role",
+    ],
+    correct: 1,
+    explanation: "Update Sets capture CONFIGURATION artifacts only — Business Rules, UI Policies, Client Scripts, Form Layouts, Catalog Items, Workflows, Script Includes, etc. Transactional DATA (Incidents, Problems, Users, CMDB records) is NOT captured in Update Sets. This distinction is critical and frequently tested.",
+    explanation_pt: "Update Sets capturam APENAS artefatos de CONFIGURAÇÃO — Business Rules, UI Policies, Client Scripts, Form Layouts, Catalog Items, Workflows, Script Includes, etc. DADOS transacionais (Incidents, Problems, Users, registros CMDB) NÃO são capturados em Update Sets. Essa distinção é fundamental e frequentemente testada.",
+  },
+  {
+    id: 119,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "When multiple Update Sets have modified the same configuration object and are merged, which change is preserved?",
+    options: [
+      "The oldest (first) change always wins",
+      "The most recently modified change wins",
+      "All changes are merged equally with no conflicts",
+      "The change with the lowest Order value wins",
+    ],
+    correct: 1,
+    explanation: "When multiple Update Sets have modified the same object and are merged or committed, the most recent change wins (last-write-wins). This is why the Preview step is critical — it surfaces these conflicts before they are committed, allowing administrators to resolve them intentionally.",
+    explanation_pt: "Quando múltiplos Update Sets modificaram o mesmo objeto e são mesclados ou confirmados, a mudança mais recente vence (last-write-wins). É por isso que a etapa de Preview é fundamental — ela expõe esses conflitos antes de serem confirmados, permitindo que os administradores os resolvam intencionalmente.",
+  },
+  {
+    id: 120,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "How are Workflows and Flow Designer flows moved between ServiceNow instances?",
+    options: [
+      "Using Update Sets",
+      "Using Transform Maps",
+      "Using Application Sets",
+      "Workflows cannot be moved between instances",
+    ],
+    correct: 0,
+    explanation: "Workflows and Flow Designer flows are configuration artifacts and are therefore captured and moved between instances using Update Sets — the same mechanism as all other configuration changes. Transform Maps are for data import field mapping, not configuration migration.",
+    explanation_pt: "Workflows e flows do Flow Designer são artefatos de configuração e, portanto, são capturados e movidos entre instâncias usando Update Sets — o mesmo mecanismo de todas as outras mudanças de configuração. Transform Maps são para mapeamento de campos de importação de dados, não para migração de configuração.",
+  },
+  {
+    id: 121,
+    domain: "Data Migration and Integration",
+    type: "single",
+    question: "Which plugin needs to be activated to support multiple languages for Service Catalog item content?",
+    options: [
+      "Localization Framework plugin (I18N)",
+      "Translation Framework plugin",
+      "Multiple Language Framework plugin",
+      "Language AI Framework plugin",
+    ],
+    correct: 0,
+    explanation: "The Localization Framework plugin (I18N) enables multi-language support for content in ServiceNow, including Service Catalog items. Once activated, administrators can provide translations for catalog item names, descriptions, and variable labels for different locales.",
+    explanation_pt: "O plugin Localization Framework (I18N) habilita o suporte a múltiplos idiomas para conteúdo no ServiceNow, incluindo itens do Service Catalog. Uma vez ativado, os administradores podem fornecer traduções para nomes, descrições e rótulos de variáveis de catalog items para suportar usuários em diferentes localidades.",
+  },
 ];
 
-// Domain weights for the exam simulation
+// Official CSA exam domain weights
 export const domainWeights: Record<Domain, number> = {
-  "Data Administration": 0.30,
-  "User Interface & Navigation": 0.20,
-  "Service Automation": 0.20,
-  "Scripting & Development": 0.20,
-  "Users & Tasks": 0.10,
+  "Platform Overview and Navigation":            0.07,
+  "Instance Configuration":                      0.11,
+  "Configuring Applications for Collaboration":  0.20,
+  "Self Service & Automation":                   0.17,
+  "Database Management and Platform Security":   0.27,
+  "Data Migration and Integration":              0.18,
 };
 
 // Exam configuration
 export const EXAM_CONFIG = {
-  totalQuestions: 61,
+  totalQuestions: 60,
   timeLimitMinutes: 90,
   passingPercentage: 70,
 };
 
 /**
- * Select questions for the hard mode simulation.
- * Returns all available questions shuffled (61 questions from official CSA course material).
+ * Select 60 domain-weighted questions for the exam simulation.
+ * Mirrors the official CSA exam domain distribution.
  */
 export function selectExamQuestions(): Question[] {
-  return [...questions].sort(() => Math.random() - 0.5);
+  const pool: Question[] = [];
+  for (const [domain, weight] of Object.entries(domainWeights) as [Domain, number][]) {
+    const domainQs = [...questions.filter((q) => q.domain === domain)].sort(() => Math.random() - 0.5);
+    const target = Math.round(weight * EXAM_CONFIG.totalQuestions);
+    pool.push(...domainQs.slice(0, Math.min(target, domainQs.length)));
+  }
+  return pool.sort(() => Math.random() - 0.5);
 }
 
 /** Shuffle and return all questions for free mode. */

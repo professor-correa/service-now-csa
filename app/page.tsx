@@ -4,11 +4,12 @@ import Link from "next/link";
 import { questions, EXAM_CONFIG } from "@/data/questions";
 
 const domains = [
-  { name: "Data Administration",       pct: 30, color: "var(--domain-1)" },
-  { name: "User Interface & Navigation",pct: 20, color: "var(--domain-2)" },
-  { name: "Service Automation",         pct: 20, color: "var(--domain-3)" },
-  { name: "Scripting & Development",    pct: 20, color: "var(--domain-4)" },
-  { name: "Users & Tasks",              pct: 10, color: "var(--domain-5)" },
+  { name: "Platform Overview and Navigation",           pct: 7,  color: "var(--domain-1)" },
+  { name: "Instance Configuration",                     pct: 11, color: "var(--domain-2)" },
+  { name: "Configuring Applications for Collaboration", pct: 20, color: "var(--domain-3)" },
+  { name: "Self Service & Automation",                  pct: 17, color: "var(--domain-4)" },
+  { name: "Database Management and Platform Security",  pct: 27, color: "var(--domain-5)" },
+  { name: "Data Migration and Integration",             pct: 18, color: "var(--domain-6)" },
 ];
 
 export default function Home() {

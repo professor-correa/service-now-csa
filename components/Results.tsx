@@ -18,11 +18,12 @@ interface Props {
 }
 
 const domainColors: Record<string, string> = {
-  "Data Administration":        "var(--domain-1)",
-  "User Interface & Navigation":"var(--domain-2)",
-  "Service Automation":         "var(--domain-3)",
-  "Scripting & Development":    "var(--domain-4)",
-  "Users & Tasks":              "var(--domain-5)",
+  "Platform Overview and Navigation":           "var(--domain-1)",
+  "Instance Configuration":                     "var(--domain-2)",
+  "Configuring Applications for Collaboration": "var(--domain-3)",
+  "Self Service & Automation":                  "var(--domain-4)",
+  "Database Management and Platform Security":  "var(--domain-5)",
+  "Data Migration and Integration":             "var(--domain-6)",
 };
 
 function fmt(s: number) {

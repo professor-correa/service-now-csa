@@ -31,11 +31,12 @@
   --amber:        #d97706;
   --amber-soft:   rgba(217,119,6,0.08);
 
-  --domain-1: #2563eb;   /* Data Administration */
-  --domain-2: #0d9488;   /* UI & Navigation */
-  --domain-3: #4f46e5;   /* Service Automation */
-  --domain-4: #ea580c;   /* Scripting & Dev */
-  --domain-5: #7c3aed;   /* Users & Tasks */
+  --domain-1: #2563eb;   /* Platform Overview and Navigation */
+  --domain-2: #0d9488;   /* Instance Configuration */
+  --domain-3: #4f46e5;   /* Configuring Applications for Collaboration */
+  --domain-4: #ea580c;   /* Self Service & Automation */
+  --domain-5: #7c3aed;   /* Database Management and Platform Security */
+  --domain-6: #0f766e;   /* Data Migration and Integration */
 }
 
 * { box-sizing: border-box; }

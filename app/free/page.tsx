@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { getShuffledQuestions, Question } from "@/data/questions";
 import QuestionCard from "@/components/QuestionCard";
 import Results from "@/components/Results";
+import { recordAttempts } from "@/lib/stats";
 
 interface Answer { question: Question; selected: number[]; isCorrect: boolean; }
 
@@ -37,8 +38,10 @@ export default function FreePage() {
   const handleCheck = () => { if (selected.length > 0) setRevealed(true); };
 
   const handleNext = () => {
-    const ans = [...answers, { question: q, selected, isCorrect: isCorrect(q, selected) }];
+    const newAnswer = { question: q, selected, isCorrect: isCorrect(q, selected) };
+    const ans = [...answers, newAnswer];
     setAnswers(ans);
+    recordAttempts([newAnswer]);
     if (index + 1 >= questions.length) { setDone(true); return; }
     setIndex((i) => i + 1);
     setSelected([]);

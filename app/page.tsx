@@ -30,9 +30,18 @@ export default function Home() {
               ServiceNow CSA Prep
             </span>
           </div>
-          <span className="text-xs" style={{ color: "var(--text-muted)" }}>
-            {questions.length} practice questions
-          </span>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/stats"
+              className="text-xs font-medium"
+              style={{ color: "var(--blue)" }}
+            >
+              Your Stats
+            </Link>
+            <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+              {questions.length} practice questions
+            </span>
+          </div>
         </div>
       </header>
 

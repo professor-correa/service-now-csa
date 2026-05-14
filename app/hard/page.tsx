@@ -6,6 +6,7 @@ import { selectExamQuestions, Question, EXAM_CONFIG } from "@/data/questions";
 import QuestionCard from "@/components/QuestionCard";
 import Timer from "@/components/Timer";
 import Results from "@/components/Results";
+import { recordAttempts } from "@/lib/stats";
 
 interface Answer { question: Question; selected: number[]; isCorrect: boolean; }
 
@@ -49,12 +50,12 @@ export default function HardPage() {
   const finish = useCallback((expired = false) => {
     const elapsed = Math.floor((Date.now() - startRef.current) / 1000);
     setTimeTaken(expired ? totalSeconds : elapsed);
-    setAnswers(
-      questions.map((q, i) => {
-        const sel = selMap[i] ?? [];
-        return { question: q, selected: sel, isCorrect: isCorrect(q, sel) };
-      })
-    );
+    const finalAnswers = questions.map((q, i) => {
+      const sel = selMap[i] ?? [];
+      return { question: q, selected: sel, isCorrect: isCorrect(q, sel) };
+    });
+    setAnswers(finalAnswers);
+    recordAttempts(finalAnswers.filter((a) => a.selected.length > 0));
     setPhase("results");
   }, [questions, selMap, totalSeconds]);
 

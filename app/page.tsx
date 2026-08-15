@@ -3,13 +3,15 @@
 import Link from "next/link";
 import { questions, EXAM_CONFIG } from "@/data/questions";
 
+// `last` = score obtained in the last real CSA attempt (Exam Result Notification,
+// 10 Aug 2026) so the weakest domains are obvious at a glance.
 const domains = [
-  { name: "Platform Overview and Navigation",           pct: 7,  color: "var(--domain-1)" },
-  { name: "Instance Configuration",                     pct: 11, color: "var(--domain-2)" },
-  { name: "Configuring Applications for Collaboration", pct: 20, color: "var(--domain-3)" },
-  { name: "Self Service & Automation",                  pct: 17, color: "var(--domain-4)" },
-  { name: "Database Management and Platform Security",  pct: 27, color: "var(--domain-5)" },
-  { name: "Data Migration and Integration",             pct: 18, color: "var(--domain-6)" },
+  { name: "Platform Overview and Navigation",           pct: 7,  last: 75, color: "var(--domain-1)" },
+  { name: "Instance Configuration",                     pct: 11, last: 83, color: "var(--domain-2)" },
+  { name: "Configuring Applications for Collaboration", pct: 20, last: 67, color: "var(--domain-3)" },
+  { name: "Self Service & Automation",                  pct: 17, last: 50, color: "var(--domain-4)" },
+  { name: "Database Management and Platform Security",  pct: 27, last: 61, color: "var(--domain-5)" },
+  { name: "Data Migration and Integration",             pct: 18, last: 75, color: "var(--domain-6)" },
 ];
 
 export default function Home() {
@@ -166,24 +168,41 @@ export default function Home() {
 
         {/* Domain breakdown */}
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--text-muted)" }}>
-            Exam Domains
-          </h2>
+          <div className="flex items-baseline justify-between mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-widest" style={{ color: "var(--text-muted)" }}>
+              Exam Domains
+            </h2>
+            <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+              Select a domain to drill it — &quot;Last&quot; is your score on the 10 Aug 2026 attempt
+            </span>
+          </div>
           <div
             className="rounded-lg divide-y"
             style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
           >
             {domains.map((d, i) => {
               const count = questions.filter((q) => q.domain === d.name).length;
+              const weak = d.last < 70;
               return (
-                <div
+                <Link
                   key={d.name}
+                  href={`/free?domain=${encodeURIComponent(d.name)}`}
                   className="flex items-center gap-4 px-5 py-3"
                   style={{ borderBottom: i < domains.length - 1 ? "1px solid var(--border)" : "none" }}
                 >
                   <div className="w-1 h-8 rounded-full shrink-0" style={{ background: d.color }} />
                   <span className="flex-1 text-sm" style={{ color: "var(--text)" }}>{d.name}</span>
-                  <span className="text-xs" style={{ color: "var(--text-muted)" }}>{count} questions</span>
+                  <span
+                    className="text-xs px-2 py-0.5 rounded shrink-0"
+                    style={{
+                      background: weak ? "var(--red-soft, rgba(220,38,38,0.12))" : "var(--bg-surface)",
+                      color: weak ? "var(--red)" : "var(--text-muted)",
+                    }}
+                    title="Score in your last CSA attempt"
+                  >
+                    Last {d.last}%
+                  </span>
+                  <span className="text-xs shrink-0" style={{ color: "var(--text-muted)" }}>{count} questions</span>
                   <div className="w-24 flex items-center gap-2">
                     <div className="flex-1 h-1.5 rounded-full" style={{ background: "var(--border)" }}>
                       <div className="h-full rounded-full" style={{ width: `${d.pct}%`, background: d.color }} />
@@ -192,7 +211,7 @@ export default function Home() {
                       {d.pct}%
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

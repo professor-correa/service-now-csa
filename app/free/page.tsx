@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { getShuffledQuestions, Question } from "@/data/questions";
+import { Suspense, useState, useCallback } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { getShuffledQuestions, isDomain, Question } from "@/data/questions";
 import QuestionCard from "@/components/QuestionCard";
 import Results from "@/components/Results";
 import { recordAttempts } from "@/lib/stats";
@@ -16,8 +16,18 @@ function isCorrect(q: Question, sel: number[]): boolean {
 }
 
 export default function FreePage() {
+  return (
+    <Suspense fallback={null}>
+      <FreeSession />
+    </Suspense>
+  );
+}
+
+function FreeSession() {
   const router = useRouter();
-  const [questions]   = useState<Question[]>(() => getShuffledQuestions());
+  const domainParam = useSearchParams().get("domain");
+  const domain = isDomain(domainParam) ? domainParam : null;
+  const [questions]   = useState<Question[]>(() => getShuffledQuestions(domain));
   const [index, setIndex]     = useState(0);
   const [selected, setSelected] = useState<number[]>([]);
   const [revealed, setRevealed] = useState(false);
@@ -53,7 +63,7 @@ export default function FreePage() {
   if (done) {
     return (
       <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
-        <PageHeader />
+        <PageHeader domain={domain} />
         <Results answers={answers} onRetry={retry} onHome={() => router.push("/")} mode="free" />
       </div>
     );
@@ -63,7 +73,7 @@ export default function FreePage() {
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: "var(--bg)" }}>
-      <PageHeader />
+      <PageHeader domain={domain} />
 
       {/* Progress */}
       <div style={{ background: "var(--border)", height: "2px" }}>
@@ -131,7 +141,7 @@ export default function FreePage() {
   );
 }
 
-function PageHeader() {
+function PageHeader({ domain }: { domain?: string | null }) {
   const router = useRouter();
   return (
     <header
@@ -147,11 +157,16 @@ function PageHeader() {
       </button>
       <span style={{ color: "var(--border-light)" }}>|</span>
       <span className="text-sm font-semibold" style={{ color: "var(--text)" }}>Practice Session</span>
+      {domain && (
+        <span className="text-xs truncate" style={{ color: "var(--text-muted)" }}>
+          — {domain}
+        </span>
+      )}
       <span
-        className="ml-auto text-xs px-2 py-0.5 rounded"
+        className="ml-auto text-xs px-2 py-0.5 rounded shrink-0"
         style={{ background: "var(--blue-soft)", color: "var(--blue)" }}
       >
-        Free Mode
+        {domain ? "Domain Drill" : "Free Mode"}
       </span>
     </header>
   );

@@ -1,24 +1,10 @@
-export type QuestionType = "single" | "multiple";
-export type Domain =
-  | "Platform Overview and Navigation"
-  | "Instance Configuration"
-  | "Configuring Applications for Collaboration"
-  | "Self Service & Automation"
-  | "Database Management and Platform Security"
-  | "Data Migration and Integration";
+import { Question, Domain } from "./types";
+import { snafQuestions } from "./snaf";
 
-export interface Question {
-  id: number;
-  domain: Domain;
-  type: QuestionType;
-  question: string;
-  options: string[];
-  correct: number | number[]; // index(es) of correct answer(s)
-  explanation: string;
-  explanation_pt: string;
-}
+export type { Question, Domain, QuestionType } from "./types";
 
-export const questions: Question[] = [
+/** Original question bank (CSA-style questions written before the SNAF decks). */
+const baseQuestions: Question[] = [
   {
     id: 1,
     domain: "Platform Overview and Navigation",
@@ -65,7 +51,7 @@ export const questions: Question[] = [
   },
   {
     id: 4,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "When does a Business Rule execute in ServiceNow?",
     options: [
@@ -95,7 +81,7 @@ export const questions: Question[] = [
   },
   {
     id: 6,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "multiple",
     question: "What are the options that can be set to determine when a Business Rule executes? (Choose 4)",
     options: [
@@ -178,7 +164,7 @@ export const questions: Question[] = [
   },
   {
     id: 11,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
     question: "What process allows users to create, categorize, review, approve and browse important information in a centralized location that is shared by the entire organization?",
     options: [
@@ -194,7 +180,7 @@ export const questions: Question[] = [
   },
   {
     id: 12,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Which feature can be used to give users the choice to easily populate the most-used fields for a specific table?",
     options: [
@@ -239,7 +225,7 @@ export const questions: Question[] = [
   },
   {
     id: 15,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
     question: "In a Knowledge Base record, where can an administrator find the User Criteria for who can read the articles?",
     options: [
@@ -392,7 +378,7 @@ export const questions: Question[] = [
   },
   {
     id: 25,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
     question: "As an IT employee what interface would you use, if you wanted to browse internal IT documentation, like troubleshooting scripts and FAQs?",
     options: [
@@ -483,7 +469,7 @@ export const questions: Question[] = [
   },
   {
     id: 31,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Which statement correctly describes the differences between a Client Script and a Business Rule?",
     options: [
@@ -498,7 +484,7 @@ export const questions: Question[] = [
   },
   {
     id: 32,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
     question: "What is used to determine user access to knowledge bases or a knowledge article?",
     options: [
@@ -513,7 +499,7 @@ export const questions: Question[] = [
   },
   {
     id: 33,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Typically, based on Best Practice, which of the following interactions is used to make fields mandatory, read only, and/or hidden?",
     options: [
@@ -543,7 +529,7 @@ export const questions: Question[] = [
   },
   {
     id: 35,
-    domain: "Instance Configuration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What action can be performed by selecting the Additional actions menu in Table Builder?",
     options: [
@@ -666,7 +652,7 @@ export const questions: Question[] = [
   },
   {
     id: 43,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
     question: "Which tab on the knowledge base record would you use to identify the sets of users who are able to read articles in that knowledge base?",
     options: [
@@ -711,7 +697,7 @@ export const questions: Question[] = [
   },
   {
     id: 46,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Where do UI Policies run?",
     options: [
@@ -741,7 +727,7 @@ export const questions: Question[] = [
   },
   {
     id: 48,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "A customer asks you to make the following updates to a form:\n• When Caller field is populated, automatically look up caller location and load it in the Location field.\n• Add notice at the top of the page when the record is submitted.\nWhat type of script would you use to meet this requirement?",
     options: [
@@ -844,8 +830,9 @@ export const questions: Question[] = [
       "Ensures user has access to the application, before evaluating access to a module within the application",
     ],
     correct: 2,
-    explanation: "ServiceNow evaluates Access Control rules in a specific order from most general to most specific: application → table (row) → field. The table-level ACL must pass first before field-level ACLs are even checked. This hierarchical evaluation ensures broader permissions are validated before granular ones.",
-    explanation_pt: "O ServiceNow avalia regras de Controle de Acesso em uma ordem específica, do mais geral para o mais específico: aplicação → tabela (linha) → campo. O ACL no nível de tabela deve ser aprovado primeiro antes que os ACLs no nível de campo sejam verificados. Essa avaliação hierárquica garante que permissões mais amplas sejam validadas antes das granulares.",
+    explanation: "The object is matched against TABLE ACL rules first (from most specific to most general), and only then against FIELD ACL rules (again most specific to most general). A user must pass both the table and the field rule: failing the table rule denies access to every field in the table, even if the field rule would have passed.",
+    explanation_pt: "O objeto é comparado primeiro com as regras de ACL de TABELA (da mais específica para a mais geral) e só depois com as regras de CAMPO (também da mais específica para a mais geral). O usuário precisa passar tanto na regra de tabela quanto na de campo: falhar na de tabela nega o acesso a todos os campos, mesmo que a regra de campo fosse aprovada.",
+    source: "SNAF Module 4 · 4.2 Table access control evaluation",
   },
   {
     id: 55,
@@ -910,7 +897,7 @@ export const questions: Question[] = [
   },
   {
     id: 59,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "On a Catalog Task record, how would an administrator change the priority choice options?",
     options: [
@@ -940,7 +927,7 @@ export const questions: Question[] = [
   },
   {
     id: 61,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "How can an administrator modify the layout of a form using Table Builder?",
     options: [
@@ -967,8 +954,9 @@ export const questions: Question[] = [
       "Banner Frame, Filter Navigator, and Sidebar",
     ],
     correct: 1,
-    explanation: "The ServiceNow UI is divided into three fixed regions: the Banner Frame (top bar — global search, user menu, settings), the Application Navigator (left panel — app menus and modules), and the Content Frame (main working area — forms, lists, dashboards).",
-    explanation_pt: "A interface do ServiceNow é dividida em três regiões fixas: o Banner Frame (barra superior — busca global, menu do usuário, configurações), o Application Navigator (painel esquerdo — menus de aplicações e módulos) e o Content Frame (área de trabalho principal — formulários, listas, dashboards).",
+    explanation: "The core UI is divided into three fixed regions: the Banner Frame (top bar), the Application Navigator (left panel with app menus and modules) and the Content Frame (main working area). In the current Next Experience release these map to the header (search, application scope picker, sidebar, user menu), the All menu with its Filter navigator plus Favorites/History, and the content area.",
+    explanation_pt: "A interface core é dividida em três regiões fixas: o Banner Frame (barra superior), o Application Navigator (painel esquerdo com menus de aplicação e módulos) e o Content Frame (área principal de trabalho). Na release atual (Next Experience) elas correspondem ao header (busca, application scope picker, sidebar, user menu), ao menu All com Filter navigator e Favorites/History, e à área de conteúdo.",
+    source: "SNAF Module 0 · Basic Platform navigation",
   },
   {
     id: 63,
@@ -1004,16 +992,17 @@ export const questions: Question[] = [
     id: 65,
     domain: "Platform Overview and Navigation",
     type: "single",
-    question: "What are the categories available in the Settings Menu (gear icon) in ServiceNow?",
+    question: "Which basic instance settings are configured from the User menu > Preferences?",
     options: [
-      "General, Theme, Notifications, Lists, Forms, and Developer",
+      "Display, Accessibility, Notifications, Debugging, Language & Region, and User Experience",
       "General, Security, Notifications, Forms, Modules, and Developer",
-      "Profile, Accessibility, Lists, Forms, Workflows, and Notifications",
-      "General, Theme, Roles, Lists, Reports, and Developer",
+      "Profile, Roles, Groups, Lists, Workflows, and Notifications",
+      "Hardening, Scanner, Metrics, Best Practices, and Posture",
     ],
     correct: 0,
-    explanation: "The Settings menu contains six categories: General (language, accessibility), Theme (UI color schemes), Notifications (email/push preferences), Lists (list behavior), Forms (form behavior), and Developer (UI diagnostics — visible only with developer role).",
-    explanation_pt: "O menu de Configurações contém seis categorias: General (idioma, acessibilidade), Theme (esquemas de cores da UI), Notifications (preferências de email/push), Lists (comportamento de lista), Forms (comportamento de formulário) e Developer (diagnósticos de UI — visível apenas com a role de desenvolvedor).",
+    explanation: "To configure basic instance settings such as Display, Accessibility, Notifications, Debugging, Language & Region and User Experience, navigate to the User menu and select Preferences. Accessibility fields are enabled with toggle buttons under Preferences > Accessibility.",
+    explanation_pt: "Para configurar ajustes básicos da instância como Display, Accessibility, Notifications, Debugging, Language & Region e User Experience, navegue até o User menu e selecione Preferences. Os campos de acessibilidade são habilitados por toggles em Preferences > Accessibility.",
+    source: "SNAF Module 2 · 2.1 Branding your instance (notes)",
   },
   {
     id: 66,
@@ -1065,7 +1054,7 @@ export const questions: Question[] = [
   // ── Instance Configuration ─────────────────────────────────────────────────
   {
     id: 69,
-    domain: "Instance Configuration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "If the prefix of an Incident number needs to be changed, where would an administrator make this change?",
     options: [
@@ -1080,11 +1069,11 @@ export const questions: Question[] = [
   },
   {
     id: 70,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
-    question: "What role is required to add or remove fields from a list view?",
+    question: "Besides admin, which role allows a user to add or remove the fields shown in a list view for all users?",
     options: [
-      "admin",
+      "impersonator",
       "personalize_list",
       "itil",
       "list_admin",
@@ -1095,7 +1084,7 @@ export const questions: Question[] = [
   },
   {
     id: 71,
-    domain: "Instance Configuration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "Which of the following is true of a new table created by extending another table?",
     options: [
@@ -1110,7 +1099,7 @@ export const questions: Question[] = [
   },
   {
     id: 72,
-    domain: "Instance Configuration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What is the platform (API) name for the User table in ServiceNow?",
     options: [
@@ -1125,7 +1114,7 @@ export const questions: Question[] = [
   },
   {
     id: 73,
-    domain: "Instance Configuration",
+    domain: "Database Management and Platform Security",
     type: "single",
     question: "What are the two most commonly used core tables in the ServiceNow database?",
     options: [
@@ -1140,7 +1129,7 @@ export const questions: Question[] = [
   },
   {
     id: 74,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Buttons, form links, and context menu items on a ServiceNow form are all examples of what?",
     options: [
@@ -1155,7 +1144,7 @@ export const questions: Question[] = [
   },
   {
     id: 75,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "A UI Action with an Order of 110 will display where relative to a UI Action with an Order of 120?",
     options: [
@@ -1170,7 +1159,7 @@ export const questions: Question[] = [
   },
   {
     id: 76,
-    domain: "Instance Configuration",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "What is a Formatter in ServiceNow?",
     options: [
@@ -1187,7 +1176,7 @@ export const questions: Question[] = [
   // ── Configuring Applications for Collaboration ─────────────────────────────
   {
     id: 77,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "In what order should the elements of a filter condition be specified?",
     options: [
@@ -1202,7 +1191,7 @@ export const questions: Question[] = [
   },
   {
     id: 78,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "multiple",
     question: "Knowledge Base search results can be sorted by which of the following? (Choose 3)",
     options: [
@@ -1218,18 +1207,19 @@ export const questions: Question[] = [
   },
   {
     id: 79,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Self Service & Automation",
     type: "single",
-    question: "What are the four out-of-the-box knowledge base workflows available in a base ServiceNow instance?",
+    question: "Which four baseline knowledge flows control the publishing and retirement lifecycle of an article?",
     options: [
       "Draft, Review, Published, Retired",
-      "Instant Publish, Instant Retire, Approval Publish, Retire Knowledge",
+      "Knowledge – Approval Publish, Knowledge – Approval Retire, Knowledge – Instant Publish, Knowledge – Instant Retire",
       "Submit, Review, Approve, Publish",
       "Draft, Instant Publish, Peer Review, Archive",
     ],
     correct: 1,
-    explanation: "The four out-of-the-box knowledge workflows are: Instant Publish (immediate publication, no approval required), Instant Retire (immediate retirement), Approval Publish (requires approval before publishing), and Retire Knowledge (workflow-driven retirement process).",
-    explanation_pt: "Os quatro workflows de conhecimento prontos para uso são: Instant Publish (publicação imediata, sem aprovação), Instant Retire (retirada imediata), Approval Publish (requer aprovação antes de publicar) e Retire Knowledge (processo de retirada orientado por workflow).",
+    explanation: "The baseline lifecycle flows are Knowledge – Approval Publish (requests KB manager approval before publishing; the article stays in draft if rejected), Knowledge – Approval Retire (approval before retiring), Knowledge – Instant Publish (publishes immediately, no approval) and Knowledge – Instant Retire (retires immediately). Knowledge – Publish Knowledge and Knowledge – Retire Knowledge are SUBFLOWS used when defining your own custom flows.",
+    explanation_pt: "Os flows baseline do ciclo de vida são Knowledge – Approval Publish (pede aprovação do gerente da KB antes de publicar; o artigo fica em draft se rejeitado), Knowledge – Approval Retire (aprovação antes de aposentar), Knowledge – Instant Publish (publica imediatamente, sem aprovação) e Knowledge – Instant Retire (aposenta imediatamente). Knowledge – Publish Knowledge e Knowledge – Retire Knowledge são SUBFLOWS usados ao criar flows customizados.",
+    source: "SNAF Module 5 · 5.1 Knowledge Base: Flows (notes)",
   },
   {
     id: 80,
@@ -1248,7 +1238,7 @@ export const questions: Question[] = [
   },
   {
     id: 81,
-    domain: "Configuring Applications for Collaboration",
+    domain: "Platform Overview and Navigation",
     type: "single",
     question: "Right-clicking on a column header in a list view opens the Column Context Menu. Which actions are available?",
     options: [
@@ -1311,31 +1301,32 @@ export const questions: Question[] = [
     id: 85,
     domain: "Configuring Applications for Collaboration",
     type: "single",
-    question: "What are the states in the SLA task instance lifecycle?",
+    question: "Which values does the Stage field of a Task SLA record take?",
     options: [
-      "Start, Pause, Stop",
-      "Start, Hold, Stop",
       "Start, Pause, Stop, End",
-      "Start, Hold, Stop, End",
+      "In progress, Paused, Completed, Cancelled",
+      "Draft, Published, Retired, Archived",
+      "New, Active, Breached, Closed",
     ],
-    correct: 2,
-    explanation: "The SLA task instance goes through four states: Start (clock begins), Pause (clock pauses), Stop (task has met or breached the SLA condition), and End (the final terminal state). Both Pause and Stop are distinct steps in the full lifecycle.",
-    explanation_pt: "A instância de task do SLA passa por quatro estados: Start (o relógio começa), Pause (o relógio pausa), Stop (a task atingiu ou violou a condição do SLA) e End (o estado terminal final). Tanto Pause quanto Stop são etapas distintas no ciclo de vida completo.",
+    correct: 1,
+    explanation: "Do not confuse the SLA DEFINITION conditions (Start, Pause, Stop) with the Task SLA record itself: the running Task SLA reports its progress through the Stage field, whose values are In progress, Paused, Completed and Cancelled.",
+    explanation_pt: "Não confunda as condições da DEFINIÇÃO do SLA (Start, Pause, Stop) com o registro Task SLA em si: o Task SLA em execução informa seu progresso pelo campo Stage, cujos valores são In progress, Paused, Completed e Cancelled.",
   },
   {
     id: 86,
     domain: "Configuring Applications for Collaboration",
     type: "single",
-    question: "How can administrators reuse the same notification content across different delivery channels (email, mobile push, etc.)?",
+    question: "How can administrators reuse the same subject line and message body across several notifications?",
     options: [
-      "Configure Default notification content",
-      "Enable Actionable notification content",
-      "Provide Common notification content",
-      "Set up Related notification content",
+      "Create an Email Layout and reference it from each notification",
+      "Create an Email Template and reference it from each notification",
+      "Copy the notification record and edit the copy",
+      "Create a Notification Category and group the notifications under it",
     ],
-    correct: 2,
-    explanation: "Common notification content allows administrators to define shared content blocks that can be reused across multiple notifications and delivery channels. This reduces duplication and ensures consistent messaging regardless of how the notification is delivered.",
-    explanation_pt: "O conteúdo de notificação Common permite que os administradores definam blocos de conteúdo compartilhados que podem ser reutilizados em várias notificações e canais de entrega. Isso reduz a duplicação e garante mensagens consistentes independentemente de como a notificação é entregue.",
+    correct: 1,
+    explanation: "Email TEMPLATES (System Notification > Email > Templates) create reusable content for the subject line and message body; the notification references the template, and the template's Subject and Message are used unless overridden in the notification. Email LAYOUTS (System Policy > Email > Layouts, stored in sys_email_layout) are a different object: they insert the HTML branding around the body of one or more templates.",
+    explanation_pt: "Email TEMPLATES (System Notification > Email > Templates) criam conteúdo reutilizável para o assunto e o corpo da mensagem; a notificação referencia o template, e o Subject e o Message dele são usados, a menos que sejam sobrescritos na notificação. Email LAYOUTS (System Policy > Email > Layouts, armazenados em sys_email_layout) são outro objeto: inserem o HTML de identidade visual em volta do corpo de um ou mais templates.",
+    source: "SNAF Module 6 · 6.2 Using email layouts and templates with notifications",
   },
 
   // ── Self Service & Automation ──────────────────────────────────────────────
@@ -1411,8 +1402,9 @@ export const questions: Question[] = [
       "Service Catalog variables cannot affect the order price",
     ],
     correct: 2,
-    explanation: "Service Catalog variables are global by default, meaning they can be accessed across different catalog items via Variable Sets (reusable groups of variables). They are NOT restricted to Record Producers or Order Guides specifically.",
-    explanation_pt: "As variáveis do Service Catalog são globais por padrão, o que significa que podem ser acessadas em diferentes catalog items por meio de Variable Sets (grupos reutilizáveis de variáveis). Elas NÃO são restritas especificamente a Record Producers ou Order Guides.",
+    explanation: "Service Catalog variables are flagged as Global by default, which means the variable displays in ALL execution tasks of a requested item. Variables are defined once and can be used in multiple places, they can affect the order price, and they are used by catalog items, record producers and order guides alike.",
+    explanation_pt: "As variáveis do Service Catalog são marcadas como Global por padrão, o que significa que a variável aparece em TODAS as tarefas de execução de um requested item. Variáveis são definidas uma vez e podem ser usadas em vários lugares, podem afetar o preço do pedido e são usadas tanto por catalog items quanto por record producers e order guides.",
+    source: "SNAF Module 5 · 5.2 Service Catalog major components",
   },
   {
     id: 92,
@@ -1433,16 +1425,17 @@ export const questions: Question[] = [
     id: 93,
     domain: "Self Service & Automation",
     type: "single",
-    question: "What are the four stages in the Service Catalog request management process?",
+    question: "Which flow stages indicate the progress of a requested item in the delivery process?",
     options: [
-      "Submit, Review, Approve, Close",
-      "Submittal, Approval, Fulfillment, Closure",
-      "Create, Assign, Fulfill, Archive",
-      "Request, Approval, Task, Complete",
+      "Draft, Published, Retired, Archived",
+      "Waiting for approval, Approved, Pending, Fulfillment, Delivery, Completed",
+      "New, In progress, On hold, Resolved, Closed",
+      "Retrieve, Preview, Commit, Complete",
     ],
     correct: 1,
-    explanation: "The four standard stages in the request lifecycle are: Submittal (user places the order), Approval (management approves if required), Fulfillment (the work is performed), and Closure (request is completed and closed). This lifecycle applies to REQ and RITM records.",
-    explanation_pt: "Os quatro estágios padrão no ciclo de vida de uma solicitação são: Submittal (usuário faz o pedido), Approval (gestão aprova se necessário), Fulfillment (o trabalho é realizado) e Closure (a solicitação é concluída e fechada). Esse ciclo de vida se aplica aos registros REQ e RITM.",
+    explanation: "Flow stages attached to an item indicate its progress in the delivery process: Waiting for approval (In Progress), Approved, Pending (has not started), Fulfillment (In Progress), Deployment/Delivery and Completed. Stages come from the flow attached to the catalog item, can be configured in Workflow Studio and can be grouped into Stage Sets. Track a request at All > Self-Service > My Requests.",
+    explanation_pt: "As flow stages associadas a um item indicam seu progresso no processo de entrega: Waiting for approval (em andamento), Approved, Pending (não iniciado), Fulfillment (em andamento), Deployment/Delivery e Completed. As stages vêm do flow anexado ao catalog item, podem ser configuradas no Workflow Studio e agrupadas em Stage Sets. Acompanhe uma solicitação em All > Self-Service > My Requests.",
+    source: "SNAF Module 5 · 5.2 Progress stages for a requested item",
   },
   {
     id: 94,
@@ -1461,7 +1454,7 @@ export const questions: Question[] = [
   },
   {
     id: 95,
-    domain: "Self Service & Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "single",
     question: "Which statement best describes what a Metric does in ServiceNow?",
     options: [
@@ -1476,18 +1469,19 @@ export const questions: Question[] = [
   },
   {
     id: 96,
-    domain: "Self Service & Automation",
+    domain: "Configuring Applications for Collaboration",
     type: "multiple",
-    question: "Reports can be created from which places in the platform? (Choose 2)",
+    question: "From which places can a data visualization be created? (Choose 3)",
     options: [
-      "A list column heading (right-click > Create Report)",
-      "The Metrics module",
+      "A list column options menu (create a chart from the data in that list)",
+      "All > Platform Analytics > Library > Data Visualizations",
+      "All > Platform Analytics > Analytics Center > Create new visualization",
       "The Statistics module",
-      "The View/Run module in the Reports application",
     ],
-    correct: [0, 3],
-    explanation: "Reports can be initiated from: (A) a list column heading — right-clicking a column header offers 'Create Report'; and (D) the View/Run module in the Reports application. There is no standalone Statistics module in standard ServiceNow navigation.",
-    explanation_pt: "Relatórios podem ser iniciados a partir de: (A) um cabeçalho de coluna de lista — clicar com o botão direito em um cabeçalho de coluna oferece 'Create Report'; e (D) o módulo View/Run no aplicativo Reports. Não há um módulo Statistics independente na navegação padrão do ServiceNow.",
+    correct: [0, 1, 2],
+    explanation: "Visualizations (formerly 'reports') can be created from most column context menus in any list, from the Data Visualizations library (All > Platform Analytics > Library > Data Visualizations) or from the Analytics Center (All > Platform Analytics > Analytics Center > Create new visualization). There is no Statistics module. Best practice is to duplicate an existing visualization and edit the copy.",
+    explanation_pt: "Visualizações (antigos 'reports') podem ser criadas pelos menus de contexto de coluna em qualquer lista, pela biblioteca de Data Visualizations (All > Platform Analytics > Library > Data Visualizations) ou pelo Analytics Center (All > Platform Analytics > Analytics Center > Create new visualization). Não existe módulo Statistics. A boa prática é duplicar uma visualização existente e editar a cópia.",
+    source: "SNAF Module 6 · 6.1 Platform Analytics / Data Visualization controls",
   },
   {
     id: 97,
@@ -1787,11 +1781,12 @@ export const questions: Question[] = [
       "Mapping fields using the Import Log for error detection",
       "Mapping fields using Transform History for auditing",
       "Mapping fields using SLA conditions",
-      "Providing field-level auto-mapping suggestions between staging and target table columns",
+      "Providing a visual environment to map source fields to one or more target fields and to correct auto-matched fields",
     ],
     correct: 3,
-    explanation: "Mapping Assist analyzes the staging table column names and suggests corresponding target table field mappings automatically. It speeds up Transform Map creation by auto-suggesting the most likely field mappings, which administrators can accept or override.",
-    explanation_pt: "Mapping Assist analisa os nomes das colunas da tabela de staging e sugere mapeamentos de campos correspondentes na tabela alvo automaticamente. Ele acelera a criação do Transform Map sugerindo automaticamente os mapeamentos de campos mais prováveis, que os administradores podem aceitar ou substituir.",
+    explanation: "Auto Map Matching Fields does the automatic matching when field NAMES are identical. Mapping Assist is the visually intuitive utility used for everything else: it maps a single source field (import set table) to MULTIPLE destination fields on the target table, and corrects any discrepancies left by auto-matching.",
+    explanation_pt: "O Auto Map Matching Fields faz o casamento automático quando os NOMES dos campos são idênticos. O Mapping Assist é o utilitário visual usado para o resto: mapeia um único campo de origem (import set table) para VÁRIOS campos de destino na tabela alvo e corrige divergências deixadas pelo mapeamento automático.",
+    source: "SNAF Module 4 · 4.3 Transform maps (notes)",
   },
   {
     id: 117,
@@ -1870,6 +1865,15 @@ export const questions: Question[] = [
   },
 ];
 
+/**
+ * Full question bank = original bank + questions derived from the official
+ * ServiceNow Administration Fundamentals (SNAF) slide decks.
+ */
+export const questions: Question[] = [...baseQuestions, ...snafQuestions];
+
+/** Only the questions written directly from the SNAF slides. */
+export const slideQuestions: Question[] = snafQuestions;
+
 // Official CSA exam domain weights
 export const domainWeights: Record<Domain, number> = {
   "Platform Overview and Navigation":            0.07,
@@ -1902,6 +1906,12 @@ export function selectExamQuestions(): Question[] {
 }
 
 /** Shuffle and return all questions for free mode. */
-export function getShuffledQuestions(): Question[] {
-  return [...questions].sort(() => Math.random() - 0.5);
+export function getShuffledQuestions(domain?: Domain | null): Question[] {
+  const pool = domain ? questions.filter((q) => q.domain === domain) : questions;
+  return [...pool].sort(() => Math.random() - 0.5);
+}
+
+/** Type guard used to validate a domain coming from the URL. */
+export function isDomain(value: string | null | undefined): value is Domain {
+  return !!value && Object.prototype.hasOwnProperty.call(domainWeights, value);
 }

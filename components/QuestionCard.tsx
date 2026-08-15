@@ -169,6 +169,17 @@ export default function QuestionCard({
               {question.explanation_pt}
             </p>
           </div>
+          {/* Where to revise this in the SNAF decks */}
+          {question.source && (
+            <div
+              className="px-4 py-2"
+              style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border)" }}
+            >
+              <span className="text-xs" style={{ color: "var(--text-muted)" }}>
+                Slide reference: {question.source}
+              </span>
+            </div>
+          )}
         </div>
       )}
     </div>
